@@ -1,0 +1,56 @@
+# We want the same Big Data bundle to be deployable on metal and on OpenStack
+#
+#
+machines:
+# Juju Bootstrap / Controller
+  '0':
+    constraints: arch=amd64 tags=demo
+    series: xenial
+# Misc Admin Non-Big-Data
+  '1':
+    constraints: arch=amd64 tags=demo
+    series: xenial
+# Misc Admin Non-Big-Data
+  '2':
+    constraints: arch=amd64 tags=demo
+    series: xenial
+# NN - Apache Hadoop HDFS NameNode
+  '3':
+    constraints: arch=amd64 tags=demo
+    series: xenial
+# RM - Apache Hadoop YARN Resource Manager
+  '4':
+    constraints: arch=amd64 tags=demo
+    series: xenial
+# SP - Apache Spark Processing
+  '5':
+    constraints: arch=amd64 tags=demo
+    series: xenial
+# SV - Apache Hadoop HDFS DataNode (slave)
+  '6':
+    constraints: arch=amd64 tags=demo
+    series: xenial
+# SV - Apache Hadoop HDFS DataNode (slave)
+#  '7':
+#    constraints: arch=amd64 tags=demo
+#    series: xenial
+# SV - Apache Hadoop HDFS DataNode (slave)
+#  '8':
+#    constraints: arch=amd64 tags=demo
+#    series: xenial
+# SV - Apache Hadoop HDFS DataNode (slave)
+#  '9':
+#    constraints: arch=amd64 tags=demo
+#    series: xenial
+# SV - Apache Hadoop HDFS DataNode (slave)
+#  '10':
+#    constraints: arch=amd64 tags=demo
+#    series: xenial
+relations:
+series: xenial
+services:
+  ganglia:
+    charm: cs:~charmers/trusty/ganglia
+    to: "lxc:1"
+  ganglia-node:
+    charm: cs:~charmers/trusty/ganglia-node

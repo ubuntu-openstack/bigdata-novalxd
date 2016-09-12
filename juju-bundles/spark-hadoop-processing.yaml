@@ -26,23 +26,23 @@ machines:
   '5':
     constraints: arch=amd64 tags=demo
     series: xenial
-# SV - Apache Hadoop HDFS DataNode (slave)
+# SV - Apache Hadoop Slave
   '6':
     constraints: arch=amd64 tags=demo
     series: xenial
-# SV - Apache Hadoop HDFS DataNode (slave)
+# SV - Apache Hadoop Slave
 #  '7':
 #    constraints: arch=amd64 tags=demo
 #    series: xenial
-# SV - Apache Hadoop HDFS DataNode (slave)
+# SV - Apache Hadoop Slave
 #  '8':
 #    constraints: arch=amd64 tags=demo
 #    series: xenial
-# SV - Apache Hadoop HDFS DataNode (slave)
+# SV - Apache Hadoop Slave
 #  '9':
 #    constraints: arch=amd64 tags=demo
 #    series: xenial
-# SV - Apache Hadoop HDFS DataNode (slave)
+# SV - Apache Hadoop Slave
 #  '10':
 #    constraints: arch=amd64 tags=demo
 #    series: xenial

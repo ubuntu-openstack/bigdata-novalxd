@@ -46,11 +46,65 @@ machines:
 #  '10':
 #    constraints: arch=amd64 tags=demo
 #    series: xenial
-relations:
-series: xenial
 services:
   ganglia:
     charm: cs:~charmers/trusty/ganglia
     to: "lxc:1"
   ganglia-node:
     charm: cs:~charmers/trusty/ganglia-node
+  namenode:
+    charm: "cs:~bigdata-dev/xenial/hadoop-namenode"
+    annotations:
+      gui-x: "300"
+      gui-y: "600"
+    num_units: 1
+    to: 3
+  resourcemanager:
+    charm: "cs:~bigdata-dev/xenial/hadoop-resourcemanager"
+    annotations:
+      gui-x: "300"
+      gui-y: "0"
+    num_units: 1
+    to: 4
+  slave:
+    charm: "cs:~bigdata-dev/xenial/hadoop-slave"
+    annotations:
+      gui-x: "0"
+      gui-y: "300"
+    num_units: 1
+    to: 6
+  #client:
+  #  charm: "cs:~bigdata-dev/xenial/hadoop-client"
+  #  annotations:
+  #    gui-x: "900"
+  #    gui-y: "300"
+  #  num_units: 1
+  plugin:
+    charm: "cs:~bigdata-dev/xenial/hadoop-plugin"
+    annotations:
+      gui-x: "600"
+      gui-y: "300"
+  openjdk:
+    charm: "cs:xenial/openjdk"
+    annotations:
+      gui-x: "300"
+      gui-y: "300"
+    options:
+      java-type: "jdk"
+      java-major: "8"
+  spark:
+    charm: "cs:~bigdata-dev/xenial/spark"
+    to: 5
+relations:
+  - [resourcemanager, namenode]
+  - [namenode, slave]
+  - [resourcemanager, slave]
+  - [plugin, namenode]
+  - [plugin, resourcemanager]
+  - [plugin, spark]
+  - [client, plugin]
+  - [openjdk, namenode]
+  - [openjdk, resourcemanager]
+  - [openjdk, slave]
+  - [openjdk, client]
+  - [openjdk, spark]

@@ -1,1 +1,1 @@
-# Ubuntu OpenStack + Big Data Spark Hadoop Processing Exploration
+# Big Data and Machine Learning on OpenStack backed by Nova-LXD

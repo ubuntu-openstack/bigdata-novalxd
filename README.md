@@ -1,2 +1,1 @@
-# bopenstack
-Ubuntu OpenStack + Big Data Spark Hadoop Processing Exploration
+# Ubuntu OpenStack + Big Data Spark Hadoop Processing Exploration

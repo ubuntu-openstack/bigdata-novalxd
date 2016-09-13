@@ -46,6 +46,7 @@ machines:
 #  '10':
 #    constraints: arch=amd64 tags=demo
 #    series: xenial
+series: xenial
 services:
   ganglia:
     charm: cs:~charmers/trusty/ganglia

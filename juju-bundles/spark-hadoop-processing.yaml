@@ -9,7 +9,7 @@ machines:
 # Misc Admin Non-Big-Data
   "1":
     constraints: arch=amd64 tags=demo
-    series: xenial
+    series: trusty
 # Misc Admin Non-Big-Data
   "2":
     constraints: arch=amd64 tags=demo
@@ -50,11 +50,11 @@ series: xenial
 services:
   juju-gui:
     charm: "cs:juju-gui"
-    to: "lxc:1"
+    to: "1"
   ganglia:
-#    charm: cs:~charmers/trusty/ganglia
-    charm: "cs:~1chb1n/xenial/ganglia"
-    to: "lxc:1"
+    charm: cs:~charmers/trusty/ganglia
+#    charm: "cs:~1chb1n/xenial/ganglia"
+    to: "1"
   ganglia-node:
 #    charm: "cs:~charmers/trusty/ganglia-node"
     charm: "cs:~1chb1n/xenial/ganglia-node"
@@ -105,11 +105,9 @@ relations:
   - [plugin, namenode]
   - [plugin, resourcemanager]
   - [plugin, spark]
-#  - [client, plugin]
   - [openjdk, namenode]
   - [openjdk, resourcemanager]
   - [openjdk, slave]
-#  - [openjdk, client]
   - [openjdk, spark]
   # ganglia:node relations
   - ["ganglia:node", namenode]

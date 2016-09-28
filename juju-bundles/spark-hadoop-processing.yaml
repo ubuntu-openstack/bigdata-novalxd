@@ -3,56 +3,61 @@
 #
 machines:
 # Juju Bootstrap / Controller
-  '0':
+  "0":
     constraints: arch=amd64 tags=demo
     series: xenial
 # Misc Admin Non-Big-Data
-  '1':
+  "1":
     constraints: arch=amd64 tags=demo
     series: xenial
 # Misc Admin Non-Big-Data
-  '2':
+  "2":
     constraints: arch=amd64 tags=demo
     series: xenial
 # NN - Apache Hadoop HDFS NameNode
-  '3':
+  "3":
     constraints: arch=amd64 tags=demo
     series: xenial
 # RM - Apache Hadoop YARN Resource Manager
-  '4':
+  "4":
     constraints: arch=amd64 tags=demo
     series: xenial
 # SP - Apache Spark Processing
-  '5':
+  "5":
     constraints: arch=amd64 tags=demo
     series: xenial
 # SV - Apache Hadoop Slave
-  '6':
+  "6":
     constraints: arch=amd64 tags=demo
     series: xenial
 # SV - Apache Hadoop Slave
-#  '7':
-#    constraints: arch=amd64 tags=demo
-#    series: xenial
+  "7":
+    constraints: arch=amd64 tags=demo
+    series: xenial
 # SV - Apache Hadoop Slave
-#  '8':
-#    constraints: arch=amd64 tags=demo
-#    series: xenial
+  "8":
+    constraints: arch=amd64 tags=demo
+    series: xenial
 # SV - Apache Hadoop Slave
-#  '9':
-#    constraints: arch=amd64 tags=demo
-#    series: xenial
+  "9":
+    constraints: arch=amd64 tags=demo
+    series: xenial
 # SV - Apache Hadoop Slave
-#  '10':
-#    constraints: arch=amd64 tags=demo
-#    series: xenial
+  "10":
+    constraints: arch=amd64 tags=demo
+    series: xenial
 series: xenial
 services:
+  juju-gui:
+    charm: "cs:juju-gui"
+    to: "lxc:1"
   ganglia:
-    charm: cs:~charmers/trusty/ganglia
+#    charm: cs:~charmers/trusty/ganglia
+    charm: "cs:~1chb1n/xenial/ganglia"
     to: "lxc:1"
   ganglia-node:
-    charm: "cs:~charmers/trusty/ganglia-node"
+#    charm: "cs:~charmers/trusty/ganglia-node"
+    charm: "cs:~1chb1n/xenial/ganglia-node"
   namenode:
     charm: "cs:~bigdata-dev/xenial/hadoop-namenode"
     annotations:
@@ -80,12 +85,6 @@ services:
       gui-y: "300"
     num_units: 1
     to: 6
-  #client:
-  #  charm: "cs:~bigdata-dev/xenial/hadoop-client"
-  #  annotations:
-  #    gui-x: "900"
-  #    gui-y: "300"
-  #  num_units: 1
   plugin:
     charm: "cs:~bigdata-dev/xenial/hadoop-plugin"
     annotations:

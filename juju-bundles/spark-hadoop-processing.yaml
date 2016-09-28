@@ -48,38 +48,43 @@ machines:
 #    series: xenial
 series: xenial
 services:
-  ganglia:
-    charm: cs:~charmers/trusty/ganglia
-    to: "lxc:1"
-  ganglia-node:
-    charm: "cs:~charmers/trusty/ganglia-node"
+#  ganglia:
+#    charm: cs:~charmers/trusty/ganglia
+#    to: "lxc:1"
+#  ganglia-node:
+#    charm: "cs:~charmers/trusty/ganglia-node"
   namenode:
     charm: "cs:~bigdata-dev/xenial/hadoop-namenode"
     annotations:
       gui-x: "300"
       gui-y: "600"
     num_units: 1
-    to: 3
+    to: 
+      - "3"
   resourcemanager:
     charm: "cs:~bigdata-dev/xenial/hadoop-resourcemanager"
     annotations:
       gui-x: "300"
       gui-y: "0"
     num_units: 1
-    to: 4
+    to: 
+      - "4" 
   spark:
     charm: "cs:~bigdata-dev/xenial/spark"
     annotations:
       gui-x: "300"
       gui-y: "300"
-    to: 5
+    to: 
+      - "2" 
   slave:
     charm: "cs:~bigdata-dev/xenial/hadoop-slave"
     annotations:
       gui-x: "0"
       gui-y: "300"
-    num_units: 1
-    to: 6
+    num_units: 2
+    to: 
+      - "5" 
+      - "6"
   #client:
   #  charm: "cs:~bigdata-dev/xenial/hadoop-client"
   #  annotations:
@@ -113,11 +118,8 @@ relations:
 #  - [openjdk, client]
   - [openjdk, spark]
   # ganglia:node relations
-  - ["ganglia:node", namenode]
-  - ["ganglia:node", resourcemanager]
-  - ["ganglia:node", slave]
-  - ["ganglia:node", ganglia-node]
+#  - ["ganglia:node", ganglia-node]
   # ganglia subordinate relations
-  - [ganglia-node, namenode]
-  - [ganglia-node, resourcemanager]
-  - [ganglia-node, slave]
+#  - [ganglia-node, namenode]
+#  - [ganglia-node, resourcemanager]
+#  - [ganglia-node, slave]

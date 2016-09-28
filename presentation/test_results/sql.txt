@@ -1,0 +1,24 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: ""
+    raw: |
+      ,sql_rddRelation-MLlibConfig,,10,,,3,0.001,0.15
+    start: 2016-09-28T19:12:41Z
+    stop: 2016-09-28T19:12:46Z
+  results:
+    duration:
+      direction: asc
+      units: secs
+      value: ""
+    throughput:
+      direction: desc
+      units: x/sec
+      value: ""
+status: completed
+timing:
+  completed: 2016-09-28 19:12:48 +0000 UTC
+  enqueued: 2016-09-28 19:12:26 +0000 UTC
+  started: 2016-09-28 19:12:28 +0000 UTC

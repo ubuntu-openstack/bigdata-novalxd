@@ -76,6 +76,19 @@ present in all three scenarios.
 
 ## Scenarios
 
+### Pre-requisites
+
+The following is necesary and applicable to all scenaios.
+
+1. (11) machines are commissioned, enlisted, and ready to deploy in MAAS.
+2. Juju 1.25.x is installed and configured to use MAAS 1.9.x.
+3. The bopenstack repo is locally cloned and is the current directory.
+
+    ```sh
+    git clone https://github.com/ubuntu-openstack/bopenstack
+    cd bopenstack
+    ```
+
 ### Spark Hadoop Processing on MAAS Bare Metal
 
 1. Deploy Spark Hadoop Processing to bare metal with Juju, the Big Data Charms, and MAAS
@@ -83,12 +96,11 @@ present in all three scenarios.
  - [deploy-spark-on-metal.sh][10]
 
     ```sh
-    sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
-    git clone https://github.com/ubuntu-openstack/bopenstack
-    cd bopenstack
     tools/deploy-spark-on-metal.sh
     ```
+
 2. ...
+
 
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-LXD
 
@@ -97,11 +109,9 @@ present in all three scenarios.
  - [deploy-openstack-nova-lxd.sh][8]
 
     ```sh
-    sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
-    git clone https://github.com/ubuntu-openstack/bopenstack
-    cd bopenstack
-    tools/deploy-......sh
+    tools/deploy-openstack-nova-lxd.sh
     ```
+
 2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
  - [spark-hadoop-processing.yaml][1]
  - [deploy-spark-on-openstack.sh][11]
@@ -109,7 +119,9 @@ present in all three scenarios.
     ```sh
     tools/deploy-spark-on-openstack.sh
     ```
+
 3. ...
+
 
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-KVM
 
@@ -118,11 +130,9 @@ present in all three scenarios.
  - [deploy-openstack-nova-kvm.sh][9]
 
     ```sh
-    sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
-    git clone https://github.com/ubuntu-openstack/bopenstack
-    cd bopenstack
-    tools/deploy-......sh
+    tools/deploy-openstack-nova-kvm.sh
     ```
+
 2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
  - [spark-hadoop-processing.yaml][1]
  - [deploy-spark-on-openstack.sh][11]
@@ -132,16 +142,6 @@ present in all three scenarios.
     ```
 3. ...
 
-
-## Fenced code blocks inside ordered and unordered lists
-
-1. This is a numbered list.
-2. I'm going to include a fenced code block as part of this bullet:
-
-    ```sh
-    Code
-    More Code
-    ```
 
 ## Additional Resources
 

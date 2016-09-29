@@ -4,53 +4,53 @@
 machines:
 # Juju Bootstrap / Controller
   "0":
-    constraints: arch=amd64 tags=demo
+    constraints: arch=amd64
     series: xenial
 # Misc Admin Non-Big-Data
   "1":
-    constraints: arch=amd64 tags=demo
+    constraints: arch=amd64
     series: trusty
 # Misc Admin Non-Big-Data
   "2":
-    constraints: arch=amd64 tags=demo
+    constraints: arch=amd64
     series: xenial
 # NN - Apache Hadoop HDFS NameNode
   "3":
-    constraints: arch=amd64 tags=demo
+    constraints: arch=amd64
     series: xenial
 # RM - Apache Hadoop YARN Resource Manager
   "4":
-    constraints: arch=amd64 tags=demo
+    constraints: arch=amd64
     series: xenial
 # SP - Apache Spark Processing
   "5":
-    constraints: arch=amd64 tags=demo
+    constraints: arch=amd64
     series: xenial
 # SV - Apache Hadoop Slave
   "6":
-    constraints: arch=amd64 tags=demo
+    constraints: arch=amd64
     series: xenial
 # SV - Apache Hadoop Slave
   "7":
-    constraints: arch=amd64 tags=demo
+    constraints: arch=amd64
     series: xenial
 # SV - Apache Hadoop Slave
   "8":
-    constraints: arch=amd64 tags=demo
+    constraints: arch=amd64
     series: xenial
 # SV - Apache Hadoop Slave
   "9":
-    constraints: arch=amd64 tags=demo
+    constraints: arch=amd64
     series: xenial
 # SV - Apache Hadoop Slave
   "10":
-    constraints: arch=amd64 tags=demo
+    constraints: arch=amd64
     series: xenial
 series: xenial
 services:
-  juju-gui:
-    charm: "cs:juju-gui"
-    to: "1"
+#  juju-gui:
+#    charm: "cs:juju-gui"
+#    to: "lxc:1"
   ganglia:
     charm: cs:~charmers/trusty/ganglia
 #    charm: "cs:~1chb1n/xenial/ganglia"

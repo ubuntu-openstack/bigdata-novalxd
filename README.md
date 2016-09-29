@@ -83,6 +83,7 @@ The following is necesary and applicable to all scenaios.
 1. (11) machines are commissioned, enlisted, and ready to deploy in MAAS.
 2. Juju 1.25.x is installed and configured to use MAAS 1.9.x.
 3. The bopenstack repo is locally cloned and is the current directory.
+ - Run:
 
     ```sh
     git clone https://github.com/ubuntu-openstack/bopenstack
@@ -92,12 +93,15 @@ The following is necesary and applicable to all scenaios.
 ### Spark Hadoop Processing on MAAS Bare Metal
 
 1. Deploy Spark Hadoop Processing to bare metal with Juju, the Big Data Charms, and MAAS
- - [spark-hadoop-processing.yaml][1]
- - [deploy-spark-on-metal.sh][10]
+ - Juju bundle:  [spark-hadoop-processing.yaml][1]
+ - Deployment script:  [deploy-spark-on-metal.sh][10]
+ - Run:
 
     ```sh
     tools/deploy-spark-on-metal.sh
     ```
+
+ - Spark Processing will deploy and announce the IP info for the YARN unit.
 
 2. ...
 
@@ -105,20 +109,27 @@ The following is necesary and applicable to all scenaios.
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-LXD
 
 1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
- - [openstack-nova-lxd.yaml][2]
- - [deploy-openstack-nova-lxd.sh][8]
+ - Juju bundle:  [openstack-nova-lxd.yaml][2]
+ - Deployment script:  [deploy-openstack-nova-lxd.sh][8]
+ - Run:
 
     ```sh
     tools/deploy-openstack-nova-lxd.sh
     ```
 
+ - OpenStack will deploy, configure and run a basic check.
+
 2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
- - [spark-hadoop-processing.yaml][1]
- - [deploy-spark-on-openstack.sh][11]
+ - Juju bundle:  [spark-hadoop-processing.yaml][1]
+ - Deployment script:  [deploy-spark-on-openstack.sh][11]
+ - Run:
 
     ```sh
     tools/deploy-spark-on-openstack.sh
     ```
+
+ - Spark Processing will deploy and announce the IP info for the YARN unit.
+
 
 3. ...
 
@@ -126,20 +137,27 @@ The following is necesary and applicable to all scenaios.
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-KVM
 
 1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
- - [openstack-nova-kvm.yaml][3]
- - [deploy-openstack-nova-kvm.sh][9]
+ - Juju bundle:  [openstack-nova-kvm.yaml][3]
+ - Deployment script:  [deploy-openstack-nova-kvm.sh][9]
+ - Run:
 
     ```sh
     tools/deploy-openstack-nova-kvm.sh
     ```
 
+ - OpenStack will deploy, configure and run a basic check.
+
 2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
- - [spark-hadoop-processing.yaml][1]
- - [deploy-spark-on-openstack.sh][11]
+ - Juju bundle:  [spark-hadoop-processing.yaml][1]
+ - Deployment script:  [deploy-spark-on-openstack.sh][11]
+ - Run:
 
     ```sh
     tools/deploy-spark-on-openstack.sh
     ```
+
+ - Spark Processing will deploy and announce the IP info for the YARN unit.
+
 3. ...
 
 

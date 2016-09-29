@@ -1,12 +1,7 @@
 #!/bin/bash -e
-
+# Untag bundle, build venv with juju-deployer from trunk, deploy
 tmp_bundle=$(mktemp)
-echo $tmp_bundle
-
-# Untag machines for use with the Juju OpenStack provider
 sed -e "s# tags=demo##g" juju-bundles/spark-hadoop-processing.yaml > $tmp_bundle
-
-# Deploy
 tox
 . .tox/deployer/bin/activate
 juju-deployer -vdc $tmp_bundle

@@ -81,6 +81,7 @@ present in all three scenarios.
 1. Deploy Spark Hadoop Processing to bare metal with Juju, the Big Data Charms, and MAAS
  - [spark-hadoop-processing.yaml][1]
  - [deploy-spark-on-metal.sh][10]
+
     ```sh
     sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
     git clone https://github.com/ubuntu-openstack/bopenstack
@@ -94,6 +95,7 @@ present in all three scenarios.
 1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
  - [openstack-nova-lxd.yaml][2]
  - [deploy-openstack-nova-lxd.sh][8]
+
     ```sh
     sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
     git clone https://github.com/ubuntu-openstack/bopenstack
@@ -103,6 +105,7 @@ present in all three scenarios.
 2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
  - [spark-hadoop-processing.yaml][1]
  - [deploy-spark-on-openstack.sh][11]
+
     ```sh
     tools/deploy-spark-on-openstack.sh
     ```
@@ -113,6 +116,7 @@ present in all three scenarios.
 1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
  - [openstack-nova-kvm.yaml][3]
  - [deploy-openstack-nova-kvm.sh][9]
+
     ```sh
     sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
     git clone https://github.com/ubuntu-openstack/bopenstack
@@ -122,6 +126,7 @@ present in all three scenarios.
 2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
  - [spark-hadoop-processing.yaml][1]
  - [deploy-spark-on-openstack.sh][11]
+
     ```sh
     tools/deploy-spark-on-openstack.sh
     ```
@@ -132,6 +137,7 @@ present in all three scenarios.
 
 1. This is a numbered list.
 2. I'm going to include a fenced code block as part of this bullet:
+
     ```sh
     Code
     More Code

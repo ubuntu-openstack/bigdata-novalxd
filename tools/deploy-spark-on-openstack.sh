@@ -5,3 +5,4 @@ sed -e "s# tags=demo##g" juju-bundles/spark-hadoop-processing.yaml > $tmp_bundle
 tox
 . .tox/deployer/bin/activate
 juju-deployer -vdc $tmp_bundle
+tools/float-namenode.sh

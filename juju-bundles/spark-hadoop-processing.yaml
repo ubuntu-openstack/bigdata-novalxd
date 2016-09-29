@@ -39,7 +39,8 @@ series: xenial
 services:
   ubuntu:
     charm: "cs:ubuntu"
-    to: "1"
+    num_units: 2
+    to: [1, 2]
 #  juju-gui:
 #    charm: "cs:juju-gui"
 #    to: "1"

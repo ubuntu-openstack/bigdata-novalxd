@@ -79,20 +79,23 @@ present in all three scenarios.
 ### Spark Hadoop Processing on MAAS Bare Metal
 
 1. Deploy Spark Hadoop Processing to bare metal with Juju, the Big Data Charms, and MAAS
-  - [Apache Spark Processing Bundle][1]
-```
+ - [Apache Spark Processing Bundle][1]
+ - [deploy-spark-on-metal.sh][10]
+```sh
 sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
 git clone https://github.com/ubuntu-openstack/bopenstack
 cd bopenstack
 tools/deploy-spark-on-metal.sh
 ```
+
 2. ...
 
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-LXD
 
 1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
  - [OpenStack with Nova-LXD Bundle][2]
-```
+ - [deploy-openstack-nova-lxd.sh][8]
+```sh
 sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
 git clone https://github.com/ubuntu-openstack/bopenstack
 cd bopenstack
@@ -101,7 +104,8 @@ tools/deploy-......sh
 
 2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
  - [Apache Spark Processing Bundle][1]
-```
+ - [deploy-spark-on-openstack.sh][11]
+```sh
 tools/deploy-spark-on-openstack.sh
 ```
 
@@ -110,18 +114,22 @@ tools/deploy-spark-on-openstack.sh
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-KVM
 
 1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
-  - [OpenStack with Nova-KVM Bundle][3]
-```
+ - [OpenStack with Nova-KVM Bundle][3]
+ - [deploy-openstack-nova-kvm.sh][9]
+```sh
 sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
 git clone https://github.com/ubuntu-openstack/bopenstack
 cd bopenstack
 tools/deploy-......sh
 ```
+
 2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
-  - [Apache Spark Processing Bundle][1]
-```
+ - [Apache Spark Processing Bundle][1]
+ - [deploy-spark-on-openstack.sh][11]
+```sh
 tools/deploy-spark-on-openstack.sh
 ```
+
 3. ...
 
 
@@ -140,3 +148,7 @@ tools/deploy-spark-on-openstack.sh
 [5]: http://www.ubuntu.com/cloud/juju
 [6]: http://www.ubuntu.com/server
 [7]: http://docs.openstack.org/developer/charm-guide
+[8]: tools/deploy-openstack-nova-lxd.sh
+[9]: tools/deploy-openstack-nova-kvm.sh
+[10]: tools/deploy-spark-on-metal.sh
+[11]: tools/deploy-spark-on-openstack.sh

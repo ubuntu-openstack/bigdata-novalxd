@@ -4,47 +4,47 @@
 machines:
 # Juju Bootstrap / Controller
   "0":
-    constraints: arch=amd64
+    constraints: arch=amd64 tags=demo
     series: xenial
 # Misc Admin Non-Big-Data
   "1":
-    constraints: arch=amd64
+    constraints: arch=amd64 tags=demo
     series: trusty
 # Misc Admin Non-Big-Data
   "2":
-    constraints: arch=amd64
+    constraints: arch=amd64 tags=demo
     series: xenial
 # NN - Apache Hadoop HDFS NameNode
   "3":
-    constraints: arch=amd64
+    constraints: arch=amd64 tags=demo
     series: xenial
 # RM - Apache Hadoop YARN Resource Manager
   "4":
-    constraints: arch=amd64
+    constraints: arch=amd64 tags=demo
     series: xenial
 # SP - Apache Spark Processing
   "5":
-    constraints: arch=amd64
+    constraints: arch=amd64 tags=demo
     series: xenial
 # SV - Apache Hadoop Slave
   "6":
-    constraints: arch=amd64
+    constraints: arch=amd64 tags=demo
     series: xenial
 # SV - Apache Hadoop Slave
   "7":
-    constraints: arch=amd64
+    constraints: arch=amd64 tags=demo
     series: xenial
 # SV - Apache Hadoop Slave
   "8":
-    constraints: arch=amd64
+    constraints: arch=amd64 tags=demo
     series: xenial
 # SV - Apache Hadoop Slave
   "9":
-    constraints: arch=amd64
+    constraints: arch=amd64 tags=demo
     series: xenial
 # SV - Apache Hadoop Slave
   "10":
-    constraints: arch=amd64
+    constraints: arch=amd64 tags=demo
     series: xenial
 series: xenial
 services:

@@ -46,12 +46,12 @@ machines:
   "10":
     constraints: arch=amd64 tags=demo
     series: xenial
-series: xenial
 services:
 #  juju-gui:
 #    charm: "cs:juju-gui"
 #    to: "lxc:1"
   ganglia:
+    series: trusty
     charm: cs:~charmers/trusty/ganglia
 #    charm: "cs:~1chb1n/xenial/ganglia"
     to: "1"

@@ -48,9 +48,9 @@ services:
 #    charm: cs:~charmers/trusty/ganglia
 #    charm: "cs:~1chb1n/xenial/ganglia"
 #    to: "1"
-  ganglia-node:
+#  ganglia-node:
 #    charm: "cs:~charmers/trusty/ganglia-node"
-    charm: "cs:~1chb1n/xenial/ganglia-node"
+#    charm: "cs:~1chb1n/xenial/ganglia-node"
   namenode:
     charm: "cs:~bigdata-dev/xenial/hadoop-namenode"
     annotations:

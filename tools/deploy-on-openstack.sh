@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 tmp_bundle=$(mktemp)
 echo $tmp_bundle
@@ -7,4 +7,6 @@ echo $tmp_bundle
 sed -e "s# tags=demo##g" juju-bundles/spark-hadoop-processing.yaml > $tmp_bundle
 
 # Deploy
+tox
+. .tox/deployer/bin/activate
 juju-deployer -vdc $tmp_bundle

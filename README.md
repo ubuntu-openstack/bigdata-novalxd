@@ -1,6 +1,6 @@
 # Big Data and Machine Learning on OpenStack backed by Nova-LXD
 
-### Overview
+## Overview
 Hadoop was built with bare metal in mind:  get your commodity hardware, 
 stick hadoop on it and let YARN do all the hard work managing resources. 
 However, Big Data software deployments on other substrates such as AWS 
@@ -73,13 +73,35 @@ machine.  The remainder of the machines are allocated to the deployed
 workloads, such that there are the same number of Apache Hadoop Slaves
 present in all three scenarios.
 
+
+## Scenarios
+
 ### Spark Hadoop Processing on MAAS Bare Metal
+
+1. Deploy Spark Hadoop Processing to bare metal with Juju, the Big Data Charms, and MAAS
+  - [Apache Spark Processing Bundle][1]
+2. ...
 
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-LXD
 
+1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
+ - [OpenStack with Nova-LXD Bundle][2]
+2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
+ - [Apache Spark Processing Bundle][1]
+3. ...
+
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-KVM
 
-[1]: https://github.com/ubuntu-openstack/bopenstack/blob/master/juju-bundles/spark-hadoop-processing.yaml
-[2]: https://github.com/ubuntu-openstack/bopenstack/blob/master/juju-bundles/openstack-nova-lxd.yaml
-[3]: https://github.com/ubuntu-openstack/bopenstack/blob/master/juju-bundles/openstack-nova-kvm.yaml
+1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
+  - [OpenStack with Nova-LXD Bundle][2]
+2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
+  - [Apache Spark Processing Bundle][1]
+3. ...
+
+[1]: juju-bundles/spark-hadoop-processing.yaml
+[2]: juju-bundles/openstack-nova-lxd.yaml
+[3]: juju-bundles/openstack-nova-kvm.yaml
+[4]: http://maas.io
+[5]: http://www.ubuntu.com/cloud/juju
+[6]: http://www.ubuntu.com/server
 

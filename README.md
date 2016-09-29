@@ -61,7 +61,7 @@ We cover:
 
 #### Hardware Specs
 
-(12) Dell PowerEdge R610 Machines
+(12) Identical Dell PowerEdge R610 Machines
 * (1) 2.40GHz Intel Xeon CPU E5620
 * 48GB 1333MHz PC3-10600 CL9 ECC DDR3 SDRAM
 * (2) Seagate ST9500620NS 500GB 7200 RPM 64MB SATA 6.0Gb/s Near-line Disks
@@ -80,23 +80,58 @@ present in all three scenarios.
 
 1. Deploy Spark Hadoop Processing to bare metal with Juju, the Big Data Charms, and MAAS
   - [Apache Spark Processing Bundle][1]
+```
+sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
+git clone https://github.com/ubuntu-openstack/bopenstack
+cd bopenstack
+tools/deploy-spark-on-metal.sh
+```
 2. ...
 
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-LXD
 
 1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
  - [OpenStack with Nova-LXD Bundle][2]
+```
+sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
+git clone https://github.com/ubuntu-openstack/bopenstack
+cd bopenstack
+tools/deploy-......sh
+```
+
 2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
  - [Apache Spark Processing Bundle][1]
+```
+tools/deploy-spark-on-openstack.sh
+```
+
 3. ...
 
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-KVM
 
 1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
-  - [OpenStack with Nova-LXD Bundle][2]
+  - [OpenStack with Nova-KVM Bundle][3]
+```
+sudo apt-get update && sudo apt-get install juju-deployer juju-1.25 -y
+git clone https://github.com/ubuntu-openstack/bopenstack
+cd bopenstack
+tools/deploy-......sh
+```
 2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
   - [Apache Spark Processing Bundle][1]
+```
+tools/deploy-spark-on-openstack.sh
+```
 3. ...
+
+
+## Additional Resources
+
+* [Juju][5]
+* [MAAS: Metal as a Service][4]
+* [OpenStack Charm Development Guide][7]
+* [Ubuntu Server][6]
+
 
 [1]: juju-bundles/spark-hadoop-processing.yaml
 [2]: juju-bundles/openstack-nova-lxd.yaml
@@ -104,4 +139,4 @@ present in all three scenarios.
 [4]: http://maas.io
 [5]: http://www.ubuntu.com/cloud/juju
 [6]: http://www.ubuntu.com/server
-
+[7]: http://docs.openstack.org/developer/charm-guide

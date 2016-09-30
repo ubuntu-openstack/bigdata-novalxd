@@ -1,5 +1,9 @@
 # Big Data and Machine Learning on OpenStack backed by Nova-LXD
 
+_Andrew McLeod <admcleod> and Ryan Beisner <beisner>_
+
+---
+
 ## Overview
 Hadoop was built with bare metal in mind:  get your commodity hardware, 
 stick hadoop on it and let YARN do all the hard work managing resources. 
@@ -33,30 +37,17 @@ We cover:
 
 #### Benchmarks and Jobs
 
-1. Terasort Benchmark
-2. Spark Benchmarks
-3. YARN and HDFS Benchmarks
-4. Anomoly Detection and Machine Learning Job
+1. Terasort Benchmark: <TODO description of job>
+2. Spark Benchmarks: <TODO description of job>
+3. YARN and HDFS Benchmarks: <TODO description of job>
+4. Anomoly Detection and Machine Learning Job: <TODO description of job>
+
 
 #### Deployment Toplogies
 
-1. [Spark Hadoop Processing][1] on MAAS bare metal
+1. [Spark Hadoop Processing][1] on [MAAS][4] bare metal
 2. [Spark Hadoop Processing][1] on [Ubuntu OpenStack with Nova-LXD][2] hypervisors
 3. [Spark Hadoop Processing][1] on [Ubuntu OpenStack with Nova-KVM][3] hypervisors
-
-
-#### Software Specs
-
-* MAAS 1.9 on on Ubuntu 14.04 Trusty
-* Juju 1.25.6 on Ubuntu 16.04 Xenial
-* All Big Data and OpenStack applications and services are deployed onto 
-  Ubuntu 16.04 Xenial.
-* As of this writing, MAAS 2.0 was stable and released.  However, the 
-  corresponding Juju 2.0 product was in development.  Because MAAS 2.0 
-  does not support the stable Juju 1.25.6, stable MAAS 1.9 was selected 
-  for these exercises.
-* When Juju 2.0 releases, the same routines should be compatible with a 
-  MAAS 2.x and Juju 2.x combination on 16.04.
 
 
 #### Hardware Specs
@@ -68,10 +59,28 @@ We cover:
 * (4) Broadcom NetXtreme II Gigabit Ethernet
 
 One machine is dedicated to MAAS, though that could be a much lesser machine
-or running within a container managed by LXD or a traditional KVM virtual
+or run within a container managed by LXD or a traditional KVM virtual 
 machine.  The remainder of the machines are allocated to the deployed
 workloads, such that there are the same number of Apache Hadoop Slaves
 present in all three scenarios.
+
+
+#### Software Specs
+
+* MAAS 1.9 on on Ubuntu 14.04 Trusty
+* Juju 1.25.6 on Ubuntu 16.04 Xenial
+* HDFS version <TODO>
+* YARN version <TODO>
+* Spark version <TODO>
+* <TODO> Any other Big Data version info
+* All Big Data and OpenStack applications and services are deployed onto 
+  Ubuntu 16.04 Xenial.
+* As of this writing, MAAS 2.0 was stable and released.  However, the 
+  corresponding Juju 2.0 product was in development.  Because MAAS 2.0 
+  does not support the stable Juju 1.25.6, stable MAAS 1.9 was selected 
+  for these exercises.
+* When Juju 2.0 releases, the same routines should be compatible with a 
+  MAAS 2.x and Juju 2.x combination on 16.04.
 
 
 ## Scenarios
@@ -80,7 +89,8 @@ present in all three scenarios.
 
 The following is necesary and applicable to all scenaios.
 
-1. (11) machines are commissioned, enlisted, and ready to deploy in MAAS.
+1. (11) machines are commissioned, enlisted, tagged as 'demo' and ready
+   to deploy in MAAS.
 2. Juju 1.25.x is installed and configured to use MAAS 1.9.x.
 3. The bopenstack repo is locally cloned and is the current directory.
  - Run:
@@ -92,7 +102,8 @@ The following is necesary and applicable to all scenaios.
 
 ### Spark Hadoop Processing on MAAS Bare Metal
 
-1. Deploy Spark Hadoop Processing to bare metal with Juju, the Big Data Charms, and MAAS
+1. Deploy Spark Hadoop Processing to bare metal with Juju, the Big Data
+   Charms, and MAAS
  - Juju bundle:  [spark-hadoop-processing.yaml][1]
  - Deployment script:  [deploy-spark-on-metal.sh][10]
  - Run:
@@ -103,12 +114,14 @@ The following is necesary and applicable to all scenaios.
 
  - Spark Processing will deploy and announce the IP info for the YARN unit.
 
-2. ...
+3. Post-Deployment Routine
+ - TODO: script and link to script for benchmarks and jobs
 
 
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-LXD
 
-1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
+1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, 
+   and MAAS.
  - Juju bundle:  [openstack-nova-lxd.yaml][2]
  - Deployment script:  [deploy-openstack-nova-lxd.sh][8]
  - Run:
@@ -119,7 +132,8 @@ The following is necesary and applicable to all scenaios.
 
  - OpenStack will deploy, configure and run a basic check.
 
-2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
+2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big
+   Data Charms.
  - Juju bundle:  [spark-hadoop-processing.yaml][1]
  - Deployment script:  [deploy-spark-on-openstack.sh][11]
  - Run:
@@ -130,13 +144,14 @@ The following is necesary and applicable to all scenaios.
 
  - Spark Processing will deploy and announce the IP info for the YARN unit.
 
-
-3. ...
+3. Post-Deployment Routine
+ - TODO: script and link to script for benchmarks and jobs
 
 
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-KVM
 
-1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, and MAAS.
+1. Deploy Ubuntu OpenStack to bare metal with Juju, the OpenStack Charms, 
+   and MAAS.
  - Juju bundle:  [openstack-nova-kvm.yaml][3]
  - Deployment script:  [deploy-openstack-nova-kvm.sh][9]
  - Run:
@@ -147,7 +162,8 @@ The following is necesary and applicable to all scenaios.
 
  - OpenStack will deploy, configure and run a basic check.
 
-2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big Data Charms.
+2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big 
+   Data Charms.
  - Juju bundle:  [spark-hadoop-processing.yaml][1]
  - Deployment script:  [deploy-spark-on-openstack.sh][11]
  - Run:
@@ -158,10 +174,14 @@ The following is necesary and applicable to all scenaios.
 
  - Spark Processing will deploy and announce the IP info for the YARN unit.
 
-3. ...
+3. Post-Deployment Routine
+ - TODO: script and link to script for benchmarks and jobs
 
 
 ## Additional Resources
+
+The authors and developers can be found on the #openstack-charms and #juju
+Freenode IRC channels.
 
 * [Juju][5]
 * [MAAS: Metal as a Service][4]

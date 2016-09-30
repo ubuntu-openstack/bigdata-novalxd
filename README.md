@@ -5,6 +5,9 @@ for OpenStack Summit Barcelona 2016_
 
 ---
 
+![alt text][juju-gui-image]
+![alt text][maas-image]
+
 ## Overview
 Hadoop was built with bare metal in mind:  get your commodity hardware, 
 stick hadoop on it and let YARN do all the hard work managing resources. 
@@ -201,3 +204,6 @@ Freenode IRC channels.
 [9]: tools/deploy-openstack-nova-kvm.sh
 [10]: tools/deploy-spark-on-metal.sh
 [11]: tools/deploy-spark-on-openstack.sh
+
+[maas-image]: presentation/images/maas-machines-deployed-400.png "MAAS - Metal as a Service"
+[juju-gui-image]: presentation/images/juju-gui-spark-processing-400.png "Juju Big Data Deployment - Spark Processing"

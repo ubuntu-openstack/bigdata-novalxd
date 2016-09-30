@@ -1,0 +1,2 @@
+bzr
+bzr+lp:juju-deployer#egg=juju-deployer

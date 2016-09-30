@@ -1,6 +1,7 @@
 # Big Data and Machine Learning on OpenStack backed by Nova-LXD
 
-_Andrew McLeod <admcleod> and Ryan Beisner <beisner>_
+_Andrew McLeod [irc: admcleod] and Ryan Beisner [irc: beisner]_ 
+for OpenStack Summit Barcelona 2016
 
 ---
 

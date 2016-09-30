@@ -73,10 +73,10 @@ present in all three scenarios.
 
 * MAAS 1.9 on on Ubuntu 14.04 Trusty
 * Juju 1.25.6 on Ubuntu 16.04 Xenial
-* HDFS version <TODO>
-* YARN version <TODO>
-* Spark version <TODO>
-* <TODO> Any other Big Data version info
+* HDFS version TODO
+* YARN version TODO
+* Spark version TODO
+* TODO Any other Big Data version info
 * All Big Data and OpenStack applications and services are deployed onto 
   Ubuntu 16.04 Xenial.
 * As of this writing, MAAS 2.0 was stable and released.  However, the 

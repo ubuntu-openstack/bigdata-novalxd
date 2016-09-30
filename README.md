@@ -1,7 +1,7 @@
 # Big Data and Machine Learning on OpenStack backed by Nova-LXD
 
-_Andrew McLeod [irc: admcleod] and Ryan Beisner [irc: beisner]_ 
-for OpenStack Summit Barcelona 2016
+_Andrew McLeod [irc: admcleod] and Ryan Beisner [irc: beisner] 
+for OpenStack Summit Barcelona 2016_
 
 ---
 
@@ -93,12 +93,12 @@ The following is necesary and applicable to all scenaios.
 1. (11) machines are commissioned, enlisted, tagged as 'demo' and ready
    to deploy in MAAS.
 2. Juju 1.25.x is installed and configured to use MAAS 1.9.x.
-3. The bopenstack repo is locally cloned and is the current directory.
+3. The bigdata-novalxd repo is locally cloned and is the current directory.
  - Run:
 
     ```sh
-    git clone https://github.com/ubuntu-openstack/bopenstack
-    cd bopenstack
+    git clone https://github.com/ubuntu-openstack/bigdata-novalxd
+    cd bigdata-novalxd
     ```
 
 ### Spark Hadoop Processing on MAAS Bare Metal

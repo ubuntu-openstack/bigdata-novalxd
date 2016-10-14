@@ -19,13 +19,18 @@ jdo() { juju action fetch --wait 0 $(juju action do $1 $2 | awk '{print $5}'); }
 # Resourcemanager (yarn / hdfs) tests
 echo Running resourcemanager tests...
 echo mapreduce benchmark
-jdo resourcemanager/0 mrbench > ../results/mrbench_results-${etype}.txt
+jdo resourcemanager/0 mrbench maps=100 reduces=50 > ../results/mrbench_results-${etype}.txt
 echo namenode benchmark
-jdo resourcemanager/0 nnbench > ../results/nnbench_results-${etype}.txt
+jdo resourcemanager/0 nnbench maps=100 reduces=50 > ../results/nnbench_results-${etype}.txt
 echo terasort
-jdo resourcemanager/0 terasort > ../results/terasort_results-${etype}.txt
-echo dfsio benchmark
-jdo resourcemanager/0 testdfsio > ../results/testdfsio_results-${etype}.txt
+jdo resourcemanager/0 terasort maps=100 reduces=50 > ../results/terasort_results-${etype}.txt
+echo dfsio write benchmark
+jdo resourcemanager/0 testdfsio mode='write' resfile='/tmp/dfsio_write_results.txt' > ../results/testdfsio_write_results-${etype}.txt
+echo dfsio read benchmark
+jdo resourcemanager/0 testdfsio mode='read' resfile='/tmp/dfsio_read_results.txt' > ../results/testdfsio_read_results-${etype}.txt
+echo getting dfsio write and read job results
+juju scp resourcemanager/0:/tmp/dfsio_write_results.txt ../results/testdfsio_write_results_detailed-${etype}.txt
+juju scp resourcemanager/0:/tmp/dfsio_read_results.txt ../results/testdfsio_read_results_detailed-${etype}.txt
 
 # Spark tests
 echo Running spark tests...

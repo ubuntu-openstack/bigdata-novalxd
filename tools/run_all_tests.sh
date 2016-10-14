@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ '$1' == '' ] ; then
+if [ "$1" == "" ] ; then
         echo Please specify the deployment name / type
         echo e.g. baremetal, lxd, kvm
         exit

@@ -47,3 +47,12 @@ echo svm
 jdo spark/0 svm ../results/svm_results-${type}.txt
 echo trianglecount
 jdo spark/0 trianglecount ../results/trianglecount_results-${type}.txt
+
+
+# prepare anomaly detection
+./prepare_anomaly_detection.sh
+
+# run anomyaly detection
+echo Check ../results/ for new files after this detection job finishes...
+./run_anomaly_detection.sh
+~                           

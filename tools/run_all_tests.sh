@@ -28,15 +28,15 @@ for run_number in {1..10} ; do
         jdo resourcemanager/0 mrbench maps=100 reduces=50 > ${base_output_dir}/mrbench_results-${run_number}.txt
         echo namenode benchmark, run ${run_number}
         jdo resourcemanager/0 nnbench maps=100 reduces=50 > ${base_output_dir}/nnbench_results-${run_number}.txt
+        juju scp resourcemanager/0:/tmp/NNBench_results.log ${base_output_dir}/nnbench_results_log-${run_number}.txt
         echo terasort, run ${run_number}
         jdo resourcemanager/0 terasort maps=100 reduces=50 > ${base_output_dir}/terasort_results-${run_number}.txt
         echo dfsio write benchmark, run ${run_number}
-        jdo resourcemanager/0 testdfsio mode='write' resfile='/tmp/dfsio_write_results.txt' > ${base_output_dir}/testdfsio_write_results-${run_number}.txt
+        jdo resourcemanager/0 testdfsio mode='write' > ${base_output_dir}/testdfsio_write_results-${run_number}.txt
+        juju scp resourcemanager/0:/tmp/TestDFSIO_results.log ${base_output_dir}/testdfsio_write_results_detailed-${run_number}.txt
         echo dfsio read benchmark, run ${run_number}
-        jdo resourcemanager/0 testdfsio mode='read' resfile='/tmp/dfsio_read_results.txt' > ${base_output_dir}/testdfsio_read_results-${run_number}.txt
-        echo getting dfsio write and read job results, run ${run_number}
-        juju scp resourcemanager/0:/tmp/dfsio_write_results.txt ${base_output_dir}/testdfsio_write_results_detailed-${run_number}.txt
-        juju scp resourcemanager/0:/tmp/dfsio_read_results.txt ${base_output_dir}/testdfsio_read_results_detailed-${run_number}.txt
+        jdo resourcemanager/0 testdfsio mode='read'  > ${base_output_dir}/testdfsio_read_results-${run_number}.txt
+        juju scp resourcemanager/0:/tmp/TestDFSIO_results.log ${base_output_dir}/testdfsio_read_results_detailed-${run_number}.txt
         
         # Spark tests
         echo Running spark tests..., run ${run_number}

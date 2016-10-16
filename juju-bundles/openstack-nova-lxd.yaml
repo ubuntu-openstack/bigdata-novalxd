@@ -1,248 +1,341 @@
-# OpenStack Nova KVM - ODS Barcelona 2016
-#
-# This OpenStack Juju Bundle deploys a model that is tailored to a specific 
-# set of machines via MAAS.  Certain applications are excluded which would
-# normally be part of an Ubuntu OpenStack deployment (such as ceph and swift).
-#
+# OpenStack Nova LXD with Exclusive Machine Scheduling - ODS Barcelona 2016
+#     This OpenStack Juju Bundle deploys a model that is tailored to deploy
+#     to a specific set of machines via MAAS.
 machines:
 # Juju Bootstrap / Controller
-  '0':
+  "0":
     constraints: arch=amd64 tags=demo
-    series: xenial
 # OpenStack Neutron Gateway + OpenStack Control Plane
-  '1':
+  "1":
     constraints: arch=amd64 tags=demo
-    series: xenial
-# OpenStack Control Plane Cont'd
-  '2':
+# OpenStack Object Storage + OpenStack Control Plane
+  "2":
     constraints: arch=amd64 tags=demo
-    series: xenial
 # OpenStack Nova-LXD Compute [for Name Node]
-  '3':
+  "3":
     constraints: arch=amd64 tags=demo
-    series: xenial
 # OpenStack Nova-LXD Compute [for Resource Manager]
-  '4':
+  "4":
     constraints: arch=amd64 tags=demo
-    series: xenial
 # OpenStack Nova-LXD Compute [for Spark]
-  '5':
+  "5":
     constraints: arch=amd64 tags=demo
-    series: xenial
-# OpenStack Nova-LXD Compute [for Slave]
-  '6':
+# OpenStack Nova-LXD Compute [for Hadoop Slave]
+  "6":
     constraints: arch=amd64 tags=demo
-    series: xenial
-# OpenStack Nova-LXD Compute [for Slave]
-#  '7':
-#    constraints: arch=amd64 tags=demo
-#    series: xenial
-# OpenStack Nova-LXD Compute [for Slave]
-#  '8':
-#    constraints: arch=amd64 tags=demo
-#    series: xenial
-# OpenStack Nova-LXD Compute [for Slave]
-#  '9':
-#    constraints: arch=amd64 tags=demo
-#    series: xenial
-# OpenStack Nova-LXD Compute [for Slave]
-#  '10':
-#    constraints: arch=amd64 tags=demo
-#    series: xenial
+# OpenStack Nova-LXD Compute [for Hadoop Slave]
+  "7":
+    constraints: arch=amd64 tags=demo
+# OpenStack Nova-LXD Compute [for Hadoop Slave]
+  "8":
+    constraints: arch=amd64 tags=demo
+# OpenStack Nova-LXD Compute [for Hadoop Slave]
+  "9":
+    constraints: arch=amd64 tags=demo
+# OpenStack Nova-LXD Compute [for Hadoop Slave]
+  "10":
+    constraints: arch=amd64 tags=demo
+series: xenial
 relations:
-- - nova-compute:lxd
-  - lxd:lxd
-- - nova-compute:amqp
-  - rabbitmq-server:amqp
+- - keystone
+  - mysql
+- - nova-cloud-controller
+  - mysql
+- - nova-cloud-controller
+  - rabbitmq-server
+- - nova-cloud-controller
+  - glance
+- - nova-cloud-controller
+  - keystone
+- - glance
+  - mysql
+- - glance
+  - keystone
+- - glance
+  - rabbitmq-server
+- - neutron-gateway
+  - nova-cloud-controller
+- - openstack-dashboard
+  - keystone
+- - swift-proxy
+  - keystone
+- - swift-proxy
+  - swift-storage
+- - ceilometer
+  - keystone:identity-service
+- - ceilometer
+  - rabbitmq-server
+- - ceilometer
+  - mongodb
+- - ceilometer-agent
+  - ceilometer
+- - heat
+  - mysql
+- - heat
+  - keystone
+- - heat
+  - rabbitmq-server
 - - neutron-gateway:amqp
-  - rabbitmq-server:amqp
-- - keystone:shared-db
-  - mysql:shared-db
-- - nova-cloud-controller:identity-service
-  - keystone:identity-service
-- - glance:identity-service
-  - keystone:identity-service
-- - neutron-api:identity-service
-  - keystone:identity-service
-- - neutron-openvswitch:neutron-plugin-api
-  - neutron-api:neutron-plugin-api
-- - neutron-api:shared-db
-  - mysql:shared-db
-- - neutron-api:amqp
-  - rabbitmq-server:amqp
-- - neutron-gateway:neutron-plugin-api
-  - neutron-api:neutron-plugin-api
-- - glance:shared-db
-  - mysql:shared-db
-- - glance:amqp
-  - rabbitmq-server:amqp
-- - nova-cloud-controller:image-service
-  - glance:image-service
-- - nova-compute:image-service
-  - glance:image-service
-- - nova-cloud-controller:cloud-compute
-  - nova-compute:cloud-compute
-- - nova-cloud-controller:amqp
-  - rabbitmq-server:amqp
-- - nova-cloud-controller:quantum-network-service
-  - neutron-gateway:quantum-network-service
-- - nova-compute:neutron-plugin
-  - neutron-openvswitch:neutron-plugin
-- - neutron-openvswitch:amqp
-  - rabbitmq-server:amqp
-- - openstack-dashboard:identity-service
-  - keystone:identity-service
-- - nova-cloud-controller:shared-db
-  - mysql:shared-db
-- - nova-cloud-controller:neutron-api
-  - neutron-api:neutron-api
-- - cinder:image-service
-  - glance:image-service
-- - cinder:amqp
-  - rabbitmq-server:amqp
-- - cinder:identity-service
-  - keystone:identity-service
-- - cinder:cinder-volume-service
-  - nova-cloud-controller:cinder-volume-service
-- - cinder:shared-db
-  - mysql:shared-db
-- - ntp:juju-info
-  - nova-compute:juju-info
-- - ntp:juju-info
-  - neutron-gateway:juju-info
-- - ceilometer:amqp
-  - rabbitmq-server:amqp
-- - ceilometer-agent:ceilometer-service
-  - ceilometer:ceilometer-service
-- - ceilometer:identity-service
-  - keystone:identity-service
-- - ceilometer:identity-notifications
-  - keystone:identity-notifications
-- - ceilometer-agent:nova-ceilometer
-  - nova-compute:nova-ceilometer
-- - ceilometer:shared-db
-  - mongodb:database
-- - aodh:shared-db
-  - mysql:shared-db
+  - rabbitmq-server
+- - neutron-api
+  - mysql
+- - neutron-api
+  - rabbitmq-server
+- - neutron-api
+  - nova-cloud-controller
+- - neutron-api
+  - neutron-openvswitch
+- - neutron-api
+  - keystone
+- - neutron-api
+  - neutron-gateway
+- - neutron-openvswitch
+  - rabbitmq-server
+- - aodh:shawhite-db
+  - mysql:shawhite-db
 - - aodh:identity-service
   - keystone:identity-service
 - - aodh:amqp
   - rabbitmq-server:amqp
-  - [ "ganglia:master", ganglia-node ]
-  - [ ganglia-node, nova-compute ]
-  - [ ganglia-node, neutron-gateway ]
-series: xenial
+- - glance-simplestreams-sync:identity-service
+  - keystone:identity-service
+- - glance-simplestreams-sync:amqp
+  - rabbitmq-server:amqp
+#
+- - nova-compute-lxd-orange
+  - nova-cloud-controller
+- - nova-compute-lxd-orange
+  - lxd
+- - nova-compute-lxd-orange
+  - rabbitmq-server:amqp
+- - nova-compute-lxd-orange
+  - glance
+- - neutron-openvswitch
+  - nova-compute-lxd-orange
+- - ceilometer-agent
+  - nova-compute-lxd-orange
+#
+- - nova-compute-lxd-aubergine
+  - nova-cloud-controller
+- - nova-compute-lxd-aubergine
+  - lxd
+- - nova-compute-lxd-aubergine
+  - rabbitmq-server:amqp
+- - nova-compute-lxd-aubergine
+  - glance
+- - neutron-openvswitch
+  - nova-compute-lxd-aubergine
+- - ceilometer-agent
+  - nova-compute-lxd-aubergine
+#
+- - nova-compute-lxd-grey
+  - nova-cloud-controller
+- - nova-compute-lxd-grey
+  - lxd
+- - nova-compute-lxd-grey
+  - rabbitmq-server:amqp
+- - neutron-openvswitch
+  - nova-compute-lxd-grey
+- - nova-compute-lxd-grey
+  - glance
+- - ceilometer-agent
+  - nova-compute-lxd-grey
+#
+- - nova-compute-lxd-white
+  - nova-cloud-controller
+- - nova-compute-lxd-white
+  - lxd
+- - nova-compute-lxd-white
+  - rabbitmq-server:amqp
+- - neutron-openvswitch
+  - nova-compute-lxd-white
+- - nova-compute-lxd-white
+  - glance
+- - ceilometer-agent
+  - nova-compute-lxd-white
 services:
-  aodh:
-    annotations:
-      gui-x: '1500'
-      gui-y: '0'
-    charm: cs:xenial/aodh
+  nova-compute-lxd-white:
+    charm: cs:~openstack-charmers-next/xenial/nova-compute
+    num_units: 5
+    to: [6, 7, 8, 9, 10]
+    options:
+      enable-live-migration: true
+      enable-resize: true
+      migration-auth-type: ssh
+      reserved-host-memory: 0
+      virt-type: lxd
+      openstack-origin: cloud:xenial-newton/proposed
+  nova-compute-lxd-grey:
+    charm: cs:~openstack-charmers-next/xenial/nova-compute
     num_units: 1
-    to:
-    - lxc:1
-  ceilometer:
-    charm: cs:xenial/ceilometer
+    to: 5
+    options:
+      enable-live-migration: true
+      enable-resize: true
+      migration-auth-type: ssh
+      reserved-host-memory: 0
+      virt-type: lxd
+      openstack-origin: cloud:xenial-newton/proposed
+  nova-compute-lxd-orange:
+    charm: cs:~openstack-charmers-next/xenial/nova-compute
+    num_units: 1
+    to: 4
+    options:
+      enable-live-migration: true
+      enable-resize: true
+      migration-auth-type: ssh
+      reserved-host-memory: 0
+      virt-type: lxd
+      openstack-origin: cloud:xenial-newton/proposed
+  nova-compute-lxd-aubergine:
+    charm: cs:~openstack-charmers-next/xenial/nova-compute
+    num_units: 1
+    to: 3
+    options:
+      enable-live-migration: true
+      enable-resize: true
+      migration-auth-type: ssh
+      reserved-host-memory: 0
+      virt-type: lxd
+      openstack-origin: cloud:xenial-newton/proposed
+  lxd:
+    charm: cs:~openstack-charmers-next/xenial/lxd
+    options:
+      block-devices: /dev/sdb
+      overwrite: "true"
+      storage-type: zfs
+  aodh:
+    charm: cs:~openstack-charmers-next/xenial/aodh
     num_units: 1
     to:
     - lxc:2
-  ceilometer-agent:
-    charm: cs:xenial/ceilometer-agent
-  cinder:
-    charm: cs:xenial/cinder
-    num_units: 1
+  ceilometer:
+    charm: cs:~openstack-charmers-next/xenial/ceilometer
     options:
-      block-device: /var/opt/cinder-test.img|20G
-      glance-api-version: 2
+      openstack-origin: cloud:xenial-newton/proposed
+    num_units: 1
     to:
     - lxc:1
-  ganglia:
-    charm: cs:~charmers/trusty/ganglia
-    to: "lxc:1"
-  ganglia-node:
-    charm: cs:~charmers/trusty/ganglia-node
+  ceilometer-agent:
+    charm: cs:~openstack-charmers-next/xenial/ceilometer-agent
   glance:
-    charm: cs:xenial/glance
+    charm: cs:~openstack-charmers-next/xenial/glance
+    options:
+      openstack-origin: cloud:xenial-newton/proposed
+    num_units: 1
+    to:
+    - lxc:1
+  glance-simplestreams-sync:
+    charm: cs:xenial/glance-simplestreams-sync
+    num_units: 1
+    options:
+      user_agent: "BigData-NovaLXD-Demo"
+      mirror_list: "[{url: 'http://cloud-images.ubuntu.com/releases/',
+                    name_prefix: 'ubuntu:daily',
+                    path: 'streams/v1/index.sjson', max: 1,
+                    item_filters: ['release~(xenial|yakkety)',
+                    'arch~amd64)', 'ftype~(tar.xz)']}]"
+                    'arch~amd64)', 'ftype~(disk1.img|tar.xz)']}]"
+#      mirror_list: "[{url: 'http://cloud-images.ubuntu.com/releases/',
+#                    name_prefix: 'ubuntu:daily',
+#                    path: 'streams/v1/index.sjson', max: 1,
+#                    item_filters: ['release~(xenial|yakkety)',
+#                    'arch~(ppc64el)', 'ftype~(disk1.img|disk.img)']}]"
+    to:
+    - lxc:1
+  heat:
+    charm: cs:~openstack-charmers-next/xenial/heat
+    options:
+      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:2
   keystone:
-    charm: cs:xenial/keystone
-    num_units: 1
+    charm: cs:~openstack-charmers-next/xenial/keystone
     options:
       admin-password: openstack
+      admin-token: ubuntutesting
+    num_units: 1
     to:
     - lxc:1
   mongodb:
     charm: cs:trusty/mongodb
     num_units: 1
     to:
-    - lxc:2
-  mysql:
-    charm: cs:xenial/percona-cluster
+    - lxc:1
+  juju-gui:
+    charm: cs:juju-gui
     num_units: 1
-    options:
-      max-connections: 20000
     to:
     - lxc:1
-  neutron-api:
-    charm: cs:xenial/neutron-api
-    num_units: 1
+  mysql:
+    charm: cs:~openstack-charmers-next/xenial/percona-cluster
     options:
-      neutron-security-groups: true
+      dataset-size: 15%
+      max-connections: 10000
+      root-password: ChangeMe123
+      sst-password: ChangeMe123
+    num_units: 1
+    to:
+    - lxc:2
+  neutron-api:
+    charm: cs:~openstack-charmers-next/xenial/neutron-api
+    options:
       flat-network-providers: physnet1
+      neutron-security-groups: true
+      openstack-origin: cloud:xenial-newton/proposed
+    num_units: 1
     to:
     - lxc:2
   neutron-gateway:
-    charm: cs:xenial/neutron-gateway
-    num_units: 1
+    charm: cs:~openstack-charmers-next/xenial/neutron-gateway
     options:
       bridge-mappings: physnet1:br-ex
-      data-port: br-ex:eth1
-    to:
-    - '1'
-  neutron-openvswitch:
-    charm: cs:xenial/neutron-openvswitch
-    num_units: 0
-  nova-cloud-controller:
-    charm: cs:xenial/nova-cloud-controller
+      instance-mtu: 1300
+      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
+    to:
+    - 1
+  neutron-openvswitch:
+    charm: cs:~openstack-charmers-next/xenial/neutron-openvswitch
+  nova-cloud-controller:
+    charm: cs:~openstack-charmers-next/xenial/nova-cloud-controller
     options:
       network-manager: Neutron
-    to:
-    - lxc:1
-  nova-compute:
-    charm: cs:xenial/nova-compute
-    num_units: 3
-    options:
-      enable-live-migration: true
-      enable-resize: true
-      migration-auth-type: ssh
-      virt-type: lxd
-    to:
-    - '5'
-    - '6'
-#    - '7'
-#    - '8'
-#    - '9'
-#    - '10'
-  lxd:
-    charm: cs:xenial/lxd
-    options:
-      block-devices: /dev/vdb
-      ephemeral-unmount: /mnt
-      storage-type: zfs
-      overwrite: "true"
-  ntp:
-    charm: cs:xenial/ntp-0
-    num_units: 0
-  openstack-dashboard:
-    charm: cs:xenial/openstack-dashboard
+      openstack-origin: cloud:xenial-newton/proposed
+      scheduler-default-filters: AggregateInstanceExtraSpecsFilter,AggregateNumInstancesFilter,RetryFilter,AvailabilityZoneFilter,CoreFilter,RamFilter,ComputeFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,ServerGroupAntiAffinityFilter,ServerGroupAffinityFilter
     num_units: 1
     to:
     - lxc:2
-  rabbitmq-server:
-    charm: cs:xenial/rabbitmq-server
+  openstack-dashboard:
+    charm: cs:~openstack-charmers-next/xenial/openstack-dashboard
+    options:
+      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:1
+  rabbitmq-server:
+    charm: cs:~openstack-charmers-next/xenial/rabbitmq-server
+    options:
+      source: cloud:xenial-newton/proposed
+    num_units: 1
+    to:
+    - lxc:2
+  swift-proxy:
+    charm: cs:~openstack-charmers-next/xenial/swift-proxy
+    options:
+      openstack-origin: cloud:xenial-newton/proposed
+      replicas: 1
+      swift-hash: 23fa5444-3cf4-4371-a2e4-9288a509ecff
+      zone-assignment: manual
+    num_units: 1
+    to:
+    - lxc:1
+  swift-storage:
+    charm: cs:~openstack-charmers-next/xenial/swift-storage
+    options:
+      block-device: sdb
+      overwrite: "true"
+      zone: 1
+    to:
+    - 2

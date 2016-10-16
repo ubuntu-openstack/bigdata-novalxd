@@ -1,0 +1,72 @@
+#!/usr/bin/python
+
+import subprocess
+import yaml
+import os
+import sys
+
+from neutronclient.v2_0 import client as ne_client
+from novaclient import client as no_client
+
+if __name__ == '__main__':
+    neutron = ne_client.Client(username=os.environ['OS_USERNAME'],
+                               password=os.environ['OS_PASSWORD'],
+                               tenant_name=os.environ['OS_TENANT_NAME'],
+                               auth_url=os.environ['OS_AUTH_URL'],
+                               region_name=os.environ['OS_REGION_NAME'])
+    nova = no_client.Client('2',
+                            os.environ['OS_USERNAME'],
+                            os.environ['OS_PASSWORD'],
+                            os.environ['OS_TENANT_NAME'],
+                            os.environ['OS_AUTH_URL'])
+
+    net_id = os.environ.get('NET_ID')
+    if net_id:
+        # Use OSCI / Jenkins environment variable if defined.
+        print('Using NET_ID environment variable: {}'.format(net_id))
+    else:
+        # Preserve existing default behavior (eg. manual testing)
+        net_name = os.environ['OS_USERNAME'] + '_admin_net'
+        print('Using default network name: {}'.format(net_name))
+        try:
+            network = neutron.list_networks(name=net_name)['networks'][0]
+            net_id = network['id']
+        except IndexError:
+            print('Unable to find local network {}'.format(net_name))
+            raise ValueError('Unable to find local network {}'.format(net_name))
+
+    service = sys.argv[1]
+
+    juju_version = int(subprocess.check_output(['juju', 'version']).strip()[0])
+
+    service_config = yaml.load(
+        subprocess.check_output(['juju', 'status', '--format=yaml',
+                                 service])
+    )
+
+    uuids = []
+    for machine in service_config['machines']:
+        uuids.append(service_config['machines'][machine]['instance-id'])
+
+    ext_port = []
+    if len(sys.argv) >= 3:
+        ext_port = [sys.argv[2]]
+
+    if len(uuids) > 0:
+        for uuid in uuids:
+            print("Attaching interface to instance {}".format(uuid))
+            server = nova.servers.get(uuid)
+            result = server.interface_attach(port_id=None,
+                                             net_id=net_id,
+                                             fixed_ip=None).to_dict()
+            ext_port.append("br-ex:{}".format(result['mac_addr']))
+
+    if juju_version == 1:
+        config_cmd = 'set'
+    else:
+        config_cmd = 'config'
+
+    ports = " ".join(ext_port)
+    print("Setting data-port configuration on {} to {}".format(service, ports))
+    subprocess.check_call(['juju', config_cmd, service, 'data-port={}'.format(ports)])
+

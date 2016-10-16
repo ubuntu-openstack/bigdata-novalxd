@@ -27,13 +27,12 @@ if __name__ == '__main__':
 
     app_status = yaml.load(subprocess.check_output(['juju', 'status',
                                                     '--format=yaml',
-                                                     app_name]))
+                                                    app_name]))
 
     hostnames = []
     for machine in app_status['machines']:
         hostname = subprocess.check_output(['juju', 'ssh', machine,
                                             'hostname']).strip()
         hostnames.append(hostname)
-
 
     print(' '.join(hostnames))

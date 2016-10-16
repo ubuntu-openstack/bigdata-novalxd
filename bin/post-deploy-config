@@ -33,7 +33,8 @@ if __name__ == '__main__':
             net_id = network['id']
         except IndexError:
             print('Unable to find local network {}'.format(net_name))
-            raise ValueError('Unable to find local network {}'.format(net_name))
+            raise ValueError('Unable to find local network '
+                             '{}'.format(net_name))
 
     service = sys.argv[1]
 
@@ -68,5 +69,5 @@ if __name__ == '__main__':
 
     ports = " ".join(ext_port)
     print("Setting data-port configuration on {} to {}".format(service, ports))
-    subprocess.check_call(['juju', config_cmd, service, 'data-port={}'.format(ports)])
-
+    subprocess.check_call(['juju', config_cmd, service,
+                          'data-port={}'.format(ports)])

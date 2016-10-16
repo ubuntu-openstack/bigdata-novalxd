@@ -1,0 +1,143 @@
+# Tooling and Infrastructure Validation Bundle
+machines:
+# Juju Bootstrap / Controller
+  "0":
+    constraints: "arch=amd64"
+# OpenStack Neutron Gateway + OpenStack Control Plane
+  "1":
+    constraints: "arch=amd64"
+# OpenStack Object Storage + OpenStack Control Plane
+  "2":
+    constraints: "arch=amd64"
+# OpenStack Nova-LXD Compute [for Name Node]
+  "3":
+    constraints: "arch=amd64"
+# OpenStack Nova-LXD Compute [for Resource Manager]
+  "4":
+    constraints: "arch=amd64"
+# OpenStack Nova-LXD Compute [for Spark]
+  "5":
+    constraints: "arch=amd64"
+# OpenStack Nova-LXD Compute [for Hadoop Slave]
+  "6":
+    constraints: "arch=amd64"
+# OpenStack Nova-LXD Compute [for Hadoop Slave]
+  "7":
+    constraints: "arch=amd64"
+# OpenStack Nova-LXD Compute [for Hadoop Slave]
+  "8":
+    constraints: "arch=amd64"
+# OpenStack Nova-LXD Compute [for Hadoop Slave]
+  "9":
+    constraints: "arch=amd64"
+# OpenStack Nova-LXD Compute [for Hadoop Slave]
+  "10":
+    constraints: "arch=amd64"
+series: xenial
+services:
+  abacus-magpie:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 11
+    to: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  nova-compute-lxd-white:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 5
+    to: [6, 7, 8, 9, 10]
+  nova-compute-lxd-grey:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to: 5
+  nova-compute-lxd-orange:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to: 4
+  nova-compute-lxd-aubergine:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to: 3
+  lxd:
+    charm: "cs:~admcleod/xenial/magpie"
+  aodh:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:2
+  ceilometer:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:1
+# Subordinate
+#  ceilometer-agent:
+#    charm: "cs:~admcleod/xenial/magpie"
+  glance:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:1
+  glance-simplestreams-sync:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:1
+  heat:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:2
+  keystone:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:1
+  mongodb:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:1
+  juju-gui:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:1
+  mysql:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:2
+  neutron-api:
+    charm: "cs:~admcleod/xenial/magpie"
+    to:
+    - lxc:2
+  neutron-gateway:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - 1
+# Subordinate
+#  neutron-openvswitch:
+#    charm: "cs:~admcleod/xenial/magpie"
+  nova-cloud-controller:
+    charm: "cs:~admcleod/xenial/magpie"
+    to:
+    - lxc:2
+  openstack-dashboard:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:1
+  rabbitmq-server:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:2
+  swift-proxy:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - lxc:1
+  swift-storage:
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 1
+    to:
+    - 2

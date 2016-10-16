@@ -35,23 +35,23 @@ juju scp resourcemanager/0:/tmp/dfsio_read_results.txt ../results/testdfsio_read
 # Spark tests
 echo Running spark tests...
 echo spark pi
-jdo spark/0 sparkpi > ../results/sparkpi_results-${type}.txt
+jdo spark/0 sparkpi > ../results/sparkpi_results-${etype}.txt
 echo spark sql
-jdo spark/0 sql > ../results/sql_results-${type}.txt
+jdo spark/0 sql > ../results/sql_results-${etype}.txt
 echo streaming
-jdo spark/0 streaming > ../results/streaming_results-${type}.txt
+jdo spark/0 streaming > ../results/streaming_results-${etype}.txt
 echo logisticregression
-jdo spark/0 logisticregression > ../results/logisticregression_results-${type}.txt
+jdo spark/0 logisticregression > ../results/logisticregression_results-${etype}.txt
 echo matrix factorization
-jdo spark/0 matrixfactorization > ../results/matrixfactorization_results-${type}.txt
+jdo spark/0 matrixfactorization > ../results/matrixfactorization_results-${etype}.txt
 echo pagerank
-jdo spark/0 pagerank > ../results/pagerank_results-${type}.txt
+jdo spark/0 pagerank > ../results/pagerank_results-${etype}.txt
 echo svdplusplus
-jdo spark/0 svdplusplus > ../results/svdplusplus_results-${type}.txt
+jdo spark/0 svdplusplus > ../results/svdplusplus_results-${etype}.txt
 echo svm
-jdo spark/0 svm > ../results/svm_results-${type}.txt
+jdo spark/0 svm > ../results/svm_results-${etype}.txt
 echo trianglecount
-jdo spark/0 trianglecount > ../results/trianglecount_results-${type}.txt
+jdo spark/0 trianglecount > ../results/trianglecount_results-${etype}.txt
 
 
 # prepare anomaly detection
@@ -59,4 +59,4 @@ jdo spark/0 trianglecount > ../results/trianglecount_results-${type}.txt
 
 # run anomyaly detection
 echo Check ../results/ for new files after this detection job finishes...
-./run_anomaly_detection.sh
+./run_anomaly_detection.sh ${etype}

@@ -60,4 +60,3 @@ jdo spark/0 trianglecount > ../results/trianglecount_results-${type}.txt
 # run anomyaly detection
 echo Check ../results/ for new files after this detection job finishes...
 ./run_anomaly_detection.sh
-~                           

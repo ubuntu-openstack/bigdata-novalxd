@@ -1,0 +1,96 @@
+#!/bin/bash
+
+# Set network defaults, if not already set.
+[[ -z "$GATEWAY" ]] && export GATEWAY="10.245.168.1"
+[[ -z "$NAMESERVER" ]] && export NAMESERVER="10.245.168.2"
+[[ -z "$CIDR_EXT" ]] && export CIDR_EXT="10.245.168.0/21"
+[[ -z "$FIP_RANGE" ]] && export FIP_RANGE="10.245.175.0:10.245.175.254"
+[[ -z "$CIDR_PRIV" ]] && export CIDR_PRIV="10.5.16.0/24"
+
+function upload_image {
+    src=$1
+    image_name=$2
+    image_file=$3
+    image_format=${4:-"qcow2"}
+
+    case "$src" in
+        swift) http_root="http://$SWIFT_IP:80/swift/v1/images";;
+        cloudimages) http_root="http://cloud-images.ubuntu.com/${image_name}/current";;
+    esac
+
+    mkdir -vp ~/images
+
+    [ -f ~/images/$image_file ] || {
+        wget -O ~/images/$image_file ${http_root}/${image_file}
+    }
+
+    openstack image show $image_name || {
+        openstack image create --public \
+            --container-format=bare --disk-format=$image_format \
+            --file=${HOME}/images/$image_file  $image_name
+    }
+}
+
+function install_packages {
+    # Install dependencies and CLI tools
+    sudo apt-get install git testrepository subunit python-nose python-lxml python-boto \
+        python-junitxml python-subunit python-testresources python-oslotest python-stevedore \
+        python-cinderclient python-glanceclient python-heatclient python-keystoneclient \
+        python-neutronclient python-novaclient python-swiftclient python-ceilometerclient \
+        python-openstackclient openvswitch-test openvswitch-common -y
+}
+
+function create_demo_user {
+    # Create demo/testing user and tenant
+    openstack project show demo || openstack project create demo
+    openstack user show demo || openstack user create --project demo --password pass --enable --email demo@dev.null demo
+    openstack role show Member || openstack role create Member
+    openstack role add --user demo --project demo Member || :
+}
+
+function create_exclusive_aggregate {
+    exclusive_flavor=$1
+    app_hostnames=$(./bin/application-hostnames nova-compute-exclusive-${exclusiveflavor})
+    if [ -n "$app_hostnames" ]; then
+        aggregate_name=exclusive-lxd-${exclusive_flavor}
+        openstack aggregate show ${aggregate_name} || {
+            openstack aggregate create ${aggregate_name}
+            openstack aggregate set --property exclusive-flavor=${exclusive_flavor} ${aggregate_name}
+            openstack aggregate set --property max_instances_per_host=1 ${aggregate_name}
+            for hostname in ${app_hostnames}; do
+                openstack aggregate add host ${aggregate_name} ${hostname}
+            done
+        }
+    fi
+}
+
+function create_exclusive_flavor {
+    exclusive_flavor=$1
+    case ${exclusive_flavor} in
+        white)
+            ram=32001
+            cpu=4
+            disk=300
+            ;;
+        grey)
+            ram=32002
+            cpu=4
+            disk=300
+            ;;
+        orange)
+            ram=32003
+            cpu=4
+            disk=300
+            ;;
+        aubergine)
+            ram=32004
+            cpu=4
+            disk=300
+            ;;
+    esac
+    flavor_name=e1.lxd.${exclusive_flavor}
+    openstack flavor show ${flavor_name} || {
+        openstack flavor create --public --ram ${ram} --disk ${disk} --vcpus ${cpu} ${flavor_name}
+        openstack flavor set --property aggregate_instance_extra_specs:exclusive-flavor=${exclusive_flavor} ${flavor_name}
+    }
+}

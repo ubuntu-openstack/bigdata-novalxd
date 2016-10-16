@@ -34,8 +34,10 @@ time juju-deployer -Svdc $tmp_bundle_openstack
 time timeout 1800 $HOME/tools/juju-wait/juju-wait -v
 
 # Confirm basic OpenStack API health via command line clients
+./tools/check-openstack-api-clients.sh
 
 # Configure OpenStack:  Tenant, Network, Images, Security Groups
+./tools/configure-openstack-lxd.sh
 
 # Launch and confirm a bastion instance
 

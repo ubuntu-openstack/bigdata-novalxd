@@ -38,9 +38,9 @@ machines:
 series: xenial
 relations:
 - - keystone
-  - mysql
+  - percona-cluster
 - - nova-cloud-controller
-  - mysql
+  - percona-cluster
 - - nova-cloud-controller
   - rabbitmq-server
 - - nova-cloud-controller
@@ -48,7 +48,7 @@ relations:
 - - nova-cloud-controller
   - keystone
 - - glance
-  - mysql
+  - percona-cluster
 - - glance
   - keystone
 - - glance
@@ -70,7 +70,7 @@ relations:
 - - ceilometer-agent
   - ceilometer
 - - heat
-  - mysql
+  - percona-cluster
 - - heat
   - keystone
 - - heat
@@ -78,7 +78,7 @@ relations:
 - - neutron-gateway:amqp
   - rabbitmq-server
 - - neutron-api
-  - mysql
+  - percona-cluster
 - - neutron-api
   - rabbitmq-server
 - - neutron-api
@@ -92,7 +92,7 @@ relations:
 - - neutron-openvswitch
   - rabbitmq-server
 - - aodh:shared-db
-  - mysql:shared-db
+  - percona-cluster:shared-db
 - - aodh:identity-service
   - keystone:identity-service
 - - aodh:amqp
@@ -271,7 +271,7 @@ services:
     num_units: 1
     to:
     - lxc:1
-  mysql:
+  percona-cluster:
     charm: cs:~openstack-charmers-next/xenial/percona-cluster
     options:
       dataset-size: 15%

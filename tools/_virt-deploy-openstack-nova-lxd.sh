@@ -40,5 +40,6 @@ time timeout 1800 $HOME/tools/juju-wait/juju-wait -v
 ./tools/configure-openstack-lxd.sh
 
 # Launch and confirm a bastion instance
+./tools/create-bastion.sh
 
 # Announce OpenStack Dashboard and Juju GUI Addresses

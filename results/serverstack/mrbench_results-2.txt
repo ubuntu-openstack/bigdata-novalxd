@@ -1,0 +1,37 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "58"
+    start: 2016-10-16T22:22:41Z
+    stop: 2016-10-16T22:23:39Z
+  results:
+    raw: '{"CONNECTION": "0", "Physical memory (bytes) snapshot": "846651392", "IO_ERROR":
+      "0", "HDFS: Number of bytes read": "306", "FILE: Number of write operations":
+      "0", "Spilled Records": "4", "Merged Map outputs": "2", "Combine output records":
+      "0", "Failed Shuffles": "0", "Total vcore-seconds taken by all map tasks": "24045",
+      "Reduce input groups": "1", "Bytes Read": "4", "Reduce output records": "2",
+      "HDFS: Number of read operations": "9", "WRONG_LENGTH": "0", "Total time spent
+      by all reduces in occupied slots (ms)": "16426", "Total time spent by all reduce
+      tasks (ms)": "16426", "Total vcore-seconds taken by all reduce tasks": "16426",
+      "FILE: Number of bytes written": "352518", "Combine input records": "0", "Data-local
+      map tasks": "2", "HDFS: Number of write operations": "2", "GC time elapsed (ms)":
+      "590", "WRONG_REDUCE": "0", "Total time spent by all map tasks (ms)": "24045",
+      "FILE: Number of bytes read": "20", "Map input records": "2", "HDFS: Number
+      of large read operations": "0", "HDFS: Number of bytes written": "6", "Total
+      time spent by all maps in occupied slots (ms)": "24045", "FILE: Number of read
+      operations": "0", "WRONG_MAP": "0", "Total megabyte-seconds taken by all map
+      tasks": "24622080", "CPU time spent (ms)": "3110", "Map output bytes": "10",
+      "Reduce shuffle bytes": "26", "Bytes Written": "6", "FILE: Number of large read
+      operations": "0", "Total committed heap usage (bytes)": "610213888", "Virtual
+      memory (bytes) snapshot": "8260661248", "BAD_ID": "0", "Map output records":
+      "2", "Total megabyte-seconds taken by all reduce tasks": "16820224", "Launched
+      map tasks": "2", "Reduce input records": "2", "Launched reduce tasks": "1",
+      "Input split bytes": "302", "Map output materialized bytes": "26", "Shuffled
+      Maps ": "2"}'
+status: completed
+timing:
+  completed: 2016-10-16 22:23:40 +0000 UTC
+  enqueued: 2016-10-16 22:22:31 +0000 UTC
+  started: 2016-10-16 22:22:34 +0000 UTC

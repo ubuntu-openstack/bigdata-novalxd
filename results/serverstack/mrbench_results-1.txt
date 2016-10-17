@@ -1,0 +1,37 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "62"
+    start: 2016-10-16T22:00:15Z
+    stop: 2016-10-16T22:01:18Z
+  results:
+    raw: '{"Shuffled Maps ": "2", "Reduce input groups": "1", "Spilled Records": "2",
+      "Failed Shuffles": "0", "Map output materialized bytes": "19", "Bytes Read":
+      "3", "HDFS: Number of bytes read": "305", "Bytes Written": "3", "Map output
+      bytes": "5", "CONNECTION": "0", "FILE: Number of bytes read": "13", "CPU time
+      spent (ms)": "3680", "WRONG_LENGTH": "0", "Physical memory (bytes) snapshot":
+      "848805888", "Combine input records": "0", "HDFS: Number of large read operations":
+      "0", "Combine output records": "0", "WRONG_MAP": "0", "Merged Map outputs":
+      "2", "Map output records": "1", "Total megabyte-seconds taken by all reduce
+      tasks": "13785088", "HDFS: Number of read operations": "9", "Total time spent
+      by all reduce tasks (ms)": "13462", "Total time spent by all map tasks (ms)":
+      "28361", "Total committed heap usage (bytes)": "610213888", "Total vcore-seconds
+      taken by all reduce tasks": "13462", "Total megabyte-seconds taken by all map
+      tasks": "29041664", "GC time elapsed (ms)": "638", "IO_ERROR": "0", "FILE: Number
+      of large read operations": "0", "HDFS: Number of bytes written": "3", "FILE:
+      Number of read operations": "0", "WRONG_REDUCE": "0", "Virtual memory (bytes)
+      snapshot": "8260661248", "FILE: Number of bytes written": "352504", "Launched
+      map tasks": "2", "Launched reduce tasks": "1", "Total time spent by all reduces
+      in occupied slots (ms)": "13462", "BAD_ID": "0", "Reduce output records": "1",
+      "Data-local map tasks": "2", "Reduce input records": "1", "Map input records":
+      "1", "Total vcore-seconds taken by all map tasks": "28361", "FILE: Number of
+      write operations": "0", "HDFS: Number of write operations": "2", "Total time
+      spent by all maps in occupied slots (ms)": "28361", "Reduce shuffle bytes":
+      "19", "Input split bytes": "302"}'
+status: completed
+timing:
+  completed: 2016-10-16 22:01:19 +0000 UTC
+  enqueued: 2016-10-16 22:00:06 +0000 UTC
+  started: 2016-10-16 22:00:08 +0000 UTC

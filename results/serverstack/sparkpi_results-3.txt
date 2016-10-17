@@ -1,0 +1,182 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "58"
+    raw: "16/10/16 22:56:18 INFO SparkContext: Running Spark version 1.5.1\n16/10/16
+      22:56:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your
+      platform... using builtin-java classes where applicable\n16/10/16 22:56:20 INFO
+      SecurityManager: Changing view acls to: root\n16/10/16 22:56:20 INFO SecurityManager:
+      Changing modify acls to: root\n16/10/16 22:56:20 INFO SecurityManager: SecurityManager:
+      authentication disabled; ui acls disabled; users with view permissions: Set(root);
+      users with modify permissions: Set(root)\n16/10/16 22:56:22 INFO Slf4jLogger:
+      Slf4jLogger started\n16/10/16 22:56:22 INFO Remoting: Starting remoting\n16/10/16
+      22:56:22 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@10.5.1.134:39133]\n16/10/16
+      22:56:22 INFO Utils: Successfully started service 'sparkDriver' on port 39133.\n16/10/16
+      22:56:23 INFO SparkEnv: Registering MapOutputTracker\n16/10/16 22:56:23 INFO
+      SparkEnv: Registering BlockManagerMaster\n16/10/16 22:56:23 INFO DiskBlockManager:
+      Created local directory at /tmp/blockmgr-668fc0d8-b148-4eb9-abc7-4fd25c33f297\n16/10/16
+      22:56:23 INFO MemoryStore: MemoryStore started with capacity 534.5 MB\n16/10/16
+      22:56:23 INFO HttpFileServer: HTTP File server directory is /tmp/spark-435869ef-40d4-4efc-9b25-4d89f13b92c6/httpd-bae58096-c3a1-45d1-b9f7-fb2afac31dfd\n16/10/16
+      22:56:23 INFO HttpServer: Starting HTTP Server\n16/10/16 22:56:23 INFO Utils:
+      Successfully started service 'HTTP file server' on port 42558.\n16/10/16 22:56:23
+      INFO SparkEnv: Registering OutputCommitCoordinator\n16/10/16 22:56:24 INFO Utils:
+      Successfully started service 'SparkUI' on port 4040.\n16/10/16 22:56:24 INFO
+      SparkUI: Started SparkUI at http://10.5.1.134:4040\n16/10/16 22:56:24 INFO SparkContext:
+      Added JAR file:/usr/lib/spark/lib/spark-examples.jar at http://10.5.1.134:42558/jars/spark-examples.jar
+      with timestamp 1476658584456\n16/10/16 22:56:24 WARN MetricsSystem: Using default
+      name DAGScheduler for source because spark.app.id is not set.\n16/10/16 22:56:25
+      INFO RMProxy: Connecting to ResourceManager at juju-admcleod-machine-2.openstacklocal/10.5.1.132:8032\n16/10/16
+      22:56:25 INFO Client: Requesting a new application from cluster with 5 NodeManagers\n16/10/16
+      22:56:25 INFO Client: Verifying our application has not requested more than
+      the maximum memory capability of the cluster (8192 MB per container)\n16/10/16
+      22:56:25 INFO Client: Will allocate AM container, with 896 MB memory including
+      384 MB overhead\n16/10/16 22:56:25 INFO Client: Setting up container launch
+      context for our AM\n16/10/16 22:56:25 INFO Client: Setting up the launch environment
+      for our AM container\n16/10/16 22:56:25 INFO Client: Preparing resources for
+      our AM container\n16/10/16 22:56:27 INFO Client: Uploading resource file:/usr/lib/spark/lib/spark-assembly-1.5.1-hadoop2.7.1.jar
+      -> hdfs://juju-admcleod-machine-1.openstacklocal:8020/user/root/.sparkStaging/application_1476655153073_0017/spark-assembly-1.5.1-hadoop2.7.1.jar\n16/10/16
+      22:56:36 INFO Client: Uploading resource file:/tmp/spark-435869ef-40d4-4efc-9b25-4d89f13b92c6/__spark_conf__3475853230051361576.zip
+      -> hdfs://juju-admcleod-machine-1.openstacklocal:8020/user/root/.sparkStaging/application_1476655153073_0017/__spark_conf__3475853230051361576.zip\n16/10/16
+      22:56:36 INFO SecurityManager: Changing view acls to: root\n16/10/16 22:56:36
+      INFO SecurityManager: Changing modify acls to: root\n16/10/16 22:56:36 INFO
+      SecurityManager: SecurityManager: authentication disabled; ui acls disabled;
+      users with view permissions: Set(root); users with modify permissions: Set(root)\n16/10/16
+      22:56:36 INFO Client: Submitting application 17 to ResourceManager\n16/10/16
+      22:56:36 INFO YarnClientImpl: Submitted application application_1476655153073_0017\n16/10/16
+      22:56:37 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:37 INFO Client: \n\t client token: N/A\n\t
+      diagnostics: N/A\n\t ApplicationMaster host: N/A\n\t ApplicationMaster RPC port:
+      -1\n\t queue: default\n\t start time: 1476658596501\n\t final status: UNDEFINED\n\t
+      tracking URL: http://juju-admcleod-machine-2.openstacklocal:20888/proxy/application_1476655153073_0017/\n\t
+      user: root\n16/10/16 22:56:38 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:39 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:40 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:41 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:42 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:43 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:44 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:45 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:46 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:47 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:48 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:49 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:50 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:51 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:52 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:53 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:54 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:55 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:56 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:57 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:58 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:56:59 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:57:00 INFO Client: Application report for application_1476655153073_0017
+      (state: ACCEPTED)\n16/10/16 22:57:00 INFO YarnSchedulerBackend$YarnSchedulerEndpoint:
+      ApplicationMaster registered as AkkaRpcEndpointRef(Actor[akka.tcp://sparkYarnAM@10.5.1.137:44841/user/YarnAM#89802256])\n16/10/16
+      22:57:01 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter,
+      Map(PROXY_HOSTS -> juju-admcleod-machine-2.openstacklocal, PROXY_URI_BASES ->
+      http://juju-admcleod-machine-2.openstacklocal:20888/proxy/application_1476655153073_0017),
+      /proxy/application_1476655153073_0017\n16/10/16 22:57:01 INFO JettyUtils: Adding
+      filter: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter\n16/10/16
+      22:57:01 INFO Client: Application report for application_1476655153073_0017
+      (state: RUNNING)\n16/10/16 22:57:01 INFO Client: \n\t client token: N/A\n\t
+      diagnostics: N/A\n\t ApplicationMaster host: 10.5.1.137\n\t ApplicationMaster
+      RPC port: 0\n\t queue: default\n\t start time: 1476658596501\n\t final status:
+      UNDEFINED\n\t tracking URL: http://juju-admcleod-machine-2.openstacklocal:20888/proxy/application_1476655153073_0017/\n\t
+      user: root\n16/10/16 22:57:01 INFO YarnClientSchedulerBackend: Application application_1476655153073_0017
+      has started running.\n16/10/16 22:57:01 INFO Utils: Successfully started service
+      'org.apache.spark.network.netty.NettyBlockTransferService' on port 45113.\n16/10/16
+      22:57:01 INFO NettyBlockTransferService: Server created on 45113\n16/10/16 22:57:01
+      INFO BlockManagerMaster: Trying to register BlockManager\n16/10/16 22:57:01
+      INFO BlockManagerMasterEndpoint: Registering block manager 10.5.1.134:45113
+      with 534.5 MB RAM, BlockManagerId(driver, 10.5.1.134, 45113)\n16/10/16 22:57:01
+      INFO BlockManagerMaster: Registered BlockManager\n16/10/16 22:57:02 INFO EventLoggingListener:
+      Logging events to hdfs:///var/log/spark/apps/application_1476655153073_0017\n16/10/16
+      22:57:02 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling
+      beginning after waiting maxRegisteredResourcesWaitingTime: 30000(ms)\n16/10/16
+      22:57:03 INFO SparkContext: Starting job: reduce at SparkPi.scala:36\n16/10/16
+      22:57:03 INFO DAGScheduler: Got job 0 (reduce at SparkPi.scala:36) with 10 output
+      partitions\n16/10/16 22:57:03 INFO DAGScheduler: Final stage: ResultStage 0(reduce
+      at SparkPi.scala:36)\n16/10/16 22:57:03 INFO DAGScheduler: Parents of final
+      stage: List()\n16/10/16 22:57:03 INFO DAGScheduler: Missing parents: List()\n16/10/16
+      22:57:03 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at
+      map at SparkPi.scala:32), which has no missing parents\n16/10/16 22:57:03 INFO
+      MemoryStore: ensureFreeSpace(1888) called with curMem=0, maxMem=560497950\n16/10/16
+      22:57:03 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated
+      size 1888.0 B, free 534.5 MB)\n16/10/16 22:57:03 INFO MemoryStore: ensureFreeSpace(1202)
+      called with curMem=1888, maxMem=560497950\n16/10/16 22:57:03 INFO MemoryStore:
+      Block broadcast_0_piece0 stored as bytes in memory (estimated size 1202.0 B,
+      free 534.5 MB)\n16/10/16 22:57:03 INFO BlockManagerInfo: Added broadcast_0_piece0
+      in memory on 10.5.1.134:45113 (size: 1202.0 B, free: 534.5 MB)\n16/10/16 22:57:03
+      INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861\n16/10/16
+      22:57:03 INFO DAGScheduler: Submitting 10 missing tasks from ResultStage 0 (MapPartitionsRDD[1]
+      at map at SparkPi.scala:32)\n16/10/16 22:57:03 INFO YarnScheduler: Adding task
+      set 0.0 with 10 tasks\n16/10/16 22:57:09 INFO YarnClientSchedulerBackend: Registered
+      executor: AkkaRpcEndpointRef(Actor[akka.tcp://sparkExecutor@juju-admcleod-machine-7.openstacklocal:40267/user/Executor#1360354767])
+      with ID 1\n16/10/16 22:57:09 INFO TaskSetManager: Starting task 0.0 in stage
+      0.0 (TID 0, juju-admcleod-machine-7.openstacklocal, PROCESS_LOCAL, 2142 bytes)\n16/10/16
+      22:57:10 INFO BlockManagerMasterEndpoint: Registering block manager juju-admcleod-machine-7.openstacklocal:43389
+      with 534.5 MB RAM, BlockManagerId(1, juju-admcleod-machine-7.openstacklocal,
+      43389)\n16/10/16 22:57:11 INFO BlockManagerInfo: Added broadcast_0_piece0 in
+      memory on juju-admcleod-machine-7.openstacklocal:43389 (size: 1202.0 B, free:
+      534.5 MB)\n16/10/16 22:57:12 INFO TaskSetManager: Starting task 1.0 in stage
+      0.0 (TID 1, juju-admcleod-machine-7.openstacklocal, PROCESS_LOCAL, 2142 bytes)\n16/10/16
+      22:57:12 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 3047
+      ms on juju-admcleod-machine-7.openstacklocal (1/10)\n16/10/16 22:57:12 INFO
+      TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, juju-admcleod-machine-7.openstacklocal,
+      PROCESS_LOCAL, 2142 bytes)\n16/10/16 22:57:12 INFO TaskSetManager: Finished
+      task 1.0 in stage 0.0 (TID 1) in 69 ms on juju-admcleod-machine-7.openstacklocal
+      (2/10)\n16/10/16 22:57:12 INFO TaskSetManager: Starting task 3.0 in stage 0.0
+      (TID 3, juju-admcleod-machine-7.openstacklocal, PROCESS_LOCAL, 2142 bytes)\n16/10/16
+      22:57:12 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 61 ms
+      on juju-admcleod-machine-7.openstacklocal (3/10)\n16/10/16 22:57:12 INFO TaskSetManager:
+      Starting task 4.0 in stage 0.0 (TID 4, juju-admcleod-machine-7.openstacklocal,
+      PROCESS_LOCAL, 2142 bytes)\n16/10/16 22:57:12 INFO TaskSetManager: Finished
+      task 3.0 in stage 0.0 (TID 3) in 43 ms on juju-admcleod-machine-7.openstacklocal
+      (4/10)\n16/10/16 22:57:12 INFO TaskSetManager: Starting task 5.0 in stage 0.0
+      (TID 5, juju-admcleod-machine-7.openstacklocal, PROCESS_LOCAL, 2142 bytes)\n16/10/16
+      22:57:12 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 43 ms
+      on juju-admcleod-machine-7.openstacklocal (5/10)\n16/10/16 22:57:12 INFO TaskSetManager:
+      Starting task 6.0 in stage 0.0 (TID 6, juju-admcleod-machine-7.openstacklocal,
+      PROCESS_LOCAL, 2142 bytes)\n16/10/16 22:57:12 INFO TaskSetManager: Finished
+      task 5.0 in stage 0.0 (TID 5) in 45 ms on juju-admcleod-machine-7.openstacklocal
+      (6/10)\n16/10/16 22:57:13 INFO TaskSetManager: Starting task 7.0 in stage 0.0
+      (TID 7, juju-admcleod-machine-7.openstacklocal, PROCESS_LOCAL, 2142 bytes)\n16/10/16
+      22:57:13 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 62 ms
+      on juju-admcleod-machine-7.openstacklocal (7/10)\n16/10/16 22:57:13 INFO TaskSetManager:
+      Starting task 8.0 in stage 0.0 (TID 8, juju-admcleod-machine-7.openstacklocal,
+      PROCESS_LOCAL, 2142 bytes)\n16/10/16 22:57:13 INFO TaskSetManager: Finished
+      task 7.0 in stage 0.0 (TID 7) in 51 ms on juju-admcleod-machine-7.openstacklocal
+      (8/10)\n16/10/16 22:57:13 INFO TaskSetManager: Starting task 9.0 in stage 0.0
+      (TID 9, juju-admcleod-machine-7.openstacklocal, PROCESS_LOCAL, 2142 bytes)\n16/10/16
+      22:57:13 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 52 ms
+      on juju-admcleod-machine-7.openstacklocal (9/10)\n16/10/16 22:57:13 INFO DAGScheduler:
+      ResultStage 0 (reduce at SparkPi.scala:36) finished in 9.570 s\n16/10/16 22:57:13
+      INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 44 ms on juju-admcleod-machine-7.openstacklocal
+      (10/10)\n16/10/16 22:57:13 INFO YarnScheduler: Removed TaskSet 0.0, whose tasks
+      have all completed, from pool \n16/10/16 22:57:13 INFO DAGScheduler: Job 0 finished:
+      reduce at SparkPi.scala:36, took 10.017021 s\nPi is roughly 3.141756\n16/10/16
+      22:57:13 INFO SparkUI: Stopped Spark web UI at http://10.5.1.134:4040\n16/10/16
+      22:57:13 INFO DAGScheduler: Stopping DAGScheduler\n16/10/16 22:57:13 INFO YarnClientSchedulerBackend:
+      Interrupting monitor thread\n16/10/16 22:57:13 INFO YarnClientSchedulerBackend:
+      Shutting down all executors\n16/10/16 22:57:13 INFO YarnClientSchedulerBackend:
+      Asking each executor to shut down\n16/10/16 22:57:13 INFO YarnClientSchedulerBackend:
+      Stopped\n16/10/16 22:57:13 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint
+      stopped!\n16/10/16 22:57:13 INFO MemoryStore: MemoryStore cleared\n16/10/16
+      22:57:13 INFO BlockManager: BlockManager stopped\n16/10/16 22:57:13 INFO BlockManagerMaster:
+      BlockManagerMaster stopped\n16/10/16 22:57:13 INFO RemoteActorRefProvider$RemotingTerminator:
+      Shutting down remote daemon.\n16/10/16 22:57:13 INFO RemoteActorRefProvider$RemotingTerminator:
+      Remote daemon shut down; proceeding with flushing remote transports.\n16/10/16
+      22:57:13 INFO SparkContext: Successfully stopped SparkContext\n16/10/16 22:57:13
+      INFO ShutdownHookManager: Shutdown hook called\n16/10/16 22:57:13 INFO ShutdownHookManager:
+      Deleting directory /tmp/spark-435869ef-40d4-4efc-9b25-4d89f13b92c6\n"
+    start: 2016-10-16T22:56:15Z
+    stop: 2016-10-16T22:57:13Z
+  output: '{''status'': ''completed''}'
+status: completed
+timing:
+  completed: 2016-10-16 22:57:14 +0000 UTC
+  enqueued: 2016-10-16 22:56:12 +0000 UTC
+  started: 2016-10-16 22:56:15 +0000 UTC

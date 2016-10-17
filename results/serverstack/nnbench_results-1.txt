@@ -1,0 +1,37 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "249"
+    start: 2016-10-16T22:01:29Z
+    stop: 2016-10-16T22:05:38Z
+  results:
+    raw: '{"Data-local map tasks": "12", "WRONG_REDUCE": "0", "Total time spent by
+      all maps in occupied slots (ms)": "1977306", "Merged Map outputs": "72", "CONNECTION":
+      "0", "IO_ERROR": "0", "BAD_ID": "0", "Failed Shuffles": "0", "Reduce output
+      records": "8", "Combine input records": "0", "HDFS: Number of write operations":
+      "12", "FILE: Number of read operations": "0", "Input split bytes": "2102", "Map
+      output materialized bytes": "2481", "FILE: Number of bytes written": "2147156",
+      "FILE: Number of bytes read": "2085", "Total committed heap usage (bytes)":
+      "3661283328", "CPU time spent (ms)": "48860", "Reduce shuffle bytes": "2481",
+      "Total vcore-seconds taken by all map tasks": "1977306", "Launched reduce tasks":
+      "6", "Total time spent by all reduce tasks (ms)": "673602", "Bytes Written":
+      "163", "HDFS: Number of large read operations": "0", "Bytes Read": "1490", "HDFS:
+      Number of bytes written": "163", "Combine output records": "0", "Reduce input
+      records": "91", "FILE: Number of large read operations": "0", "HDFS: Number
+      of read operations": "66", "WRONG_LENGTH": "0", "Map output bytes": "1867",
+      "HDFS: Number of bytes read": "3592", "Total time spent by all map tasks (ms)":
+      "1977306", "Virtual memory (bytes) snapshot": "49561657344", "Map input records":
+      "12", "Total vcore-seconds taken by all reduce tasks": "673602", "Total megabyte-seconds
+      taken by all map tasks": "2024761344", "Total time spent by all reduces in occupied
+      slots (ms)": "673602", "WRONG_MAP": "0", "GC time elapsed (ms)": "111350", "Physical
+      memory (bytes) snapshot": "3124228096", "FILE: Number of write operations":
+      "0", "Map output records": "91", "Shuffled Maps ": "72", "Spilled Records":
+      "182", "Launched map tasks": "12", "Total megabyte-seconds taken by all reduce
+      tasks": "689768448", "Reduce input groups": "8"}'
+status: completed
+timing:
+  completed: 2016-10-16 22:05:39 +0000 UTC
+  enqueued: 2016-10-16 22:01:21 +0000 UTC
+  started: 2016-10-16 22:01:23 +0000 UTC

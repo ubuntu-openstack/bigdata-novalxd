@@ -4,43 +4,43 @@
 machines:
 # Juju Bootstrap / Controller
   "0":
-    constraints: arch=amd64 tags=demo
+    constraints: "arch=amd64 tags=demo"
 # OpenStack Neutron Gateway + OpenStack Control Plane
   "1":
-    constraints: arch=amd64 tags=demo
+    constraints: "arch=amd64 tags=demo"
 # OpenStack Object Storage + OpenStack Control Plane
   "2":
-    constraints: arch=amd64 tags=demo
+    constraints: "arch=amd64 tags=demo"
 # OpenStack Nova-LXD Compute [for Name Node]
   "3":
-    constraints: arch=amd64 tags=demo
+    constraints: "arch=amd64 tags=demo"
 # OpenStack Nova-LXD Compute [for Resource Manager]
   "4":
-    constraints: arch=amd64 tags=demo
+    constraints: "arch=amd64 tags=demo"
 # OpenStack Nova-LXD Compute [for Spark]
   "5":
-    constraints: arch=amd64 tags=demo
+    constraints: "arch=amd64 tags=demo"
 # OpenStack Nova-LXD Compute [for Hadoop Slave]
   "6":
-    constraints: arch=amd64 tags=demo
+    constraints: "arch=amd64 tags=demo"
 # OpenStack Nova-LXD Compute [for Hadoop Slave]
   "7":
-    constraints: arch=amd64 tags=demo
+    constraints: "arch=amd64 tags=demo"
 # OpenStack Nova-LXD Compute [for Hadoop Slave]
   "8":
-    constraints: arch=amd64 tags=demo
+    constraints: "arch=amd64 tags=demo"
 # OpenStack Nova-LXD Compute [for Hadoop Slave]
   "9":
-    constraints: arch=amd64 tags=demo
+    constraints: "arch=amd64 tags=demo"
 # OpenStack Nova-LXD Compute [for Hadoop Slave]
   "10":
-    constraints: arch=amd64 tags=demo
+    constraints: "arch=amd64 tags=demo"
 series: xenial
 relations:
 - - keystone
-  - mysql
+  - percona-cluster
 - - nova-cloud-controller
-  - mysql
+  - percona-cluster
 - - nova-cloud-controller
   - rabbitmq-server
 - - nova-cloud-controller
@@ -48,7 +48,7 @@ relations:
 - - nova-cloud-controller
   - keystone
 - - glance
-  - mysql
+  - percona-cluster
 - - glance
   - keystone
 - - glance
@@ -70,7 +70,7 @@ relations:
 - - ceilometer-agent
   - ceilometer
 - - heat
-  - mysql
+  - percona-cluster
 - - heat
   - keystone
 - - heat
@@ -78,7 +78,7 @@ relations:
 - - neutron-gateway:amqp
   - rabbitmq-server
 - - neutron-api
-  - mysql
+  - percona-cluster
 - - neutron-api
   - rabbitmq-server
 - - neutron-api
@@ -91,8 +91,8 @@ relations:
   - neutron-gateway
 - - neutron-openvswitch
   - rabbitmq-server
-- - aodh:shawhite-db
-  - mysql:shawhite-db
+- - aodh:shared-db
+  - percona-cluster:shared-db
 - - aodh:identity-service
   - keystone:identity-service
 - - aodh:amqp
@@ -154,18 +154,25 @@ relations:
 - - ceilometer-agent
   - nova-compute-lxd-white
 services:
+#  z-magpie:
+#    constraints: "arch=amd64 mem=49152M tags=demo"
+#    charm: "cs:~admcleod/xenial/magpie"
+#    num_units: 10
+#    to: [1,2,3,4,5,6,7,8,9,10]
   nova-compute-lxd-white:
+    constraints: "arch=amd64 mem=49152M tags=demo"
     charm: cs:~openstack-charmers-next/xenial/nova-compute
     num_units: 5
-    to: [6, 7, 8, 9, 10]
+    to: [6,7,8,9,10]
     options:
       enable-live-migration: true
       enable-resize: true
       migration-auth-type: ssh
       reserved-host-memory: 0
       virt-type: lxd
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
   nova-compute-lxd-grey:
+    constraints: "arch=amd64 mem=49152M tags=demo"
     charm: cs:~openstack-charmers-next/xenial/nova-compute
     num_units: 1
     to: 5
@@ -175,8 +182,9 @@ services:
       migration-auth-type: ssh
       reserved-host-memory: 0
       virt-type: lxd
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
   nova-compute-lxd-orange:
+    constraints: "arch=amd64 mem=49152M tags=demo"
     charm: cs:~openstack-charmers-next/xenial/nova-compute
     num_units: 1
     to: 4
@@ -186,8 +194,9 @@ services:
       migration-auth-type: ssh
       reserved-host-memory: 0
       virt-type: lxd
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
   nova-compute-lxd-aubergine:
+    constraints: "arch=amd64 mem=49152M tags=demo"
     charm: cs:~openstack-charmers-next/xenial/nova-compute
     num_units: 1
     to: 3
@@ -197,7 +206,7 @@ services:
       migration-auth-type: ssh
       reserved-host-memory: 0
       virt-type: lxd
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
   lxd:
     charm: cs:~openstack-charmers-next/xenial/lxd
     options:
@@ -212,7 +221,7 @@ services:
   ceilometer:
     charm: cs:~openstack-charmers-next/xenial/ceilometer
     options:
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:1
@@ -221,7 +230,7 @@ services:
   glance:
     charm: cs:~openstack-charmers-next/xenial/glance
     options:
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:1
@@ -233,20 +242,14 @@ services:
       mirror_list: "[{url: 'http://cloud-images.ubuntu.com/releases/',
                     name_prefix: 'ubuntu:daily',
                     path: 'streams/v1/index.sjson', max: 1,
-                    item_filters: ['release~(xenial|yakkety)',
-                    'arch~amd64)', 'ftype~(tar.xz)']}]"
+                    item_filters: ['release~(xenial)',
                     'arch~amd64)', 'ftype~(disk1.img|tar.xz)']}]"
-#      mirror_list: "[{url: 'http://cloud-images.ubuntu.com/releases/',
-#                    name_prefix: 'ubuntu:daily',
-#                    path: 'streams/v1/index.sjson', max: 1,
-#                    item_filters: ['release~(xenial|yakkety)',
-#                    'arch~(ppc64el)', 'ftype~(disk1.img|disk.img)']}]"
     to:
     - lxc:1
   heat:
     charm: cs:~openstack-charmers-next/xenial/heat
     options:
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:2
@@ -268,7 +271,7 @@ services:
     num_units: 1
     to:
     - lxc:1
-  mysql:
+  percona-cluster:
     charm: cs:~openstack-charmers-next/xenial/percona-cluster
     options:
       dataset-size: 15%
@@ -283,16 +286,17 @@ services:
     options:
       flat-network-providers: physnet1
       neutron-security-groups: true
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:2
   neutron-gateway:
+    constraints: "arch=amd64 mem=49152M tags=demo"
     charm: cs:~openstack-charmers-next/xenial/neutron-gateway
     options:
       bridge-mappings: physnet1:br-ex
       instance-mtu: 1300
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - 1
@@ -302,7 +306,8 @@ services:
     charm: cs:~openstack-charmers-next/xenial/nova-cloud-controller
     options:
       network-manager: Neutron
-      openstack-origin: cloud:xenial-newton/proposed
+      ram-allocation-ratio: 1.0
+#      openstack-origin: cloud:xenial-newton/proposed
       scheduler-default-filters: AggregateInstanceExtraSpecsFilter,AggregateNumInstancesFilter,RetryFilter,AvailabilityZoneFilter,CoreFilter,RamFilter,ComputeFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,ServerGroupAntiAffinityFilter,ServerGroupAffinityFilter
     num_units: 1
     to:
@@ -310,7 +315,7 @@ services:
   openstack-dashboard:
     charm: cs:~openstack-charmers-next/xenial/openstack-dashboard
     options:
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:1
@@ -324,7 +329,7 @@ services:
   swift-proxy:
     charm: cs:~openstack-charmers-next/xenial/swift-proxy
     options:
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
       replicas: 1
       swift-hash: 23fa5444-3cf4-4371-a2e4-9288a509ecff
       zone-assignment: manual
@@ -332,10 +337,12 @@ services:
     to:
     - lxc:1
   swift-storage:
+    constraints: "arch=amd64 mem=49152M tags=demo"
     charm: cs:~openstack-charmers-next/xenial/swift-storage
     options:
       block-device: sdb
       overwrite: "true"
       zone: 1
+    num_units: 1
     to:
     - 2

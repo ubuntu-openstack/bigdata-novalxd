@@ -37,7 +37,7 @@ for run_number in {1..10} ; do
         echo dfsio read benchmark, run ${run_number}
         jdo resourcemanager/0 testdfsio mode='read'  > ${base_output_dir}/testdfsio_read_results-${run_number}.txt
         juju scp resourcemanager/0:/tmp/TestDFSIO_results.log ${base_output_dir}/testdfsio_read_results_detailed-${run_number}.txt
-        
+
         # Spark tests
         echo Running spark tests..., run ${run_number}
         echo spark pi, run ${run_number}

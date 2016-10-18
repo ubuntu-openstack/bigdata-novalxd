@@ -243,7 +243,7 @@ services:
                     name_prefix: 'ubuntu:daily',
                     path: 'streams/v1/index.sjson', max: 1,
                     item_filters: ['release~(xenial)',
-                    'arch~amd64)', 'ftype~(disk1.img|tar.xz)']}]"
+                    'arch~amd64)', 'ftype~(disk1.img|root.tar.xz)']}]"
     to:
     - lxc:1
   heat:

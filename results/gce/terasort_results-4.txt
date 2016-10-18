@@ -1,0 +1,39 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "222"
+    start: 2016-10-18T18:14:22Z
+    stop: 2016-10-18T18:18:04Z
+  results:
+    raw: '{"Reduce input groups": "10000000", "Map output materialized bytes": "1040000048",
+      "HDFS: Number of bytes written": "1000000000", "FILE: Number of bytes written":
+      "2081071662", "FILE: Number of write operations": "0", "CONNECTION": "0", "BAD_ID":
+      "0", "Killed map tasks": "1", "Total committed heap usage (bytes)": "3413016576",
+      "Combine input records": "0", "HDFS: Number of large read operations": "0",
+      "Total time spent by all maps in occupied slots (ms)": "395926", "Total time
+      spent by all map tasks (ms)": "395926", "Input split bytes": "1272", "WRONG_REDUCE":
+      "0", "Total vcore-seconds taken by all map tasks": "395926", "Bytes Read": "1000000000",
+      "Spilled Records": "20000000", "Total megabyte-seconds taken by all map tasks":
+      "405428224", "Reduce input records": "10000000", "Total time spent by all reduce
+      tasks (ms)": "136377", "FILE: Number of large read operations": "0", "Shuffled
+      Maps ": "8", "Virtual memory (bytes) snapshot": "24770908160", "HDFS: Number
+      of read operations": "27", "WRONG_LENGTH": "0", "Launched reduce tasks": "1",
+      "Bytes Written": "1000000000", "Physical memory (bytes) snapshot": "3613790208",
+      "HDFS: Number of write operations": "2", "Total vcore-seconds taken by all reduce
+      tasks": "136377", "Rack-local map tasks": "3", "WRONG_MAP": "0", "Map input
+      records": "10000000", "Launched map tasks": "9", "Total time spent by all reduces
+      in occupied slots (ms)": "136377", "FILE: Number of bytes read": "1040000012",
+      "FILE: Number of read operations": "0", "GC time elapsed (ms)": "11528", "Combine
+      output records": "0", "Reduce shuffle bytes": "1040000048", "HDFS: Number of
+      bytes read": "1000001272", "Reduce output records": "10000000", "Map output
+      records": "10000000", "CPU time spent (ms)": "71380", "IO_ERROR": "0", "Failed
+      Shuffles": "0", "Map output bytes": "1020000000", "Merged Map outputs": "8",
+      "Data-local map tasks": "6", "Total megabyte-seconds taken by all reduce tasks":
+      "139650048"}'
+status: completed
+timing:
+  completed: 2016-10-18 18:18:05 +0000 UTC
+  enqueued: 2016-10-18 18:14:09 +0000 UTC
+  started: 2016-10-18 18:14:11 +0000 UTC

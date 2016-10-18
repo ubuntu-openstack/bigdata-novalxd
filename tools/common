@@ -144,3 +144,7 @@ function create_secgroup_rules {
     openstack security group rule create default --proto udp --dst-port 53 --src-ip ::/0 ||:
     openstack security group rule list
 }
+
+function delete_all_public_flavors {
+    for i in $(openstack flavor list | grep True | awk '{ print $2 }'); do echo $i; openstack flavor delete $i; done
+}

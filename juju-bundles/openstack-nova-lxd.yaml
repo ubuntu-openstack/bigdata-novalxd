@@ -108,94 +108,44 @@ relations:
   - lxd
 - - nova-compute-lxd-orange
   - rabbitmq-server:amqp
+- - neutron-openvswitch
+  - nova-compute-lxd-orange
 - - nova-compute-lxd-orange
   - glance
-- - neutron-openvswitch
-  - nova-compute-lxd-orange
 - - ceilometer-agent
   - nova-compute-lxd-orange
 #
-- - nova-compute-lxd-aubergine
+- - nova-compute-lxd
   - nova-cloud-controller
-- - nova-compute-lxd-aubergine
+- - nova-compute-lxd
   - lxd
-- - nova-compute-lxd-aubergine
-  - rabbitmq-server:amqp
-- - nova-compute-lxd-aubergine
-  - glance
-- - neutron-openvswitch
-  - nova-compute-lxd-aubergine
-- - ceilometer-agent
-  - nova-compute-lxd-aubergine
-#
-- - nova-compute-lxd-grey
-  - nova-cloud-controller
-- - nova-compute-lxd-grey
-  - lxd
-- - nova-compute-lxd-grey
+- - nova-compute-lxd
   - rabbitmq-server:amqp
 - - neutron-openvswitch
-  - nova-compute-lxd-grey
-- - nova-compute-lxd-grey
+  - nova-compute-lxd
+- - nova-compute-lxd
   - glance
 - - ceilometer-agent
-  - nova-compute-lxd-grey
-#
-- - nova-compute-lxd-white
-  - nova-cloud-controller
-- - nova-compute-lxd-white
-  - lxd
-- - nova-compute-lxd-white
-  - rabbitmq-server:amqp
-- - neutron-openvswitch
-  - nova-compute-lxd-white
-- - nova-compute-lxd-white
-  - glance
-- - ceilometer-agent
-  - nova-compute-lxd-white
+  - nova-compute-lxd
 services:
 #  z-magpie:
 #    constraints: "arch=amd64 mem=49152M tags=demo"
 #    charm: "cs:~admcleod/xenial/magpie"
 #    num_units: 10
 #    to: [1,2,3,4,5,6,7,8,9,10]
-  nova-compute-lxd-white:
-    constraints: "arch=amd64 mem=49152M tags=demo"
-    charm: cs:~openstack-charmers-next/xenial/nova-compute
-    num_units: 5
-    to: [6,7,8,9,10]
-    options:
-      enable-live-migration: true
-      enable-resize: true
-      migration-auth-type: ssh
-      reserved-host-memory: 0
-      virt-type: lxd
-#      openstack-origin: cloud:xenial-newton/proposed
-  nova-compute-lxd-grey:
-    constraints: "arch=amd64 mem=49152M tags=demo"
-    charm: cs:~openstack-charmers-next/xenial/nova-compute
-    num_units: 1
-    to: 5
-    options:
-      enable-live-migration: true
-      enable-resize: true
-      migration-auth-type: ssh
-      reserved-host-memory: 0
-      virt-type: lxd
-#      openstack-origin: cloud:xenial-newton/proposed
   nova-compute-lxd-orange:
     constraints: "arch=amd64 mem=49152M tags=demo"
     charm: cs:~openstack-charmers-next/xenial/nova-compute
-    num_units: 1
-    to: 4
+    num_units: 7
+    to: [4,5,6,7,8,9,10]
     options:
       enable-live-migration: true
       enable-resize: true
       migration-auth-type: ssh
       reserved-host-memory: 0
       virt-type: lxd
-#      openstack-origin: cloud:xenial-newton/proposed
-  nova-compute-lxd-aubergine:
+      openstack-origin: cloud:xenial-newton/proposed
+  nova-compute-lxd:
     constraints: "arch=amd64 mem=49152M tags=demo"
     charm: cs:~openstack-charmers-next/xenial/nova-compute
     num_units: 1
@@ -204,9 +154,8 @@ services:
       enable-live-migration: true
       enable-resize: true
       migration-auth-type: ssh
-      reserved-host-memory: 0
       virt-type: lxd
-#      openstack-origin: cloud:xenial-newton/proposed
+      openstack-origin: cloud:xenial-newton/proposed
   lxd:
     charm: cs:~openstack-charmers-next/xenial/lxd
     options:
@@ -221,7 +170,7 @@ services:
   ceilometer:
     charm: cs:~openstack-charmers-next/xenial/ceilometer
     options:
-#      openstack-origin: cloud:xenial-newton/proposed
+      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:1
@@ -230,7 +179,7 @@ services:
   glance:
     charm: cs:~openstack-charmers-next/xenial/glance
     options:
-#      openstack-origin: cloud:xenial-newton/proposed
+      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:1
@@ -243,13 +192,13 @@ services:
                     name_prefix: 'ubuntu:daily',
                     path: 'streams/v1/index.sjson', max: 1,
                     item_filters: ['release~(xenial)',
-                    'arch~amd64)', 'ftype~(disk1.img|root.tar.xz)']}]"
+                    'arch~amd64)', 'ftype~(root.tar.xz)']}]"
     to:
     - lxc:1
   heat:
     charm: cs:~openstack-charmers-next/xenial/heat
     options:
-#      openstack-origin: cloud:xenial-newton/proposed
+      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:2
@@ -286,7 +235,7 @@ services:
     options:
       flat-network-providers: physnet1
       neutron-security-groups: true
-#      openstack-origin: cloud:xenial-newton/proposed
+      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:2
@@ -294,9 +243,10 @@ services:
     constraints: "arch=amd64 mem=49152M tags=demo"
     charm: cs:~openstack-charmers-next/xenial/neutron-gateway
     options:
-      bridge-mappings: physnet1:br-ex
       instance-mtu: 1300
-#      openstack-origin: cloud:xenial-newton/proposed
+      data-port: br-ex:eth1
+      bridge-mappings: physnet1:br-ex
+      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - 1
@@ -307,7 +257,7 @@ services:
     options:
       network-manager: Neutron
       ram-allocation-ratio: 1.0
-#      openstack-origin: cloud:xenial-newton/proposed
+      openstack-origin: cloud:xenial-newton/proposed
       scheduler-default-filters: AggregateInstanceExtraSpecsFilter,AggregateNumInstancesFilter,RetryFilter,AvailabilityZoneFilter,CoreFilter,RamFilter,ComputeFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,ServerGroupAntiAffinityFilter,ServerGroupAffinityFilter
     num_units: 1
     to:
@@ -315,7 +265,7 @@ services:
   openstack-dashboard:
     charm: cs:~openstack-charmers-next/xenial/openstack-dashboard
     options:
-#      openstack-origin: cloud:xenial-newton/proposed
+      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:1
@@ -329,7 +279,7 @@ services:
   swift-proxy:
     charm: cs:~openstack-charmers-next/xenial/swift-proxy
     options:
-#      openstack-origin: cloud:xenial-newton/proposed
+      openstack-origin: cloud:xenial-newton/proposed
       replicas: 1
       swift-hash: 23fa5444-3cf4-4371-a2e4-9288a509ecff
       zone-assignment: manual

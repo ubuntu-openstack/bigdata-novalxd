@@ -11,7 +11,7 @@ set_quotas
 create_secgroup_rules
 delete_all_public_flavors
 
-upload_image cloudimages xenial-lxd xenial-server-cloudimg-amd64-root.tar.xz raw lxc x86_64
+upload_image cloudimages xenial xenial-server-cloudimg-amd64-root.tar.xz raw lxc x86_64
 openstack flavor show m1.test || openstack flavor create --ram 2048 --disk 20 --vcpus 2 m1.test
 
 for exclusive_flavor in white grey orange aubergine; do

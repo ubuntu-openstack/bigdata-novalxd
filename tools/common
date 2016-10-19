@@ -53,18 +53,19 @@ function create_demo_user {
 }
 
 function create_keypairs {
-    openstack keypair show mykey || openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
+    openstack keypair show mykey || openstack keypair create --public-key ~/.ssh/id_dsa.pub mykey
 }
 
 function create_exclusive_aggregate {
     exclusive_flavor=$1
+    max_instances=$2
     app_hostnames=$(./bin/application-hostnames nova-compute-lxd-${exclusive_flavor})
     if [ -n "$app_hostnames" ]; then
         aggregate_name=exclusive-lxd-${exclusive_flavor}
         openstack aggregate show ${aggregate_name} || {
             openstack aggregate create ${aggregate_name}
             openstack aggregate set --property exclusive-flavor=${exclusive_flavor} ${aggregate_name}
-            openstack aggregate set --property max_instances_per_host=1 ${aggregate_name}
+            openstack aggregate set --property max_instances_per_host=$max_instances ${aggregate_name}
             for hostname in ${app_hostnames}; do
                 openstack aggregate add host ${aggregate_name} ${hostname}
             done
@@ -77,9 +78,9 @@ function create_exclusive_aggregate {
 
 function create_exclusive_flavor {
     exclusive_flavor=$1
-    ram=32768
-    cpu=4
-    disk=300
+    ram=$2
+    cpu=$3
+    disk=$4
     flavor_name=e1.lxd.${exclusive_flavor}
     openstack flavor show ${flavor_name} || {
         openstack flavor create --public --ram ${ram} --disk ${disk} --vcpus ${cpu} ${flavor_name}

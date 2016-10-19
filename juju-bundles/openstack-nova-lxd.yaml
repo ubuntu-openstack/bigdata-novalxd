@@ -144,7 +144,7 @@ services:
       migration-auth-type: ssh
       reserved-host-memory: 0
       virt-type: lxd
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
   nova-compute-lxd-grey:
     constraints: "arch=amd64 mem=49152M tags=demo"
     charm: cs:~openstack-charmers-next/xenial/nova-compute
@@ -155,7 +155,7 @@ services:
       enable-resize: true
       migration-auth-type: ssh
       virt-type: lxd
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
   lxd:
     charm: cs:~openstack-charmers-next/xenial/lxd
     options:
@@ -170,7 +170,7 @@ services:
   ceilometer:
     charm: cs:~openstack-charmers-next/xenial/ceilometer
     options:
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:1
@@ -179,7 +179,7 @@ services:
   glance:
     charm: cs:~openstack-charmers-next/xenial/glance
     options:
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:1
@@ -198,7 +198,7 @@ services:
   heat:
     charm: cs:~openstack-charmers-next/xenial/heat
     options:
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:2
@@ -235,7 +235,7 @@ services:
     options:
       flat-network-providers: physnet1
       neutron-security-groups: true
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:2
@@ -246,7 +246,7 @@ services:
       instance-mtu: 1300
       data-port: br-ex:eth1
       bridge-mappings: physnet1:br-ex
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - 1
@@ -257,7 +257,7 @@ services:
     options:
       network-manager: Neutron
       ram-allocation-ratio: 1.0
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
       scheduler-default-filters: AggregateInstanceExtraSpecsFilter,AggregateNumInstancesFilter,RetryFilter,AvailabilityZoneFilter,CoreFilter,RamFilter,ComputeFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,ServerGroupAntiAffinityFilter,ServerGroupAffinityFilter
     num_units: 1
     to:
@@ -265,7 +265,7 @@ services:
   openstack-dashboard:
     charm: cs:~openstack-charmers-next/xenial/openstack-dashboard
     options:
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
     num_units: 1
     to:
     - lxc:1
@@ -279,7 +279,7 @@ services:
   swift-proxy:
     charm: cs:~openstack-charmers-next/xenial/swift-proxy
     options:
-      openstack-origin: cloud:xenial-newton/proposed
+#      openstack-origin: cloud:xenial-newton/proposed
       replicas: 1
       swift-hash: 23fa5444-3cf4-4371-a2e4-9288a509ecff
       zone-assignment: manual

@@ -1,16 +1,12 @@
 #!/usr/bin/env python
 
-try:
-    from quantumclient.v2_0 import client
-except ImportError:
-    from neutronclient.v2_0 import client
-
-from keystoneclient.v2_0 import client as ks_client
 import optparse
 import os
 import sys
 import logging
 
+from keystoneclient.v2_0 import client as ks_client
+from neutronclient.v2_0 import client
 
 usage = """Usage: %prog [options] ext_net_name
 

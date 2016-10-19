@@ -1,0 +1,39 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "1354"
+    start: 2016-10-19T19:03:29Z
+    stop: 2016-10-19T19:26:03Z
+  results:
+    raw: '{"WRONG_REDUCE": "0", "Launched reduce tasks": "1", "Physical memory (bytes)
+      snapshot": "5827559424", "Total time spent by all reduce tasks (ms)": "32684",
+      "WRONG_LENGTH": "0", "Spilled Records": "20000000", "Total vcore-seconds taken
+      by all reduce tasks": "32684", "Total megabyte-seconds taken by all map tasks":
+      "119470080", "Total committed heap usage (bytes)": "5812256768", "Reduce output
+      records": "10000000", "Map output records": "10000000", "FILE: Number of write
+      operations": "0", "Failed Shuffles": "0", "Reduce input records": "10000000",
+      "Reduce input groups": "10000000", "Total vcore-seconds taken by all map tasks":
+      "116670", "Map input records": "10000000", "Total megabyte-seconds taken by
+      all reduce tasks": "33468416", "Failed map tasks": "1", "Rack-local map tasks":
+      "3", "Bytes Read": "1000000000", "HDFS: Number of large read operations": "0",
+      "Killed map tasks": "6", "Input split bytes": "1200", "Virtual memory (bytes)
+      snapshot": "25494052864", "Other local map tasks": "1", "Reduce shuffle bytes":
+      "1040000048", "FILE: Number of read operations": "0", "Total time spent by all
+      maps in occupied slots (ms)": "116670", "Map output bytes": "1020000000", "Launched
+      map tasks": "15", "HDFS: Number of read operations": "27", "CPU time spent (ms)":
+      "92120", "BAD_ID": "0", "WRONG_MAP": "0", "CONNECTION": "0", "HDFS: Number of
+      write operations": "2", "FILE: Number of large read operations": "0", "Bytes
+      Written": "1000000000", "Shuffled Maps ": "8", "Merged Map outputs": "8", "Total
+      time spent by all map tasks (ms)": "116670", "Map output materialized bytes":
+      "1040000048", "GC time elapsed (ms)": "1200", "Combine input records": "0",
+      "Total time spent by all reduces in occupied slots (ms)": "32684", "IO_ERROR":
+      "0", "Combine output records": "0", "FILE: Number of bytes read": "1040000012",
+      "HDFS: Number of bytes read": "1000001200", "HDFS: Number of bytes written":
+      "1000000000", "FILE: Number of bytes written": "2081070540"}'
+status: completed
+timing:
+  completed: 2016-10-19 19:26:04 +0000 UTC
+  enqueued: 2016-10-19 19:03:19 +0000 UTC
+  started: 2016-10-19 19:03:21 +0000 UTC

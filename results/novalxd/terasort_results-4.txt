@@ -1,0 +1,38 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "87"
+    start: 2016-10-19T18:55:59Z
+    stop: 2016-10-19T18:57:26Z
+  results:
+    raw: '{"Total vcore-seconds taken by all reduce tasks": "34617", "Combine output
+      records": "0", "Total vcore-seconds taken by all map tasks": "75554", "Total
+      time spent by all maps in occupied slots (ms)": "75554", "Rack-local map tasks":
+      "3", "Bytes Written": "1000000000", "Physical memory (bytes) snapshot": "5854449664",
+      "IO_ERROR": "0", "Total megabyte-seconds taken by all map tasks": "77367296",
+      "HDFS: Number of write operations": "2", "Map output records": "10000000", "HDFS:
+      Number of read operations": "27", "Failed Shuffles": "0", "Total time spent
+      by all reduces in occupied slots (ms)": "34617", "BAD_ID": "0", "Total time
+      spent by all reduce tasks (ms)": "34617", "Reduce output records": "10000000",
+      "WRONG_MAP": "0", "Reduce input records": "10000000", "Data-local map tasks":
+      "6", "Launched map tasks": "9", "CONNECTION": "0", "Total committed heap usage
+      (bytes)": "5725749248", "GC time elapsed (ms)": "1143", "Virtual memory (bytes)
+      snapshot": "25476341760", "FILE: Number of bytes written": "2081070528", "WRONG_LENGTH":
+      "0", "FILE: Number of bytes read": "1040000012", "Map output bytes": "1020000000",
+      "Shuffled Maps ": "8", "Merged Map outputs": "8", "FILE: Number of large read
+      operations": "0", "Launched reduce tasks": "1", "Total megabyte-seconds taken
+      by all reduce tasks": "35447808", "HDFS: Number of bytes written": "1000000000",
+      "CPU time spent (ms)": "93750", "Reduce input groups": "10000000", "Bytes Read":
+      "1000000000", "WRONG_REDUCE": "0", "Spilled Records": "20000000", "HDFS: Number
+      of large read operations": "0", "Total time spent by all map tasks (ms)": "75554",
+      "Killed map tasks": "1", "Reduce shuffle bytes": "1040000048", "Map input records":
+      "10000000", "Input split bytes": "1200", "HDFS: Number of bytes read": "1000001200",
+      "FILE: Number of read operations": "0", "Map output materialized bytes": "1040000048",
+      "FILE: Number of write operations": "0", "Combine input records": "0"}'
+status: completed
+timing:
+  completed: 2016-10-19 18:57:27 +0000 UTC
+  enqueued: 2016-10-19 18:55:48 +0000 UTC
+  started: 2016-10-19 18:55:51 +0000 UTC

@@ -4,3 +4,4 @@ python-openstackclient
 python-keystoneclient
 python-neutronclient
 python-novaclient
+python-heatclient

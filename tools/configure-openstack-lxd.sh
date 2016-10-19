@@ -14,8 +14,7 @@ delete_all_public_flavors
 upload_image cloudimages xenial xenial-server-cloudimg-amd64-root.tar.xz raw
 
 create_exclusive_aggregate orange 1
-create_exclusive_flavor orange 32768 300 4
+create_exclusive_flavor orange 32768 4 300
 
 create_exclusive_aggregate grey 999999
 create_exclusive_flavor grey 2048 2 20
-

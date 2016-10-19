@@ -53,7 +53,7 @@ function create_demo_user {
 }
 
 function create_keypairs {
-    openstack keypair show mykey || openstack keypair create --public-key ~/.ssh/id_dsa.pub mykey
+    openstack keypair show mykey || openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
 }
 
 function create_exclusive_aggregate {

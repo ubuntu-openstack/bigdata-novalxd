@@ -70,4 +70,7 @@ for run_number in {1..10} ; do
         echo Check ../results/ for new files after this detection job finishes...
         ./run_anomaly_detection.sh ${etype} ${run_number}
 
+
+        # restart nodemanagers - just in case
+        juju run --service slave "sudo service hadoop-yarn-nodemanager restart"
 done

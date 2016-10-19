@@ -71,20 +71,23 @@ present in all three scenarios.
 
 #### Software Specs
 
-* MAAS 1.9 on on Ubuntu 14.04 Trusty
+* OpenStack Mitaka on Ubuntu 16.04 Xenial
 * Juju 1.25.6 on Ubuntu 16.04 Xenial
-* HDFS version TODO
-* YARN version TODO
-* Spark version TODO
+* MAAS 1.9 on on Ubuntu 14.04 Trusty
+* Apache Bigtop Hadoop (HDFS and YARN) 2.7.1
+* Apache Bigtop Spark version TODO
 * TODO Any other Big Data version info
 * All Big Data and OpenStack applications and services are deployed onto 
   Ubuntu 16.04 Xenial.
-* As of this writing, MAAS 2.0 was stable and released.  However, the 
-  corresponding Juju 2.0 product was in development.  Because MAAS 2.0 
-  does not support the stable Juju 1.25.6, stable MAAS 1.9 was selected 
-  for these exercises.
-* When Juju 2.0 releases, the same routines should be compatible with a 
-  MAAS 2.x and Juju 2.x combination on 16.04.
+* OpenStack Newton was pre-RC at the time of this research and writing,
+  so OpenStack Mitaka was selected.
+* Also, as of this research and writing, MAAS 2.0 was released.  However,
+  the corresponding Juju 2.0 product was in beta development.  Because
+  MAAS 2.0 does not support the stable Juju 1.25.x, MAAS 1.9 was selected
+  for these research exercises.
+* When OpenStack Newton and Juju 2.0 release, the same routines should be
+  compatible with a MAAS 2.x and Juju 2.x combination on 16.04, and these
+  procedures can be re-visited and updated accordingly.
 
 
 ## Scenarios
@@ -134,7 +137,7 @@ The following is necesary and applicable to all scenaios.
     tools/deploy-openstack-nova-lxd.sh
     ```
 
- - OpenStack will deploy, configure and run a basic check.
+ - OpenStack will deploy, configure and run basic checks.
 
 2. Deploy Spark Hadoop Processing to OpenStack with Juju and the Big
    Data Charms.

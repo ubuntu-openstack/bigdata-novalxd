@@ -1,0 +1,39 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "265"
+    start: 2016-10-18T16:49:14Z
+    stop: 2016-10-18T16:53:39Z
+  results:
+    raw: '{"WRONG_REDUCE": "0", "Data-local map tasks": "8", "Physical memory (bytes)
+      snapshot": "4126994432", "Total time spent by all reduce tasks (ms)": "121041",
+      "HDFS: Number of large read operations": "0", "Total vcore-seconds taken by
+      all reduce tasks": "121041", "Bytes Read": "1000000000", "Killed map tasks":
+      "2", "GC time elapsed (ms)": "6420", "Input split bytes": "1240", "Total vcore-seconds
+      taken by all map tasks": "400471", "Reduce input groups": "10000000", "Shuffled
+      Maps ": "8", "Bytes Written": "1000000000", "Total megabyte-seconds taken by
+      all map tasks": "410082304", "Merged Map outputs": "8", "HDFS: Number of bytes
+      read": "1000001240", "Virtual memory (bytes) snapshot": "24770826240", "Launched
+      map tasks": "10", "Total megabyte-seconds taken by all reduce tasks": "123945984",
+      "WRONG_MAP": "0", "Map input records": "10000000", "Reduce output records":
+      "10000000", "Launched reduce tasks": "1", "Total time spent by all map tasks
+      (ms)": "400471", "Map output materialized bytes": "1040000048", "WRONG_LENGTH":
+      "0", "IO_ERROR": "0", "BAD_ID": "0", "Spilled Records": "20000000", "HDFS: Number
+      of read operations": "27", "FILE: Number of bytes read": "1040000012", "FILE:
+      Number of bytes written": "2081071104", "Rack-local map tasks": "2", "FILE:
+      Number of read operations": "0", "Reduce shuffle bytes": "1040000048", "Map
+      output records": "10000000", "Total time spent by all maps in occupied slots
+      (ms)": "400471", "Map output bytes": "1020000000", "Total time spent by all
+      reduces in occupied slots (ms)": "121041", "HDFS: Number of bytes written":
+      "1000000000", "Reduce input records": "10000000", "Total committed heap usage
+      (bytes)": "3672539136", "FILE: Number of write operations": "0", "Combine input
+      records": "0", "CPU time spent (ms)": "123980", "HDFS: Number of write operations":
+      "2", "FILE: Number of large read operations": "0", "Failed Shuffles": "0", "CONNECTION":
+      "0", "Combine output records": "0"}'
+status: completed
+timing:
+  completed: 2016-10-18 16:53:40 +0000 UTC
+  enqueued: 2016-10-18 16:49:00 +0000 UTC
+  started: 2016-10-18 16:49:01 +0000 UTC

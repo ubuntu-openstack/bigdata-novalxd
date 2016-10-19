@@ -1,0 +1,38 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "266"
+    start: 2016-10-18T20:19:56Z
+    stop: 2016-10-18T20:24:22Z
+  results:
+    raw: '{"Total megabyte-seconds taken by all reduce tasks": "107799552", "Shuffled
+      Maps ": "8", "Combine output records": "0", "WRONG_REDUCE": "0", "Map output
+      bytes": "1020000000", "FILE: Number of bytes read": "1040000012", "IO_ERROR":
+      "0", "HDFS: Number of bytes written": "1000000000", "Combine input records":
+      "0", "Reduce input groups": "10000000", "Total vcore-seconds taken by all reduce
+      tasks": "105273", "Total committed heap usage (bytes)": "3672539136", "WRONG_MAP":
+      "0", "HDFS: Number of read operations": "27", "Map input records": "10000000",
+      "Total time spent by all maps in occupied slots (ms)": "715978", "Rack-local
+      map tasks": "3", "Bytes Written": "1000000000", "Launched reduce tasks": "1",
+      "FILE: Number of write operations": "0", "Total time spent by all reduces in
+      occupied slots (ms)": "105273", "Total time spent by all reduce tasks (ms)":
+      "105273", "Map output records": "10000000", "HDFS: Number of large read operations":
+      "0", "Total megabyte-seconds taken by all map tasks": "733161472", "Virtual
+      memory (bytes) snapshot": "24770752512", "Launched map tasks": "8", "Physical
+      memory (bytes) snapshot": "4091846656", "Map output materialized bytes": "1040000048",
+      "CONNECTION": "0", "FILE: Number of bytes written": "2081071104", "Input split
+      bytes": "1240", "Total time spent by all map tasks (ms)": "715978", "Data-local
+      map tasks": "5", "HDFS: Number of write operations": "2", "BAD_ID": "0", "HDFS:
+      Number of bytes read": "1000001240", "Merged Map outputs": "8", "WRONG_LENGTH":
+      "0", "Reduce shuffle bytes": "1040000048", "FILE: Number of read operations":
+      "0", "Total vcore-seconds taken by all map tasks": "715978", "Bytes Read": "1000000000",
+      "Failed Shuffles": "0", "Reduce output records": "10000000", "Spilled Records":
+      "20000000", "FILE: Number of large read operations": "0", "Reduce input records":
+      "10000000", "GC time elapsed (ms)": "8302", "CPU time spent (ms)": "138990"}'
+status: completed
+timing:
+  completed: 2016-10-18 20:24:24 +0000 UTC
+  enqueued: 2016-10-18 20:19:23 +0000 UTC
+  started: 2016-10-18 20:19:31 +0000 UTC

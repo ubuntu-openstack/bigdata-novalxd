@@ -1,15 +1,16 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 # Give all instances a floating IP address.
 
 echo " + Floating all instances."
 
 function get_ip_f() {
   # Get first unallocated floating IP
-  local var=$(openstack ip floating list | grep 'None' | awk '{ print $4 }' | head -n 1)
+  echo FOO
+  local var=$(openstack floating ip list | grep 'None' | awk '{ print $4 }' | head -n 1)
   echo $var
 }
 
-fips=$(openstack ip floating list | grep 'None ' | awk '{ print $4 }')
+fips=$(openstack floating ip list | grep 'None ' | awk '{ print $4 }')
 fip_count=$(echo $fips | wc -w)
 
 instances=$(openstack server list | grep ACTIVE | grep -v '\,' | awk '{ print $2 }')
@@ -27,7 +28,7 @@ else
   fip_diff=$(( $inst_count - $fip_count ))
   echo " + Creating $fip_diff more floating IPs."
   for m in $(seq 1 $fip_diff); do
-    openstack ip floating create ext_net
+    openstack floating ip create ext_net
   done
 fi
 
@@ -35,5 +36,5 @@ fi
 for instance in $instances; do
   ip_f=$(get_ip_f)
   echo " + Associating floating IP $ip_f to instance $instance."
-  openstack ip floating add $ip_f $instance
+  openstack server add floating ip $instance $ip_f
 done

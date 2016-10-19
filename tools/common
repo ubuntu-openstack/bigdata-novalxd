@@ -12,8 +12,8 @@ function upload_image {
     image_name=$2
     image_file=$3
     image_format=${4:-"qcow2"}
-    image_hv_type=${5:-"qemu"}
-    image_arch=${6:-"x86_64"}
+#    image_hv_type=${5:-"qemu"}
+#    image_arch=${6:-"x86_64"}
 
     case "$src" in
         swift) http_root="http://$SWIFT_IP:80/swift/v1/images";;
@@ -30,8 +30,8 @@ function upload_image {
         openstack image create --public \
             --container-format=bare --disk-format=$image_format \
             --file=${HOME}/images/$image_file  $image_name \
-            --property architecture=$image_arch \
-            --property hypervisor_type=$image_hv_type
+#            --property architecture=$image_arch \
+#            --property hypervisor_type=$image_hv_type
     }
 }
 
@@ -58,44 +58,29 @@ function create_keypairs {
 
 function create_exclusive_aggregate {
     exclusive_flavor=$1
-    app_hostnames=$(./bin/application-hostnames nova-compute-exclusive-${exclusiveflavor})
+    max_instances=$2
+    app_hostnames=$(./bin/application-hostnames nova-compute-lxd-${exclusive_flavor})
     if [ -n "$app_hostnames" ]; then
         aggregate_name=exclusive-lxd-${exclusive_flavor}
         openstack aggregate show ${aggregate_name} || {
             openstack aggregate create ${aggregate_name}
             openstack aggregate set --property exclusive-flavor=${exclusive_flavor} ${aggregate_name}
-            openstack aggregate set --property max_instances_per_host=1 ${aggregate_name}
+            openstack aggregate set --property max_instances_per_host=$max_instances ${aggregate_name}
             for hostname in ${app_hostnames}; do
                 openstack aggregate add host ${aggregate_name} ${hostname}
             done
         }
+    else
+        echo " ! Expected application hostnames, found none."
+        exit 1
     fi
 }
 
 function create_exclusive_flavor {
     exclusive_flavor=$1
-    case ${exclusive_flavor} in
-        white)
-            ram=32768
-            cpu=4
-            disk=300
-            ;;
-        grey)
-            ram=32776
-            cpu=4
-            disk=301
-            ;;
-        orange)
-            ram=32784
-            cpu=4
-            disk=302
-            ;;
-        aubergine)
-            ram=32792
-            cpu=4
-            disk=303
-            ;;
-    esac
+    ram=$2
+    cpu=$3
+    disk=$4
     flavor_name=e1.lxd.${exclusive_flavor}
     openstack flavor show ${flavor_name} || {
         openstack flavor create --public --ram ${ram} --disk ${disk} --vcpus ${cpu} ${flavor_name}
@@ -134,7 +119,7 @@ function set_quotas {
 
 function create_secgroup_rules {
     # Set security group rules
-    for port in 22 80 443 8080 3128; do
+    for port in 22 80 443 8080 3128 8020 50070 8088 19888 8042 18080; do
         openstack security group rule create default --proto tcp --dst-port $port --src-ip 0.0.0.0/0 ||:
         openstack security group rule create default --proto tcp --dst-port $port --src-ip ::/0 ||:
     done

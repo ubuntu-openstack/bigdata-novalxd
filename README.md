@@ -74,9 +74,8 @@ present in all three scenarios.
 * OpenStack Mitaka on Ubuntu 16.04 Xenial
 * Juju 1.25.6 on Ubuntu 16.04 Xenial
 * MAAS 1.9 on on Ubuntu 14.04 Trusty
-* HDFS version TODO
-* YARN version TODO
-* Spark version TODO
+* Hadoop (HDFS and YARN) 2.7.1
+* Spark version 
 * TODO Any other Big Data version info
 * All Big Data and OpenStack applications and services are deployed onto 
   Ubuntu 16.04 Xenial.

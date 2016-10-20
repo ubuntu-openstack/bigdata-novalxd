@@ -1,0 +1,9 @@
+message: exit status 1
+results:
+  meta:
+    start: 2016-10-20T09:06:29Z
+status: failed
+timing:
+  completed: 2016-10-20 09:13:52 +0000 UTC
+  enqueued: 2016-10-20 09:06:16 +0000 UTC
+  started: 2016-10-20 09:06:17 +0000 UTC

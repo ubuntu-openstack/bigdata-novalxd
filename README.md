@@ -75,7 +75,7 @@ present in all three scenarios.
 * Juju 1.25.6 on Ubuntu 16.04 Xenial
 * MAAS 1.9 on on Ubuntu 14.04 Trusty
 * Apache Bigtop Hadoop (HDFS and YARN) 2.7.1
-* Apache Bigtop Spark version TODO
+* Apache Bigtop Spark version 1.5.1
 * TODO Any other Big Data version info
 * All Big Data and OpenStack applications and services are deployed onto 
   Ubuntu 16.04 Xenial.

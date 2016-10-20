@@ -5,7 +5,6 @@ echo " + Floating all instances."
 
 function get_ip_f() {
   # Get first unallocated floating IP
-  echo FOO
   local var=$(openstack floating ip list | grep 'None' | awk '{ print $4 }' | head -n 1)
   echo $var
 }

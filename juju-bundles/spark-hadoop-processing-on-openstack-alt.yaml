@@ -1,0 +1,72 @@
+series: xenial
+services:
+  juju-gui:
+    charm: "cs:juju-gui"
+#  ganglia:
+#    series: trusty
+#    charm: cs:~charmers/trusty/ganglia
+#    charm: "cs:~1chb1n/xenial/ganglia"
+#    to: "1"
+#  ganglia-node:
+#    charm: "cs:~charmers/trusty/ganglia-node"
+#    charm: "cs:~1chb1n/xenial/ganglia-node"
+  namenode:
+    charm: "cs:~bigdata-dev/xenial/hadoop-namenode"
+    annotations:
+      gui-x: "300"
+      gui-y: "600"
+    num_units: 1
+  resourcemanager:
+    charm: "cs:~bigdata-dev/xenial/hadoop-resourcemanager"
+    constraints: mem=20G
+    annotations:
+      gui-x: "300"
+      gui-y: "0"
+    num_units: 1
+  spark:
+    charm: "cs:~bigdata-dev/xenial/spark"
+    constraints: mem=20G
+    num_units: 1
+    annotations:
+      gui-x: "300"
+      gui-y: "300"
+  slave:
+    charm: "cs:~bigdata-dev/xenial/hadoop-slave"
+    constraints: mem=20G
+    annotations:
+      gui-x: "0"
+      gui-y: "300"
+    num_units: 10
+  plugin:
+    charm: "cs:~bigdata-dev/xenial/hadoop-plugin"
+    annotations:
+      gui-x: "600"
+      gui-y: "300"
+  openjdk:
+    charm: "cs:xenial/openjdk"
+    annotations:
+      gui-x: "300"
+      gui-y: "300"
+    options:
+      java-type: "jdk"
+      java-major: "8"
+relations:
+  - [resourcemanager, namenode]
+  - [namenode, slave]
+  - [resourcemanager, slave]
+  - [plugin, namenode]
+  - [plugin, resourcemanager]
+  - [plugin, spark]
+  - [openjdk, namenode]
+  - [openjdk, resourcemanager]
+  - [openjdk, slave]
+  - [openjdk, spark]
+  # ganglia:node relations
+#  - ["ganglia:node", namenode]
+#  - ["ganglia:node", resourcemanager]
+#  - ["ganglia:node", slave]
+#  - ["ganglia:node", ganglia-node]
+  # ganglia subordinate relations
+#  - [ganglia-node, namenode]
+#  - [ganglia-node, resourcemanager]
+#  - [ganglia-node, slave]

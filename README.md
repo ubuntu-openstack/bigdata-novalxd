@@ -194,6 +194,7 @@ Freenode IRC channels.
 * [MAAS: Metal as a Service][4]
 * [OpenStack Charm Development Guide][7]
 * [Ubuntu Server][6]
+* [Presentation/Slides from ODS Barcelona, October 2016][12]
 
 
 [1]: juju-bundles/spark-hadoop-processing.yaml
@@ -207,6 +208,7 @@ Freenode IRC channels.
 [9]: tools/deploy-openstack-nova-kvm.sh
 [10]: tools/deploy-spark-on-metal.sh
 [11]: tools/deploy-spark-on-openstack.sh
+[12]: http://prezi.com/cvhcdlqwnsfn
 
 [maas-image]: presentation/images/maas-machines-deployed-400.png "MAAS - Metal as a Service"
 [juju-gui-image]: presentation/images/juju-gui-spark-processing-400.png "Juju Big Data Deployment - Spark Processing"

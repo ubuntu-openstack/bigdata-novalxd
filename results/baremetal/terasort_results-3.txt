@@ -1,0 +1,39 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "75"
+    start: 2016-10-21T09:04:29Z
+    stop: 2016-10-21T09:05:44Z
+  results:
+    raw: '{"Rack-local map tasks": "3", "Map output records": "10000000", "Total time
+      spent by all maps in occupied slots (ms)": "71989", "Physical memory (bytes)
+      snapshot": "6014230528", "Map output materialized bytes": "1040000048", "HDFS:
+      Number of large read operations": "0", "Total time spent by all reduce tasks
+      (ms)": "26832", "FILE: Number of bytes read": "1040000012", "Map input records":
+      "10000000", "Killed map tasks": "1", "Map output bytes": "1020000000", "Total
+      time spent by all map tasks (ms)": "71989", "FILE: Number of write operations":
+      "0", "Reduce output records": "10000000", "Total vcore-seconds taken by all
+      map tasks": "71989", "Reduce input groups": "10000000", "HDFS: Number of bytes
+      read": "1000001072", "IO_ERROR": "0", "Total vcore-seconds taken by all reduce
+      tasks": "26832", "Launched reduce tasks": "1", "HDFS: Number of read operations":
+      "27", "Virtual memory (bytes) snapshot": "25500856320", "Bytes Written": "1000000000",
+      "FILE: Number of read operations": "0", "Merged Map outputs": "8", "HDFS: Number
+      of write operations": "2", "Total committed heap usage (bytes)": "5835849728",
+      "Spilled Records": "20000000", "Total megabyte-seconds taken by all map tasks":
+      "73716736", "CPU time spent (ms)": "84430", "GC time elapsed (ms)": "1080",
+      "Reduce shuffle bytes": "1040000048", "Reduce input records": "10000000", "HDFS:
+      Number of bytes written": "1000000000", "Total megabyte-seconds taken by all
+      reduce tasks": "27475968", "Total time spent by all reduces in occupied slots
+      (ms)": "26832", "BAD_ID": "0", "WRONG_REDUCE": "0", "Input split bytes": "1072",
+      "Combine input records": "0", "Launched map tasks": "9", "WRONG_LENGTH": "0",
+      "Shuffled Maps ": "8", "FILE: Number of bytes written": "2081068791", "CONNECTION":
+      "0", "Combine output records": "0", "WRONG_MAP": "0", "Data-local map tasks":
+      "6", "FILE: Number of large read operations": "0", "Bytes Read": "1000000000",
+      "Failed Shuffles": "0"}'
+status: completed
+timing:
+  completed: 2016-10-21 09:05:45 +0000 UTC
+  enqueued: 2016-10-21 09:04:19 +0000 UTC
+  started: 2016-10-21 09:04:19 +0000 UTC

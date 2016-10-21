@@ -1,0 +1,38 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "836"
+    start: 2016-10-21T09:43:07Z
+    stop: 2016-10-21T09:57:03Z
+  results:
+    raw: '{"Bytes Read": "1000000000", "HDFS: Number of large read operations": "0",
+      "GC time elapsed (ms)": "972", "Physical memory (bytes) snapshot": "6036500480",
+      "Total time spent by all reduces in occupied slots (ms)": "26170", "Killed map
+      tasks": "1", "Combine output records": "0", "Total committed heap usage (bytes)":
+      "5776080896", "Reduce input groups": "10000000", "Merged Map outputs": "8",
+      "HDFS: Number of bytes written": "1000000000", "HDFS: Number of write operations":
+      "2", "FILE: Number of read operations": "0", "FILE: Number of bytes written":
+      "2081068791", "Total time spent by all reduce tasks (ms)": "26170", "Spilled
+      Records": "20000000", "Combine input records": "0", "Total vcore-seconds taken
+      by all map tasks": "67843", "Map output materialized bytes": "1040000048", "WRONG_REDUCE":
+      "0", "Launched reduce tasks": "1", "Bytes Written": "1000000000", "Failed Shuffles":
+      "0", "Virtual memory (bytes) snapshot": "25499279360", "Map output records":
+      "10000000", "Launched map tasks": "9", "Map output bytes": "1020000000", "Rack-local
+      map tasks": "3", "CPU time spent (ms)": "82760", "Total vcore-seconds taken
+      by all reduce tasks": "26170", "Shuffled Maps ": "8", "Map input records": "10000000",
+      "IO_ERROR": "0", "Reduce output records": "10000000", "Total megabyte-seconds
+      taken by all map tasks": "69471232", "Total megabyte-seconds taken by all reduce
+      tasks": "26798080", "Total time spent by all maps in occupied slots (ms)": "67843",
+      "FILE: Number of bytes read": "1040000012", "Total time spent by all map tasks
+      (ms)": "67843", "Input split bytes": "1072", "WRONG_LENGTH": "0", "FILE: Number
+      of write operations": "0", "Reduce input records": "10000000", "FILE: Number
+      of large read operations": "0", "Data-local map tasks": "6", "HDFS: Number of
+      read operations": "27", "BAD_ID": "0", "CONNECTION": "0", "WRONG_MAP": "0",
+      "HDFS: Number of bytes read": "1000001072", "Reduce shuffle bytes": "1040000048"}'
+status: completed
+timing:
+  completed: 2016-10-21 09:57:04 +0000 UTC
+  enqueued: 2016-10-21 09:42:54 +0000 UTC
+  started: 2016-10-21 09:42:56 +0000 UTC

@@ -1,0 +1,40 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "651"
+    start: 2016-10-21T10:25:19Z
+    stop: 2016-10-21T10:36:10Z
+  results:
+    raw: '{"Failed map tasks": "1", "Reduce input records": "10000000", "Total megabyte-seconds
+      taken by all map tasks": "1322524672", "WRONG_REDUCE": "0", "Reduce output records":
+      "10000000", "Total vcore-seconds taken by all reduce tasks": "604717", "HDFS:
+      Number of write operations": "2", "Total time spent by all reduce tasks (ms)":
+      "604717", "HDFS: Number of read operations": "27", "Bytes Written": "1000000000",
+      "Spilled Records": "20000000", "WRONG_LENGTH": "0", "Total time spent by all
+      reduces in occupied slots (ms)": "604717", "Map output materialized bytes":
+      "1040000048", "Physical memory (bytes) snapshot": "6057086976", "FILE: Number
+      of read operations": "0", "Combine input records": "0", "Data-local map tasks":
+      "6", "FILE: Number of bytes read": "1040000012", "Launched reduce tasks": "1",
+      "HDFS: Number of bytes written": "1000000000", "Total committed heap usage (bytes)":
+      "5804392448", "Reduce shuffle bytes": "1040000048", "FILE: Number of large read
+      operations": "0", "Input split bytes": "1072", "BAD_ID": "0", "Total time spent
+      by all map tasks (ms)": "1291528", "Launched map tasks": "13", "Bytes Read":
+      "1000000000", "Combine output records": "0", "Shuffled Maps ": "8", "GC time
+      elapsed (ms)": "1093", "Merged Map outputs": "8", "Map output bytes": "1020000000",
+      "HDFS: Number of large read operations": "0", "Other local map tasks": "2",
+      "Rack-local map tasks": "5", "IO_ERROR": "3", "Map input records": "10000000",
+      "CONNECTION": "0", "FILE: Number of bytes written": "2081068791", "CPU time
+      spent (ms)": "87640", "Total megabyte-seconds taken by all reduce tasks": "619230208",
+      "Killed map tasks": "4", "Reduce input groups": "10000000", "HDFS: Number of
+      bytes read": "1000001072", "Map output records": "10000000", "WRONG_MAP": "0",
+      "FILE: Number of write operations": "0", "Virtual memory (bytes) snapshot":
+      "25489076224", "Total vcore-seconds taken by all map tasks": "1291528", "Total
+      time spent by all maps in occupied slots (ms)": "1291528", "Failed Shuffles":
+      "3"}'
+status: completed
+timing:
+  completed: 2016-10-21 10:36:11 +0000 UTC
+  enqueued: 2016-10-21 10:25:07 +0000 UTC
+  started: 2016-10-21 10:25:09 +0000 UTC

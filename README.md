@@ -40,10 +40,8 @@ We cover:
 
 #### Benchmarks and Jobs
 
-1. Terasort Benchmark: <TODO description of job>
-2. Spark Benchmarks: <TODO description of job>
-3. YARN and HDFS Benchmarks: <TODO description of job>
-4. Anomoly Detection and Machine Learning Job: <TODO description of job>
+1. Terasort Benchmark: The classic mapreduce benchmark - but this time, it's a gigasort 
+2. Anomoly Detection and Machine Learning Job: <TODO description of job>
 
 
 #### Deployment Toplogies
@@ -65,7 +63,7 @@ One machine is dedicated to MAAS, though that could be a much lesser machine
 or run within a container managed by LXD or a traditional KVM virtual 
 machine.  The remainder of the machines are allocated to the deployed
 workloads, such that there are the same number of Apache Hadoop Slaves
-present in all three scenarios.
+with the same resources present in all three scenarios.
 
 
 #### Software Specs
@@ -75,7 +73,6 @@ present in all three scenarios.
 * MAAS 1.9 on on Ubuntu 14.04 Trusty
 * Apache Bigtop Hadoop (HDFS and YARN) 2.7.1
 * Apache Bigtop Spark version 1.5.1
-* TODO Any other Big Data version info
 * All Big Data and OpenStack applications and services are deployed onto 
   Ubuntu 16.04 Xenial.
 * OpenStack Newton was pre-RC at the time of this research and writing,

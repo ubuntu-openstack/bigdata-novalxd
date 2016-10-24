@@ -54,11 +54,11 @@ More Big Data and Machine Learning on OpenStack backed by Nova-LXD.
 [10]: tools/deploy-spark-on-metal.sh
 [11]: tools/deploy-spark-on-openstack.sh
 [12]: http://prezi.com/cvhcdlqwnsfn
-[maas-image]: presentation/images/maas-machines-deployed-400.png "MAAS - Metal as a Service"
-[juju-gui-image]: presentation/images/juju-gui-spark-processing-400.png "Juju Big Data Deployment - Spark Processing"
-[slide-sample]: presentation/images/presentation-sample-slide-400.png
-[slide-anomalies]: presentation/images/presentation-sample-slide-anomalies-400.png
-[slide-atlas]: presentation/images/presentation-sample-slide-atlas-400.png
-[slide-title2]: presentation/images/presentation-sample-slide-title2-400.png
-[slide-title]: presentation/images/presentation-sample-slide-title-400.png
+[maas-image]: maas-machines-deployed-400.png "MAAS - Metal as a Service"
+[juju-gui-image]: juju-gui-spark-processing-400.png "Juju Big Data Deployment - Spark Processing"
+[slide-sample]: presentation-sample-slide-400.png
+[slide-anomalies]: presentation-sample-slide-anomalies-400.png
+[slide-atlas]: presentation-sample-slide-atlas-400.png
+[slide-title2]: presentation-sample-slide-title2-400.png
+[slide-title]: presentation-sample-slide-title-400.png
 [slide-sample-600]: slides-multi-sample-600.png

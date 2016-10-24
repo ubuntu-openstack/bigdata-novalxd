@@ -5,7 +5,7 @@ for OpenStack Summit Barcelona 2016_
 
 ---
 
-![alt text][slide-sample-600]
+[![Presentation Slides - Big Data and Machine Learning on OpenStack backed by Nova-LXD - Andrew McLeod and Ryan Beisner](presentation/images/slides-multi-sample-600.png)](http://prezi.com/cvhcdlqwnsfn)
 
 ## Overview
 Hadoop was built with bare metal in mind:  get your commodity hardware, 
@@ -208,4 +208,3 @@ Freenode IRC channels.
 [10]: tools/deploy-spark-on-metal.sh
 [11]: tools/deploy-spark-on-openstack.sh
 [12]: http://prezi.com/cvhcdlqwnsfn
-[slide-sample-600]: presentation/images/slides-multi-sample-600.png "Big Data and Machine Learning on OpenStack backed by Nova-LXD - Andrew McLeod [irc: admcleod] and Ryan Beisner [irc: beisner]"

@@ -2,6 +2,11 @@
 
 ## Image Assets
 
+
+---
+
+[![Big Data and Machine Learning on OpenStack backed by Nova-LXD - Andrew McLeod and Ryan Beisner](slides-multi-sample-600.png)](http://prezi.com/cvhcdlqwnsfn)
+
 ---
 
 ![alt text][juju-gui-image]

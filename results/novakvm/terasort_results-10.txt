@@ -1,0 +1,39 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "86"
+    start: 2016-10-22T03:38:11Z
+    stop: 2016-10-22T03:39:37Z
+  results:
+    raw: '{"Bytes Written": "1000000000", "Spilled Records": "20000000", "FILE: Number
+      of write operations": "0", "Total time spent by all reduce tasks (ms)": "29798",
+      "Bytes Read": "1000000000", "HDFS: Number of bytes read": "1000001200", "Physical
+      memory (bytes) snapshot": "5972934656", "CONNECTION": "0", "HDFS: Number of
+      write operations": "2", "Total time spent by all map tasks (ms)": "84903", "Reduce
+      input records": "10000000", "Failed Shuffles": "0", "Data-local map tasks":
+      "7", "HDFS: Number of large read operations": "0", "Total time spent by all
+      maps in occupied slots (ms)": "84903", "Reduce shuffle bytes": "1040000048",
+      "Merged Map outputs": "8", "Map output records": "10000000", "FILE: Number of
+      bytes read": "1040000012", "Input split bytes": "1200", "Combine output records":
+      "0", "BAD_ID": "0", "CPU time spent (ms)": "89670", "Total committed heap usage
+      (bytes)": "7065305088", "Map output bytes": "1020000000", "Killed map tasks":
+      "1", "IO_ERROR": "0", "Total vcore-seconds taken by all map tasks": "84903",
+      "Total megabyte-seconds taken by all map tasks": "86940672", "FILE: Number of
+      large read operations": "0", "Total vcore-seconds taken by all reduce tasks":
+      "29798", "HDFS: Number of read operations": "27", "Rack-local map tasks": "2",
+      "Reduce output records": "10000000", "Total time spent by all reduces in occupied
+      slots (ms)": "29798", "Map output materialized bytes": "1040000048", "WRONG_LENGTH":
+      "0", "WRONG_REDUCE": "0", "Virtual memory (bytes) snapshot": "25504292864",
+      "Reduce input groups": "10000000", "Combine input records": "0", "Shuffled Maps
+      ": "8", "GC time elapsed (ms)": "2060", "Launched map tasks": "9", "Launched
+      reduce tasks": "1", "FILE: Number of read operations": "0", "FILE: Number of
+      bytes written": "2081070528", "HDFS: Number of bytes written": "1000000000",
+      "Total megabyte-seconds taken by all reduce tasks": "30513152", "WRONG_MAP":
+      "0", "Map input records": "10000000"}'
+status: completed
+timing:
+  completed: 2016-10-22 03:39:38 +0000 UTC
+  enqueued: 2016-10-22 03:37:56 +0000 UTC
+  started: 2016-10-22 03:38:00 +0000 UTC

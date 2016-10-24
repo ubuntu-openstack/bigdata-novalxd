@@ -1,0 +1,39 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "657"
+    start: 2016-10-22T04:16:37Z
+    stop: 2016-10-22T04:27:34Z
+  results:
+    raw: '{"Combine output records": "0", "Launched map tasks": "13", "Total vcore-seconds
+      taken by all reduce tasks": "603513", "CPU time spent (ms)": "92190", "Reduce
+      output records": "10000000", "Reduce shuffle bytes": "1040000048", "Bytes Written":
+      "1000000000", "Total time spent by all reduce tasks (ms)": "603513", "FILE:
+      Number of large read operations": "0", "Failed map tasks": "1", "Total committed
+      heap usage (bytes)": "7340032000", "HDFS: Number of read operations": "27",
+      "Total time spent by all reduces in occupied slots (ms)": "603513", "FILE: Number
+      of read operations": "0", "Combine input records": "0", "Failed Shuffles": "3",
+      "Merged Map outputs": "8", "HDFS: Number of bytes written": "1000000000", "Spilled
+      Records": "20000000", "Data-local map tasks": "7", "Map input records": "10000000",
+      "Total time spent by all maps in occupied slots (ms)": "925980", "Rack-local
+      map tasks": "4", "WRONG_LENGTH": "0", "Reduce input records": "10000000", "Shuffled
+      Maps ": "8", "Total vcore-seconds taken by all map tasks": "925980", "Launched
+      reduce tasks": "1", "Bytes Read": "1000000000", "Reduce input groups": "10000000",
+      "BAD_ID": "0", "WRONG_MAP": "0", "Virtual memory (bytes) snapshot": "25511415808",
+      "Total time spent by all map tasks (ms)": "925980", "HDFS: Number of bytes read":
+      "1000001200", "CONNECTION": "0", "Map output records": "10000000", "Killed map
+      tasks": "4", "Input split bytes": "1200", "Total megabyte-seconds taken by all
+      map tasks": "948203520", "Map output bytes": "1020000000", "Total megabyte-seconds
+      taken by all reduce tasks": "617997312", "FILE: Number of write operations":
+      "0", "Other local map tasks": "2", "HDFS: Number of write operations": "2",
+      "IO_ERROR": "3", "GC time elapsed (ms)": "2436", "Map output materialized bytes":
+      "1040000048", "HDFS: Number of large read operations": "0", "FILE: Number of
+      bytes written": "2081070528", "Physical memory (bytes) snapshot": "6052704256",
+      "FILE: Number of bytes read": "1040000012", "WRONG_REDUCE": "0"}'
+status: completed
+timing:
+  completed: 2016-10-22 04:27:35 +0000 UTC
+  enqueued: 2016-10-22 04:16:22 +0000 UTC
+  started: 2016-10-22 04:16:27 +0000 UTC

@@ -1,0 +1,39 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "1241"
+    start: 2016-10-22T03:53:36Z
+    stop: 2016-10-22T04:14:17Z
+  results:
+    raw: '{"BAD_ID": "0", "HDFS: Number of bytes read": "1000001200", "Data-local
+      map tasks": "6", "Reduce input groups": "10000000", "CPU time spent (ms)": "102840",
+      "Other local map tasks": "4", "Physical memory (bytes) snapshot": "5877014528",
+      "FILE: Number of large read operations": "0", "CONNECTION": "0", "HDFS: Number
+      of bytes written": "1000000000", "Total committed heap usage (bytes)": "7117209600",
+      "Map output materialized bytes": "1040000048", "WRONG_REDUCE": "0", "FILE: Number
+      of bytes read": "1040000012", "Combine input records": "0", "Virtual memory
+      (bytes) snapshot": "25490341888", "GC time elapsed (ms)": "2763", "Total time
+      spent by all maps in occupied slots (ms)": "940682", "Merged Map outputs": "8",
+      "Combine output records": "0", "Spilled Records": "20000000", "Launched reduce
+      tasks": "1", "Map input records": "10000000", "Reduce input records": "10000000",
+      "Shuffled Maps ": "8", "IO_ERROR": "6", "Map output records": "10000000", "Total
+      vcore-seconds taken by all reduce tasks": "1184642", "FILE: Number of bytes
+      written": "2081070528", "Failed Shuffles": "6", "HDFS: Number of write operations":
+      "2", "Reduce output records": "10000000", "Total time spent by all reduce tasks
+      (ms)": "1184642", "Map output bytes": "1020000000", "Total time spent by all
+      map tasks (ms)": "940682", "Launched map tasks": "15", "HDFS: Number of read
+      operations": "27", "HDFS: Number of large read operations": "0", "Total time
+      spent by all reduces in occupied slots (ms)": "1184642", "Bytes Read": "1000000000",
+      "Input split bytes": "1200", "Total vcore-seconds taken by all map tasks": "940682",
+      "Reduce shuffle bytes": "1040000048", "FILE: Number of read operations": "0",
+      "Total megabyte-seconds taken by all map tasks": "963258368", "Killed map tasks":
+      "5", "WRONG_LENGTH": "0", "WRONG_MAP": "0", "Failed map tasks": "2", "Rack-local
+      map tasks": "5", "FILE: Number of write operations": "0", "Bytes Written": "1000000000",
+      "Total megabyte-seconds taken by all reduce tasks": "1213073408"}'
+status: completed
+timing:
+  completed: 2016-10-22 04:14:18 +0000 UTC
+  enqueued: 2016-10-22 03:53:23 +0000 UTC
+  started: 2016-10-22 03:53:26 +0000 UTC

@@ -5,8 +5,7 @@ for OpenStack Summit Barcelona 2016_
 
 ---
 
-![alt text][juju-gui-image]
-![alt text][maas-image]
+[![Presentation Slides - Big Data and Machine Learning on OpenStack backed by Nova-LXD - Andrew McLeod and Ryan Beisner](presentation/images/slides-multi-sample-600.png)](http://prezi.com/cvhcdlqwnsfn)
 
 ## Overview
 Hadoop was built with bare metal in mind:  get your commodity hardware, 
@@ -194,6 +193,7 @@ Freenode IRC channels.
 * [MAAS: Metal as a Service][4]
 * [OpenStack Charm Development Guide][7]
 * [Ubuntu Server][6]
+* [Presentation/Slides from ODS Barcelona, October 2016][12]
 
 
 [1]: juju-bundles/spark-hadoop-processing.yaml
@@ -207,6 +207,4 @@ Freenode IRC channels.
 [9]: tools/deploy-openstack-nova-kvm.sh
 [10]: tools/deploy-spark-on-metal.sh
 [11]: tools/deploy-spark-on-openstack.sh
-
-[maas-image]: presentation/images/maas-machines-deployed-400.png "MAAS - Metal as a Service"
-[juju-gui-image]: presentation/images/juju-gui-spark-processing-400.png "Juju Big Data Deployment - Spark Processing"
+[12]: http://prezi.com/cvhcdlqwnsfn

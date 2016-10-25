@@ -1,6 +1,11 @@
 # OpenStack Nova LXD with Exclusive Machine Scheduling - ODS Barcelona 2016
 #     This OpenStack Juju Bundle deploys a model that is tailored to deploy
 #     to a specific set of machines via MAAS.
+#
+# This bundle is a PoC/demo, not highly available, and is specific to the
+# particular set of hardware used in a demo.  Further customization and
+# important architectural decisions should be taken into consideration
+# in each use case.
 machines:
 # Juju Bootstrap / Controller
   "0":

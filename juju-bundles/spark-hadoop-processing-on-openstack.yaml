@@ -1,18 +1,11 @@
-# We want the same Big Data bundle to be deployable on metal and on OpenStack
-#
-#
+# This bundle is a PoC/demo, not highly available, and is specific to the
+# particular set of hardware used in a demo.  Further customization and
+# important architectural decisions should be taken into consideration
+# in each use case.
 series: xenial
 services:
   juju-gui:
     charm: "cs:juju-gui"
-#  ganglia:
-#    series: trusty
-#    charm: cs:~charmers/trusty/ganglia
-#    charm: "cs:~1chb1n/xenial/ganglia"
-#    to: "1"
-#  ganglia-node:
-#    charm: "cs:~charmers/trusty/ganglia-node"
-#    charm: "cs:~1chb1n/xenial/ganglia-node"
   namenode:
     charm: "cs:~bigdata-dev/xenial/hadoop-namenode"
     annotations:
@@ -64,12 +57,3 @@ relations:
   - [openjdk, resourcemanager]
   - [openjdk, slave]
   - [openjdk, spark]
-  # ganglia:node relations
-#  - ["ganglia:node", namenode]
-#  - ["ganglia:node", resourcemanager]
-#  - ["ganglia:node", slave]
-#  - ["ganglia:node", ganglia-node]
-  # ganglia subordinate relations
-#  - [ganglia-node, namenode]
-#  - [ganglia-node, resourcemanager]
-#  - [ganglia-node, slave]

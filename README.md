@@ -40,8 +40,8 @@ We cover:
 
 #### Benchmarks and Jobs
 
-1. Terasort Benchmark: The classic mapreduce benchmark - but this time, it's a gigasort 
-2. Anomoly Detection and Machine Learning Job: <TODO description of job>
+1. Terasort Benchmark: The classic mapreduce benchmark - but this time, it's a gigasort.
+2. Anomoly Detection and Machine Learning Job - a Spark job which identifies financial transaction anomalies via unsupervised learning.
 
 
 #### Deployment Toplogies
@@ -68,22 +68,16 @@ with the same resources present in all three scenarios.
 
 #### Software Specs
 
-* OpenStack Mitaka on Ubuntu 16.04 Xenial
-* Juju 1.25.6 on Ubuntu 16.04 Xenial
-* MAAS 1.9 on on Ubuntu 14.04 Trusty
+* Ubuntu Server 16.04 LTS
+* OpenStack Mitaka
+* OpenStack Charms
+* Juju + MAAS
 * Apache Bigtop Hadoop (HDFS and YARN) 2.7.1
 * Apache Bigtop Spark version 1.5.1
 * All Big Data and OpenStack applications and services are deployed onto 
   Ubuntu 16.04 Xenial.
 * OpenStack Newton was pre-RC at the time of this research and writing,
   so OpenStack Mitaka was selected.
-* Also, as of this research and writing, MAAS 2.0 was released.  However,
-  the corresponding Juju 2.0 product was in beta development.  Because
-  MAAS 2.0 does not support the stable Juju 1.25.x, MAAS 1.9 was selected
-  for these research exercises.
-* When OpenStack Newton and Juju 2.0 release, the same routines should be
-  compatible with a MAAS 2.x and Juju 2.x combination on 16.04, and these
-  procedures can be re-visited and updated accordingly.
 
 
 ## Scenarios
@@ -118,8 +112,11 @@ The following is necesary and applicable to all scenaios.
  - Spark Processing will deploy and announce the IP info for the YARN unit.
 
 3. Post-Deployment Routine
- - TODO: script and link to script for benchmarks and jobs
+ - Run:
 
+    ```sh
+    tools/run_all_tests.sh
+    ```
 
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-LXD
 
@@ -148,8 +145,10 @@ The following is necesary and applicable to all scenaios.
  - Spark Processing will deploy and announce the IP info for the YARN unit.
 
 3. Post-Deployment Routine
- - TODO: script and link to script for benchmarks and jobs
 
+    ```sh
+    tools/run_all_tests.sh
+    ```
 
 ### Spark Hadoop Processing on Ubuntu OpenStack with Nova-KVM
 
@@ -178,7 +177,10 @@ The following is necesary and applicable to all scenaios.
  - Spark Processing will deploy and announce the IP info for the YARN unit.
 
 3. Post-Deployment Routine
- - TODO: script and link to script for benchmarks and jobs
+
+    ```sh
+    tools/run_all_tests.sh
+    ```
 
 
 ## Additional Resources

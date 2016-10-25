@@ -1,0 +1,135 @@
+#!/bin/bash
+
+# Set network defaults, if not already set.
+[[ -z "$GATEWAY" ]] && export GATEWAY="10.245.168.1"
+[[ -z "$NAMESERVER" ]] && export NAMESERVER="10.245.168.2"
+[[ -z "$CIDR_EXT" ]] && export CIDR_EXT="10.245.168.0/21"
+[[ -z "$FIP_RANGE" ]] && export FIP_RANGE="10.245.175.0:10.245.175.254"
+[[ -z "$CIDR_PRIV" ]] && export CIDR_PRIV="10.5.16.0/24"
+
+function upload_image {
+    src=$1
+    image_name=$2
+    image_file=$3
+    image_format=${4:-"qcow2"}
+#    image_hv_type=${5:-"qemu"}
+#    image_arch=${6:-"x86_64"}
+
+    case "$src" in
+        swift) http_root="http://$SWIFT_IP:80/swift/v1/images";;
+        cloudimages) http_root="http://cloud-images.ubuntu.com/${image_name}/current";;
+    esac
+
+    mkdir -vp ~/images
+
+    [ -f ~/images/$image_file ] || {
+        wget -O ~/images/$image_file ${http_root}/${image_file}
+    }
+
+    openstack image show $image_name || {
+        openstack image create --public \
+            --container-format=bare --disk-format=$image_format \
+            --file=${HOME}/images/$image_file  $image_name \
+#            --property architecture=$image_arch \
+#            --property hypervisor_type=$image_hv_type
+    }
+}
+
+function install_packages {
+    # Install dependencies and CLI tools
+    sudo apt-get install git testrepository subunit python-nose python-lxml python-boto \
+        python-junitxml python-subunit python-testresources python-oslotest python-stevedore \
+        python-cinderclient python-glanceclient python-heatclient python-keystoneclient \
+        python-neutronclient python-novaclient python-swiftclient python-ceilometerclient \
+        python-openstackclient openvswitch-test openvswitch-common -y
+}
+
+function create_demo_user {
+    # Create demo/testing user and tenant
+    openstack project show demo || openstack project create demo
+    openstack user show demo || openstack user create --project demo --password pass --enable --email demo@dev.null demo
+    openstack role show Member || openstack role create Member
+    openstack role add --user demo --project demo Member || :
+}
+
+function create_keypairs {
+    openstack keypair show mykey || openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
+}
+
+function create_exclusive_aggregate {
+    exclusive_flavor=$1
+    max_instances=$2
+    app_hostnames=$(./bin/application-hostnames nova-compute-lxd-${exclusive_flavor})
+    if [ -n "$app_hostnames" ]; then
+        aggregate_name=exclusive-lxd-${exclusive_flavor}
+        openstack aggregate show ${aggregate_name} || {
+            openstack aggregate create ${aggregate_name}
+            openstack aggregate set --property exclusive-flavor=${exclusive_flavor} ${aggregate_name}
+            openstack aggregate set --property max_instances_per_host=$max_instances ${aggregate_name}
+            for hostname in ${app_hostnames}; do
+                openstack aggregate add host ${aggregate_name} ${hostname}
+            done
+        }
+    else
+        echo " ! Expected application hostnames, found none."
+        exit 1
+    fi
+}
+
+function create_exclusive_flavor {
+    exclusive_flavor=$1
+    ram=$2
+    cpu=$3
+    disk=$4
+    flavor_name=e1.lxd.${exclusive_flavor}
+    openstack flavor show ${flavor_name} || {
+        openstack flavor create --public --ram ${ram} --disk ${disk} --vcpus ${cpu} ${flavor_name}
+        openstack flavor set --property aggregate_instance_extra_specs:exclusive-flavor=${exclusive_flavor} ${flavor_name}
+    }
+}
+
+function set_quotas {
+    # Set quotas to ridiculous levels for uninhibited testing
+    for tenant in admin demo; do
+        TENANT_ID="$(openstack project show admin | grep " id " | awk '{ print $4 }')"
+
+        openstack quota set \
+        --instances 999999 \
+        --ram 999999 \
+        --floating-ips 999999 \
+        --fixed-ips 999999 \
+        --cores 999999 \
+        --key-pairs 999999 \
+        --secgroups 999999 \
+        --secgroup-rules 999999 \
+        $TENANT_ID
+
+        neutron quota-update \
+        --network 999999 \
+        --subnet 999999 \
+        --port 999999 \
+        --router 999999 \
+        --floatingip 999999 \
+        --security-group 999999 \
+        --security-group-rule 999999 \
+        --pool 999999 \
+        --tenant-id $TENANT_ID
+    done
+}
+
+function create_secgroup_rules {
+    # Set security group rules
+    for port in 22 80 443 8080 3128 8020 50070 8088 19888 8042 18080; do
+        openstack security group rule create default --proto tcp --dst-port $port --src-ip 0.0.0.0/0 ||:
+        openstack security group rule create default --proto tcp --dst-port $port --src-ip ::/0 ||:
+    done
+    openstack security group rule create default --proto icmp --src-ip 0.0.0.0/0 ||:
+    openstack security group rule create default --proto icmp --src-ip ::/0 ||:
+    openstack security group rule create default --proto udp --dst-port 53 --src-ip 0.0.0.0/0 ||:
+    openstack security group rule create default --proto udp --dst-port 53 --src-ip ::/0 ||:
+    openstack security group rule list
+}
+
+function delete_all_public_flavors {
+    for i in $(openstack flavor list | grep True | awk '{ print $2 }'); do echo $i; openstack flavor delete $i; done
+}

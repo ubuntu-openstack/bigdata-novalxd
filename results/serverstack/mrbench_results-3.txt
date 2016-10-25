@@ -1,0 +1,37 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "55"
+    start: 2016-10-16T22:41:40Z
+    stop: 2016-10-16T22:42:35Z
+  results:
+    raw: '{"Data-local map tasks": "2", "Map output bytes": "15", "Total megabyte-seconds
+      taken by all map tasks": "57778176", "Failed Shuffles": "0", "Reduce input groups":
+      "1", "Virtual memory (bytes) snapshot": "11011891200", "Total time spent by
+      all maps in occupied slots (ms)": "56424", "FILE: Number of bytes read": "27",
+      "Total committed heap usage (bytes)": "903098368", "FILE: Number of large read
+      operations": "0", "Total time spent by all reduce tasks (ms)": "11348", "Input
+      split bytes": "452", "WRONG_REDUCE": "0", "Reduce shuffle bytes": "39", "FILE:
+      Number of write operations": "0", "Map input records": "3", "Reduce input records":
+      "3", "FILE: Number of read operations": "0", "Physical memory (bytes) snapshot":
+      "1215160320", "HDFS: Number of read operations": "12", "FILE: Number of bytes
+      written": "470047", "WRONG_MAP": "0", "IO_ERROR": "0", "Launched reduce tasks":
+      "1", "Bytes Written": "9", "HDFS: Number of bytes written": "9", "Rack-local
+      map tasks": "1", "Total time spent by all reduces in occupied slots (ms)": "11348",
+      "Combine output records": "0", "Launched map tasks": "3", "Combine input records":
+      "0", "Merged Map outputs": "3", "Spilled Records": "6", "BAD_ID": "0", "Total
+      vcore-seconds taken by all reduce tasks": "11348", "GC time elapsed (ms)": "760",
+      "HDFS: Number of bytes read": "458", "Total megabyte-seconds taken by all reduce
+      tasks": "11620352", "Bytes Read": "6", "HDFS: Number of write operations": "2",
+      "Shuffled Maps ": "3", "Map output materialized bytes": "39", "Reduce output
+      records": "3", "HDFS: Number of large read operations": "0", "Total vcore-seconds
+      taken by all map tasks": "56424", "CONNECTION": "0", "Map output records": "3",
+      "WRONG_LENGTH": "0", "CPU time spent (ms)": "4350", "Total time spent by all
+      map tasks (ms)": "56424"}'
+status: completed
+timing:
+  completed: 2016-10-16 22:42:36 +0000 UTC
+  enqueued: 2016-10-16 22:41:29 +0000 UTC
+  started: 2016-10-16 22:41:35 +0000 UTC

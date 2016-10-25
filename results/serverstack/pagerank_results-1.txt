@@ -1,0 +1,24 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: ""
+    raw: |
+      ,PageRank-MLlibConfig,,,,,10,12,,200000,4.0,1.3,0.15
+    start: 2016-10-16T22:16:27Z
+    stop: 2016-10-16T22:16:36Z
+  results:
+    duration:
+      direction: asc
+      units: secs
+      value: ""
+    throughput:
+      direction: desc
+      units: x/sec
+      value: ""
+status: completed
+timing:
+  completed: 2016-10-16 22:16:38 +0000 UTC
+  enqueued: 2016-10-16 22:16:00 +0000 UTC
+  started: 2016-10-16 22:16:04 +0000 UTC

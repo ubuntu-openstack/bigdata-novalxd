@@ -1,0 +1,40 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "657"
+    start: 2016-10-20T09:45:04Z
+    stop: 2016-10-20T09:56:02Z
+  results:
+    raw: '{"WRONG_REDUCE": "0", "Launched reduce tasks": "1", "HDFS: Number of read
+      operations": "27", "GC time elapsed (ms)": "1612", "HDFS: Number of bytes written":
+      "1000000000", "Reduce output records": "10000000", "BAD_ID": "0", "Map output
+      bytes": "1020000000", "Other local map tasks": "2", "Rack-local map tasks":
+      "4", "CPU time spent (ms)": "99740", "HDFS: Number of bytes read": "1000001200",
+      "Bytes Read": "1000000000", "Data-local map tasks": "5", "Total megabyte-seconds
+      taken by all reduce tasks": "620032000", "Combine input records": "0", "HDFS:
+      Number of large read operations": "0", "Input split bytes": "1200", "Spilled
+      Records": "20000000", "FILE: Number of read operations": "0", "FILE: Number
+      of bytes read": "1040000012", "FILE: Number of write operations": "0", "Bytes
+      Written": "1000000000", "Total time spent by all map tasks (ms)": "109882",
+      "Total time spent by all maps in occupied slots (ms)": "109882", "FILE: Number
+      of large read operations": "0", "Map output records": "10000000", "Virtual memory
+      (bytes) snapshot": "25495572480", "Total vcore-seconds taken by all map tasks":
+      "109882", "Launched map tasks": "11", "Physical memory (bytes) snapshot": "5816528896",
+      "Total time spent by all reduces in occupied slots (ms)": "605500", "Killed
+      map tasks": "2", "Reduce input records": "10000000", "CONNECTION": "0", "Failed
+      Shuffles": "3", "Shuffled Maps ": "8", "IO_ERROR": "3", "Reduce shuffle bytes":
+      "1040000048", "Combine output records": "0", "Failed map tasks": "1", "Reduce
+      input groups": "10000000", "WRONG_LENGTH": "0", "Total time spent by all reduce
+      tasks (ms)": "605500", "Map input records": "10000000", "FILE: Number of bytes
+      written": "2081070600", "Total committed heap usage (bytes)": "5782372352",
+      "Map output materialized bytes": "1040000048", "HDFS: Number of write operations":
+      "2", "Total megabyte-seconds taken by all map tasks": "112519168", "WRONG_MAP":
+      "0", "Total vcore-seconds taken by all reduce tasks": "605500", "Merged Map
+      outputs": "8"}'
+status: completed
+timing:
+  completed: 2016-10-20 09:56:03 +0000 UTC
+  enqueued: 2016-10-20 09:44:51 +0000 UTC
+  started: 2016-10-20 09:44:52 +0000 UTC

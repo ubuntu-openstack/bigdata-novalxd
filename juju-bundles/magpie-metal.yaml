@@ -1,0 +1,7 @@
+# Tooling and Infrastructure Validation Bundle
+series: xenial
+services:
+  z-magpie:
+    constraints: "arch=amd64 tags=demo"
+    charm: "cs:~admcleod/xenial/magpie"
+    num_units: 10

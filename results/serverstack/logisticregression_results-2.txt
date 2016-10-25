@@ -1,0 +1,24 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: ""
+    raw: |
+      ,LogisticRegression-MLlibConfig,,,,,300000000,4,0.5,720,,3,,,,,,,
+    start: 2016-10-16T22:35:44Z
+    stop: 2016-10-16T22:35:54Z
+  results:
+    duration:
+      direction: asc
+      units: secs
+      value: ""
+    throughput:
+      direction: desc
+      units: x/sec
+      value: ""
+status: completed
+timing:
+  completed: 2016-10-16 22:35:55 +0000 UTC
+  enqueued: 2016-10-16 22:35:30 +0000 UTC
+  started: 2016-10-16 22:35:35 +0000 UTC

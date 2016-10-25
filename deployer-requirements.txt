@@ -1,2 +1,7 @@
 bzr
 bzr+lp:juju-deployer#egg=juju-deployer
+python-openstackclient
+python-keystoneclient
+python-neutronclient
+python-novaclient
+python-heatclient

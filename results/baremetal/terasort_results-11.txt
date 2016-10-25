@@ -1,0 +1,38 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "76"
+    start: 2016-10-21T10:02:38Z
+    stop: 2016-10-21T10:03:55Z
+  results:
+    raw: '{"Reduce input records": "10000000", "Total time spent by all map tasks
+      (ms)": "71027", "Shuffled Maps ": "8", "Rack-local map tasks": "2", "HDFS: Number
+      of write operations": "2", "HDFS: Number of large read operations": "0", "Map
+      output materialized bytes": "1040000048", "Total time spent by all maps in occupied
+      slots (ms)": "71027", "Map output bytes": "1020000000", "CPU time spent (ms)":
+      "84540", "Total megabyte-seconds taken by all map tasks": "72731648", "WRONG_MAP":
+      "0", "Total time spent by all reduces in occupied slots (ms)": "28663", "Combine
+      output records": "0", "Bytes Read": "1000000000", "Map output records": "10000000",
+      "Physical memory (bytes) snapshot": "6066028544", "FILE: Number of large read
+      operations": "0", "Total time spent by all reduce tasks (ms)": "28663", "WRONG_LENGTH":
+      "0", "Total vcore-seconds taken by all map tasks": "71027", "Spilled Records":
+      "20000000", "Reduce shuffle bytes": "1040000048", "Reduce output records": "10000000",
+      "GC time elapsed (ms)": "1058", "HDFS: Number of read operations": "27", "Total
+      vcore-seconds taken by all reduce tasks": "28663", "Reduce input groups": "10000000",
+      "CONNECTION": "0", "Failed Shuffles": "0", "Combine input records": "0", "HDFS:
+      Number of bytes read": "1000001072", "Map input records": "10000000", "FILE:
+      Number of read operations": "0", "Killed map tasks": "1", "Launched reduce tasks":
+      "1", "Total megabyte-seconds taken by all reduce tasks": "29350912", "FILE:
+      Number of bytes written": "2081068791", "FILE: Number of bytes read": "1040000012",
+      "Launched map tasks": "9", "FILE: Number of write operations": "0", "Bytes Written":
+      "1000000000", "HDFS: Number of bytes written": "1000000000", "Merged Map outputs":
+      "8", "Virtual memory (bytes) snapshot": "25495830528", "BAD_ID": "0", "Data-local
+      map tasks": "7", "Input split bytes": "1072", "IO_ERROR": "0", "WRONG_REDUCE":
+      "0", "Total committed heap usage (bytes)": "5800198144"}'
+status: completed
+timing:
+  completed: 2016-10-21 10:03:55 +0000 UTC
+  enqueued: 2016-10-21 10:02:26 +0000 UTC
+  started: 2016-10-21 10:02:28 +0000 UTC

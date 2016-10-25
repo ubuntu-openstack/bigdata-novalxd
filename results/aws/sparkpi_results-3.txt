@@ -1,0 +1,179 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "54"
+    raw: "16/10/18 17:29:46 INFO SparkContext: Running Spark version 1.5.1\n16/10/18
+      17:29:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your
+      platform... using builtin-java classes where applicable\n16/10/18 17:29:48 INFO
+      SecurityManager: Changing view acls to: root\n16/10/18 17:29:48 INFO SecurityManager:
+      Changing modify acls to: root\n16/10/18 17:29:48 INFO SecurityManager: SecurityManager:
+      authentication disabled; ui acls disabled; users with view permissions: Set(root);
+      users with modify permissions: Set(root)\n16/10/18 17:29:50 INFO Slf4jLogger:
+      Slf4jLogger started\n16/10/18 17:29:50 INFO Remoting: Starting remoting\n16/10/18
+      17:29:51 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@172.31.23.206:37275]\n16/10/18
+      17:29:51 INFO Utils: Successfully started service 'sparkDriver' on port 37275.\n16/10/18
+      17:29:51 INFO SparkEnv: Registering MapOutputTracker\n16/10/18 17:29:51 INFO
+      SparkEnv: Registering BlockManagerMaster\n16/10/18 17:29:51 INFO DiskBlockManager:
+      Created local directory at /tmp/blockmgr-8a8973cf-5dea-49cb-a836-d59d6d9c8488\n16/10/18
+      17:29:51 INFO MemoryStore: MemoryStore started with capacity 534.5 MB\n16/10/18
+      17:29:52 INFO HttpFileServer: HTTP File server directory is /tmp/spark-39202013-35d1-4597-b93a-7c8e14fc082d/httpd-b3ad2151-12db-47fe-bd59-d4f24b1c405e\n16/10/18
+      17:29:52 INFO HttpServer: Starting HTTP Server\n16/10/18 17:29:52 INFO Utils:
+      Successfully started service 'HTTP file server' on port 36260.\n16/10/18 17:29:52
+      INFO SparkEnv: Registering OutputCommitCoordinator\n16/10/18 17:29:52 INFO Utils:
+      Successfully started service 'SparkUI' on port 4040.\n16/10/18 17:29:52 INFO
+      SparkUI: Started SparkUI at http://172.31.23.206:4040\n16/10/18 17:29:53 INFO
+      SparkContext: Added JAR file:/usr/lib/spark/lib/spark-examples.jar at http://172.31.23.206:36260/jars/spark-examples.jar
+      with timestamp 1476811793091\n16/10/18 17:29:53 WARN MetricsSystem: Using default
+      name DAGScheduler for source because spark.app.id is not set.\n16/10/18 17:29:53
+      INFO RMProxy: Connecting to ResourceManager at ip-172-31-0-22.eu-west-1.compute.internal/172.31.0.22:8032\n16/10/18
+      17:29:54 INFO Client: Requesting a new application from cluster with 2 NodeManagers\n16/10/18
+      17:29:54 INFO Client: Verifying our application has not requested more than
+      the maximum memory capability of the cluster (8192 MB per container)\n16/10/18
+      17:29:54 INFO Client: Will allocate AM container, with 896 MB memory including
+      384 MB overhead\n16/10/18 17:29:54 INFO Client: Setting up container launch
+      context for our AM\n16/10/18 17:29:54 INFO Client: Setting up the launch environment
+      for our AM container\n16/10/18 17:29:54 INFO Client: Preparing resources for
+      our AM container\n16/10/18 17:29:56 INFO Client: Uploading resource file:/usr/lib/spark/lib/spark-assembly-1.5.1-hadoop2.7.1.jar
+      -> hdfs://ip-172-31-28-57.eu-west-1.compute.internal:8020/user/root/.sparkStaging/application_1476808697591_0011/spark-assembly-1.5.1-hadoop2.7.1.jar\n16/10/18
+      17:30:03 INFO Client: Uploading resource file:/tmp/spark-39202013-35d1-4597-b93a-7c8e14fc082d/__spark_conf__2614281646399045334.zip
+      -> hdfs://ip-172-31-28-57.eu-west-1.compute.internal:8020/user/root/.sparkStaging/application_1476808697591_0011/__spark_conf__2614281646399045334.zip\n16/10/18
+      17:30:04 INFO SecurityManager: Changing view acls to: root\n16/10/18 17:30:04
+      INFO SecurityManager: Changing modify acls to: root\n16/10/18 17:30:04 INFO
+      SecurityManager: SecurityManager: authentication disabled; ui acls disabled;
+      users with view permissions: Set(root); users with modify permissions: Set(root)\n16/10/18
+      17:30:04 INFO Client: Submitting application 11 to ResourceManager\n16/10/18
+      17:30:04 INFO YarnClientImpl: Submitted application application_1476808697591_0011\n16/10/18
+      17:30:05 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:05 INFO Client: \n\t client token: N/A\n\t
+      diagnostics: N/A\n\t ApplicationMaster host: N/A\n\t ApplicationMaster RPC port:
+      -1\n\t queue: default\n\t start time: 1476811804284\n\t final status: UNDEFINED\n\t
+      tracking URL: http://ip-172-31-0-22.eu-west-1.compute.internal:20888/proxy/application_1476808697591_0011/\n\t
+      user: root\n16/10/18 17:30:06 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:07 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:08 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:09 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:10 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:11 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:12 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:13 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:14 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:15 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:16 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:17 INFO Client: Application report for application_1476808697591_0011
+      (state: ACCEPTED)\n16/10/18 17:30:17 INFO YarnSchedulerBackend$YarnSchedulerEndpoint:
+      ApplicationMaster registered as AkkaRpcEndpointRef(Actor[akka.tcp://sparkYarnAM@172.31.32.216:45735/user/YarnAM#-685530693])\n16/10/18
+      17:30:17 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter,
+      Map(PROXY_HOSTS -> ip-172-31-0-22.eu-west-1.compute.internal, PROXY_URI_BASES
+      -> http://ip-172-31-0-22.eu-west-1.compute.internal:20888/proxy/application_1476808697591_0011),
+      /proxy/application_1476808697591_0011\n16/10/18 17:30:17 INFO JettyUtils: Adding
+      filter: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter\n16/10/18
+      17:30:18 INFO Client: Application report for application_1476808697591_0011
+      (state: RUNNING)\n16/10/18 17:30:18 INFO Client: \n\t client token: N/A\n\t
+      diagnostics: N/A\n\t ApplicationMaster host: 172.31.32.216\n\t ApplicationMaster
+      RPC port: 0\n\t queue: default\n\t start time: 1476811804284\n\t final status:
+      UNDEFINED\n\t tracking URL: http://ip-172-31-0-22.eu-west-1.compute.internal:20888/proxy/application_1476808697591_0011/\n\t
+      user: root\n16/10/18 17:30:18 INFO YarnClientSchedulerBackend: Application application_1476808697591_0011
+      has started running.\n16/10/18 17:30:18 INFO Utils: Successfully started service
+      'org.apache.spark.network.netty.NettyBlockTransferService' on port 33502.\n16/10/18
+      17:30:18 INFO NettyBlockTransferService: Server created on 33502\n16/10/18 17:30:18
+      INFO BlockManagerMaster: Trying to register BlockManager\n16/10/18 17:30:18
+      INFO BlockManagerMasterEndpoint: Registering block manager 172.31.23.206:33502
+      with 534.5 MB RAM, BlockManagerId(driver, 172.31.23.206, 33502)\n16/10/18 17:30:18
+      INFO BlockManagerMaster: Registered BlockManager\n16/10/18 17:30:19 INFO EventLoggingListener:
+      Logging events to hdfs:///var/log/spark/apps/application_1476808697591_0011\n16/10/18
+      17:30:23 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling
+      beginning after waiting maxRegisteredResourcesWaitingTime: 30000(ms)\n16/10/18
+      17:30:24 INFO SparkContext: Starting job: reduce at SparkPi.scala:36\n16/10/18
+      17:30:24 INFO DAGScheduler: Got job 0 (reduce at SparkPi.scala:36) with 10 output
+      partitions\n16/10/18 17:30:24 INFO DAGScheduler: Final stage: ResultStage 0(reduce
+      at SparkPi.scala:36)\n16/10/18 17:30:24 INFO DAGScheduler: Parents of final
+      stage: List()\n16/10/18 17:30:24 INFO DAGScheduler: Missing parents: List()\n16/10/18
+      17:30:24 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at
+      map at SparkPi.scala:32), which has no missing parents\n16/10/18 17:30:24 INFO
+      MemoryStore: ensureFreeSpace(1888) called with curMem=0, maxMem=560497950\n16/10/18
+      17:30:24 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated
+      size 1888.0 B, free 534.5 MB)\n16/10/18 17:30:24 INFO MemoryStore: ensureFreeSpace(1202)
+      called with curMem=1888, maxMem=560497950\n16/10/18 17:30:24 INFO MemoryStore:
+      Block broadcast_0_piece0 stored as bytes in memory (estimated size 1202.0 B,
+      free 534.5 MB)\n16/10/18 17:30:24 INFO BlockManagerInfo: Added broadcast_0_piece0
+      in memory on 172.31.23.206:33502 (size: 1202.0 B, free: 534.5 MB)\n16/10/18
+      17:30:24 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861\n16/10/18
+      17:30:24 INFO DAGScheduler: Submitting 10 missing tasks from ResultStage 0 (MapPartitionsRDD[1]
+      at map at SparkPi.scala:32)\n16/10/18 17:30:24 INFO YarnScheduler: Adding task
+      set 0.0 with 10 tasks\n16/10/18 17:30:29 INFO YarnClientSchedulerBackend: Registered
+      executor: AkkaRpcEndpointRef(Actor[akka.tcp://sparkExecutor@ip-172-31-32-216.eu-west-1.compute.internal:39439/user/Executor#2033404125])
+      with ID 1\n16/10/18 17:30:29 INFO TaskSetManager: Starting task 0.0 in stage
+      0.0 (TID 0, ip-172-31-32-216.eu-west-1.compute.internal, PROCESS_LOCAL, 2145
+      bytes)\n16/10/18 17:30:30 INFO BlockManagerMasterEndpoint: Registering block
+      manager ip-172-31-32-216.eu-west-1.compute.internal:40333 with 534.5 MB RAM,
+      BlockManagerId(1, ip-172-31-32-216.eu-west-1.compute.internal, 40333)\n16/10/18
+      17:30:32 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ip-172-31-32-216.eu-west-1.compute.internal:40333
+      (size: 1202.0 B, free: 534.5 MB)\n16/10/18 17:30:32 INFO YarnClientSchedulerBackend:
+      Registered executor: AkkaRpcEndpointRef(Actor[akka.tcp://sparkExecutor@ip-172-31-27-166.eu-west-1.compute.internal:36086/user/Executor#-1694495381])
+      with ID 2\n16/10/18 17:30:32 INFO TaskSetManager: Starting task 1.0 in stage
+      0.0 (TID 1, ip-172-31-27-166.eu-west-1.compute.internal, PROCESS_LOCAL, 2145
+      bytes)\n16/10/18 17:30:33 INFO TaskSetManager: Starting task 2.0 in stage 0.0
+      (TID 2, ip-172-31-32-216.eu-west-1.compute.internal, PROCESS_LOCAL, 2145 bytes)\n16/10/18
+      17:30:33 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 3314
+      ms on ip-172-31-32-216.eu-west-1.compute.internal (1/10)\n16/10/18 17:30:33
+      INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3, ip-172-31-32-216.eu-west-1.compute.internal,
+      PROCESS_LOCAL, 2145 bytes)\n16/10/18 17:30:33 INFO TaskSetManager: Starting
+      task 4.0 in stage 0.0 (TID 4, ip-172-31-32-216.eu-west-1.compute.internal, PROCESS_LOCAL,
+      2145 bytes)\n16/10/18 17:30:33 INFO TaskSetManager: Finished task 2.0 in stage
+      0.0 (TID 2) in 106 ms on ip-172-31-32-216.eu-west-1.compute.internal (2/10)\n16/10/18
+      17:30:33 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 35 ms
+      on ip-172-31-32-216.eu-west-1.compute.internal (3/10)\n16/10/18 17:30:33 INFO
+      TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5, ip-172-31-32-216.eu-west-1.compute.internal,
+      PROCESS_LOCAL, 2145 bytes)\n16/10/18 17:30:33 INFO TaskSetManager: Finished
+      task 4.0 in stage 0.0 (TID 4) in 76 ms on ip-172-31-32-216.eu-west-1.compute.internal
+      (4/10)\n16/10/18 17:30:33 INFO TaskSetManager: Starting task 6.0 in stage 0.0
+      (TID 6, ip-172-31-32-216.eu-west-1.compute.internal, PROCESS_LOCAL, 2145 bytes)\n16/10/18
+      17:30:33 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 39 ms
+      on ip-172-31-32-216.eu-west-1.compute.internal (5/10)\n16/10/18 17:30:33 INFO
+      TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7, ip-172-31-32-216.eu-west-1.compute.internal,
+      PROCESS_LOCAL, 2145 bytes)\n16/10/18 17:30:33 INFO TaskSetManager: Finished
+      task 6.0 in stage 0.0 (TID 6) in 37 ms on ip-172-31-32-216.eu-west-1.compute.internal
+      (6/10)\n16/10/18 17:30:33 INFO TaskSetManager: Starting task 8.0 in stage 0.0
+      (TID 8, ip-172-31-32-216.eu-west-1.compute.internal, PROCESS_LOCAL, 2145 bytes)\n16/10/18
+      17:30:33 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 38 ms
+      on ip-172-31-32-216.eu-west-1.compute.internal (7/10)\n16/10/18 17:30:33 INFO
+      TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9, ip-172-31-32-216.eu-west-1.compute.internal,
+      PROCESS_LOCAL, 2145 bytes)\n16/10/18 17:30:33 INFO TaskSetManager: Finished
+      task 8.0 in stage 0.0 (TID 8) in 54 ms on ip-172-31-32-216.eu-west-1.compute.internal
+      (8/10)\n16/10/18 17:30:33 INFO BlockManagerMasterEndpoint: Registering block
+      manager ip-172-31-27-166.eu-west-1.compute.internal:36428 with 534.5 MB RAM,
+      BlockManagerId(2, ip-172-31-27-166.eu-west-1.compute.internal, 36428)\n16/10/18
+      17:30:33 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 41 ms
+      on ip-172-31-32-216.eu-west-1.compute.internal (9/10)\n16/10/18 17:30:36 INFO
+      BlockManagerInfo: Added broadcast_0_piece0 in memory on ip-172-31-27-166.eu-west-1.compute.internal:36428
+      (size: 1202.0 B, free: 534.5 MB)\n16/10/18 17:30:37 INFO TaskSetManager: Finished
+      task 1.0 in stage 0.0 (TID 1) in 5149 ms on ip-172-31-27-166.eu-west-1.compute.internal
+      (10/10)\n16/10/18 17:30:37 INFO DAGScheduler: ResultStage 0 (reduce at SparkPi.scala:36)
+      finished in 12.823 s\n16/10/18 17:30:37 INFO YarnScheduler: Removed TaskSet
+      0.0, whose tasks have all completed, from pool \n16/10/18 17:30:37 INFO DAGScheduler:
+      Job 0 finished: reduce at SparkPi.scala:36, took 13.618340 s\nPi is roughly
+      3.142544\n16/10/18 17:30:37 INFO SparkUI: Stopped Spark web UI at http://172.31.23.206:4040\n16/10/18
+      17:30:37 INFO DAGScheduler: Stopping DAGScheduler\n16/10/18 17:30:37 INFO YarnClientSchedulerBackend:
+      Interrupting monitor thread\n16/10/18 17:30:37 INFO YarnClientSchedulerBackend:
+      Shutting down all executors\n16/10/18 17:30:37 INFO YarnClientSchedulerBackend:
+      Asking each executor to shut down\n16/10/18 17:30:37 INFO YarnClientSchedulerBackend:
+      Stopped\n16/10/18 17:30:37 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint
+      stopped!\n16/10/18 17:30:37 INFO MemoryStore: MemoryStore cleared\n16/10/18
+      17:30:37 INFO BlockManager: BlockManager stopped\n16/10/18 17:30:37 INFO BlockManagerMaster:
+      BlockManagerMaster stopped\n16/10/18 17:30:37 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:
+      OutputCommitCoordinator stopped!\n16/10/18 17:30:37 INFO SparkContext: Successfully
+      stopped SparkContext\n16/10/18 17:30:37 INFO RemoteActorRefProvider$RemotingTerminator:
+      Shutting down remote daemon.\n16/10/18 17:30:37 INFO RemoteActorRefProvider$RemotingTerminator:
+      Remote daemon shut down; proceeding with flushing remote transports.\n16/10/18
+      17:30:38 INFO ShutdownHookManager: Shutdown hook called\n16/10/18 17:30:38 INFO
+      ShutdownHookManager: Deleting directory /tmp/spark-39202013-35d1-4597-b93a-7c8e14fc082d\n"
+    start: 2016-10-18T17:29:44Z
+    stop: 2016-10-18T17:30:38Z
+  output: '{''status'': ''completed''}'
+status: completed
+timing:
+  completed: 2016-10-18 17:30:39 +0000 UTC
+  enqueued: 2016-10-18 17:29:43 +0000 UTC
+  started: 2016-10-18 17:29:43 +0000 UTC

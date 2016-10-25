@@ -1,0 +1,38 @@
+results:
+  meta:
+    composite:
+      direction: asc
+      units: secs
+      value: "78"
+    start: 2016-10-21T09:24:55Z
+    stop: 2016-10-21T09:26:13Z
+  results:
+    raw: '{"Total megabyte-seconds taken by all reduce tasks": "25883648", "Input
+      split bytes": "1072", "WRONG_MAP": "0", "CPU time spent (ms)": "86850", "BAD_ID":
+      "0", "Total time spent by all reduces in occupied slots (ms)": "25277", "FILE:
+      Number of large read operations": "0", "Spilled Records": "20000000", "Killed
+      map tasks": "1", "Bytes Read": "1000000000", "WRONG_LENGTH": "0", "FILE: Number
+      of bytes written": "2081068791", "Total time spent by all map tasks (ms)": "78005",
+      "Map output records": "10000000", "Bytes Written": "1000000000", "Total vcore-seconds
+      taken by all map tasks": "78005", "HDFS: Number of bytes written": "1000000000",
+      "Total time spent by all reduce tasks (ms)": "25277", "IO_ERROR": "0", "GC time
+      elapsed (ms)": "1340", "WRONG_REDUCE": "0", "Reduce shuffle bytes": "1040000048",
+      "CONNECTION": "0", "FILE: Number of write operations": "0", "Failed Shuffles":
+      "0", "HDFS: Number of write operations": "2", "Launched reduce tasks": "1",
+      "HDFS: Number of large read operations": "0", "Launched map tasks": "9", "Merged
+      Map outputs": "8", "Rack-local map tasks": "4", "Total vcore-seconds taken by
+      all reduce tasks": "25277", "Shuffled Maps ": "8", "HDFS: Number of bytes read":
+      "1000001072", "Virtual memory (bytes) snapshot": "25496506368", "Data-local
+      map tasks": "5", "Combine input records": "0", "Total committed heap usage (bytes)":
+      "5855772672", "Map output materialized bytes": "1040000048", "HDFS: Number of
+      read operations": "27", "Total megabyte-seconds taken by all map tasks": "79877120",
+      "Physical memory (bytes) snapshot": "6077292544", "FILE: Number of read operations":
+      "0", "Map input records": "10000000", "FILE: Number of bytes read": "1040000012",
+      "Combine output records": "0", "Reduce input groups": "10000000", "Total time
+      spent by all maps in occupied slots (ms)": "78005", "Reduce output records":
+      "10000000", "Map output bytes": "1020000000", "Reduce input records": "10000000"}'
+status: completed
+timing:
+  completed: 2016-10-21 09:26:14 +0000 UTC
+  enqueued: 2016-10-21 09:24:40 +0000 UTC
+  started: 2016-10-21 09:24:45 +0000 UTC

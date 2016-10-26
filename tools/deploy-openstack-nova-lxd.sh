@@ -30,5 +30,3 @@ time ./tools/configure-openstack-lxd.sh
 # Launch and confirm a bastion instance
 time ./tools/create-bastion.sh
 time ./tools/check-exclusive-instances.sh
-
-# Announce OpenStack Dashboard and Juju GUI Addresses

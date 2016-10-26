@@ -18,11 +18,6 @@
 time juju bootstrap --constraints "arch=amd64 tags=demo" ||:
 time juju-deployer -Svdc juju-bundles/magpie-metal.yaml
 time timeout 1800 $HOME/tools/juju-wait/juju-wait -v
-
-
-exit 0
-
-
 time juju-deployer -Svdc juju-bundles/openstack-nova-kvm.yaml
 time timeout 2700 $HOME/tools/juju-wait/juju-wait -v
 
@@ -33,7 +28,5 @@ time ./tools/check-openstack-api-clients.sh
 time ./tools/configure-openstack-kvm.sh
 
 # Launch and confirm a bastion instance
-time ./tools/create-bastion.sh
+time ./tools/create-bastion-kvm.sh
 time ./tools/check-exclusive-instances.sh
-
-# Announce OpenStack Dashboard and Juju GUI Addresses

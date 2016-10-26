@@ -5,7 +5,7 @@ for OpenStack Summit Barcelona 2016_
 
 ---
 
-[![Presentation Slides - Big Data and Machine Learning on OpenStack backed by Nova-LXD - Andrew McLeod and Ryan Beisner](presentation/images/slides-multi-sample-600.png)](http://prezi.com/cvhcdlqwnsfn)
+[![Presentation Video - Big Data and Machine Learning on OpenStack backed by Nova-LXD - Andrew McLeod and Ryan Beisner](presentation/images/slides-multi-sample-600.png)](https://www.youtube.com/watch?v=I7ETRW14hHs)
 
 ## Overview
 Hadoop was built with bare metal in mind:  get your commodity hardware, 
@@ -88,7 +88,7 @@ The following is necesary and applicable to all scenaios.
 
 1. (11) machines are commissioned, enlisted, tagged as 'demo' and ready
    to deploy in MAAS.
-2. Juju 1.25.x is installed and configured to use MAAS 1.9.x.
+2. Juju is installed and configured to use MAAS.
 3. The bigdata-novalxd repo is locally cloned and is the current directory.
  - Run:
 
@@ -182,6 +182,14 @@ The following is necesary and applicable to all scenaios.
     tools/run_all_tests.sh
     ```
 
+### Other Notes
+
+The charms require firewall egress to the Ubuntu repositories, the Ubuntu 
+Cloud Archive, and the Apache Bigtop repositories.  Many of the deployed 
+applications are sensitive to DNS.  Ensure that the network provides DNS
+which allows units to resolve themselves and their peers with A and PTR
+records.  Such configuration is out of the scope of this demonstration.
+
 
 ## Additional Resources
 
@@ -192,7 +200,9 @@ Freenode IRC channels.
 * [MAAS: Metal as a Service][4]
 * [OpenStack Charm Development Guide][7]
 * [Ubuntu Server][6]
-* [Presentation/Slides from ODS Barcelona, October 2016][12]
+* [Presentation - Slides from ODS Barcelona, October 2016][12]
+* [Presentation - Full Video (openstack.org) from ODS Barcelona, October 2016][13]
+* [Presentation - Full Video (youtube) from ODS Barcelona, October 2016][14]
 
 
 [1]: juju-bundles/spark-hadoop-processing.yaml
@@ -207,3 +217,5 @@ Freenode IRC channels.
 [10]: tools/deploy-spark-on-metal.sh
 [11]: tools/deploy-spark-on-openstack.sh
 [12]: http://prezi.com/cvhcdlqwnsfn
+[13]: https://www.openstack.org/videos/video/big-data-and-machine-learning-on-openstack-backed-by-nova-lxd
+[14]: https://www.youtube.com/watch?v=I7ETRW14hHs

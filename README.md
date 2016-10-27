@@ -5,7 +5,7 @@ for OpenStack Summit Barcelona 2016_
 
 ---
 
-[![Presentation Video - Big Data and Machine Learning on OpenStack backed by Nova-LXD - Andrew McLeod and Ryan Beisner](presentation/images/slides-multi-sample-600.png)](https://www.youtube.com/watch?v=I7ETRW14hHs)
+[![alt text](presentation/images/slides-multi-sample-700.png "Presentation Video - Big Data and Machine Learning on OpenStack backed by Nova-LXD - Andrew McLeod and Ryan Beisner")](https://www.youtube.com/watch?v=I7ETRW14hHs)
 
 ## Overview
 Hadoop was built with bare metal in mind:  get your commodity hardware, 
@@ -38,6 +38,16 @@ We cover:
 * Spark anomoly detection.
 
 
+#### Challenge
+
+Deploy the big data applications onto three substrates: (1) bare metal; 
+(2) OpenStack with Nova-LXD; (3) OpenStack with Nova-KVM -- each onto
+the same set of identical underlying physical machines.
+
+Execute the same set of workloads and benchmarks against each big data
+deployment.
+
+
 #### Benchmarks and Jobs
 
 1. Terasort Benchmark: The classic mapreduce benchmark - but this time, it's a gigasort.
@@ -64,6 +74,15 @@ or run within a container managed by LXD or a traditional KVM virtual
 machine.  The remainder of the machines are allocated to the deployed
 workloads, such that there are the same number of Apache Hadoop Slaves
 with the same resources present in all three scenarios.
+
+Each scenario (Bare Metal, Nova-LXD, and Nova-KVM) has exactly 5 Hadoop 
+slaves, with each slave guaranteed exclusive placement per physical machine.
+
+In the Nova scenarios, this is achieved by using exclusive machine 
+scheduling filters and carefully-crafted flavors.
+
+This approach presents a clean comparison of the workload and benchmarks of
+Nova-LXD against bare metal, and Nova-KVM against bare metal.
 
 
 #### Software Specs
@@ -182,13 +201,63 @@ The following is necesary and applicable to all scenaios.
     tools/run_all_tests.sh
     ```
 
-### Other Notes
+### Other Execution Notes
 
 The charms require firewall egress to the Ubuntu repositories, the Ubuntu 
 Cloud Archive, and the Apache Bigtop repositories.  Many of the deployed 
 applications are sensitive to DNS.  Ensure that the network provides DNS
 which allows units to resolve themselves and their peers with A and PTR
 records.  Such configuration is out of the scope of this demonstration.
+
+
+## Results and Conclusions
+
+### Conclusions
+
+With:
+
+* All compute nodes hosting exactly one Hadoop slave (nova instance);
+* All Hadoop slaves being of the same instance size (nova flavor);
+* All compute nodes comprised of the same set of physical machines;
+* All physical machines being of identical make, spec and model; and
+
+When considering averages of the Spark job and benchmark measurements:
+
+* The Nova-LXD-backed OpenStack was >2.9X (nearly three times) more performant in
+  completing the analysis than the Nova-KVM-backed OpenStack.
+
+* The MAAS Bare Metal stack was >3.2X (over three times) more performant in
+  completing the analysis than the Nova-KVM-backed OpenStack.
+
+* The 'Reduce' operations were >7X (over seven times) more performant with 
+  Nova-LXD than Nova-KVM.
+
+
+### Measurement Data (Average of Multiple Runs per Scenario)
+
+|     | **Bare Metal** | **Nova LXD** | **Nova KVM** |
+|:--- | ---:| ---:| ---:|
+| Spark Anomaly Detection Job | 6.674561404 | 7.358333333 | 13.036842105 |
+| MB Seconds Map | 81793988 | 83552384 | 212194450 |
+| MB Seconds Reduce | 30041510 | 33321600 | 269166958 |
+| CPU time spent | 87041 | 91914 | 93912 |
+| VCore Seconds Map | 72438 | 81594 | 179053 |
+| VCore Seconds Reduce | 27801 | 32541 | 241667 |
+
+
+### Bare Metal Comparison
+|     | **Bare Metal** | **Nova LXD** | **Nova KVM** |
+|:--- | ---:| ---:| ---:|
+| Spark Anomaly Detection Job | 1.0000 | 1.1024 | 1.9532 |
+| MB Seconds Map | 1.0000 | 1.0215 | 2.5943 |
+| MB Seconds Reduce | 1.0000 | 1.1092 | 8.9598 |
+| CPU time spent | 1.0000 | 1.0560 | 1.0789 |
+| VCore Seconds Map | 1.0000 | 1.1264 | 2.4718 |
+| VCore Seconds Reduce | 1.0000 | 1.1705 | 8.6928 |
+| **AVG** | **1.0000** | **1.0977** | **4.2918** |
+
+
+![alt text](presentation/images/results-all-vs-baremetal.png "All Results vs. Bare Metal")
 
 
 ## Additional Resources

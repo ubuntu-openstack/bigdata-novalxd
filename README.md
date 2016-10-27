@@ -3,6 +3,8 @@
 _Andrew McLeod [irc: admcleod] and Ryan Beisner [irc: beisner] 
 for OpenStack Summit Barcelona 2016_
 
+[Skip to Results:  Bare Metal vs Nova-LXD vs Nova-KVM](#bare-metal-comparison)
+
 ---
 
 [![alt text](presentation/images/slides-multi-sample-700.png "Presentation Video - Big Data and Machine Learning on OpenStack backed by Nova-LXD - Andrew McLeod and Ryan Beisner")](https://www.youtube.com/watch?v=I7ETRW14hHs)
@@ -232,28 +234,37 @@ When considering averages of the Spark job and benchmark measurements:
 * The 'Reduce' operations were >7X (over seven times) more performant with 
   Nova-LXD than Nova-KVM.
 
+* The Nova-KVM-backed OpenStack incurred a 329.18% overhead as compared with
+  the bare metal stack.
+
+* The Nova-LXD-backed OpenStack incurred a 9.77% overhead as compared with 
+  the bare metal stack.
+
+* Both Nova scenarios could conceivably be improved by a few percentage
+  points with network tuning such as enabling jumbo frames.
+
 
 ### Measurement Data (Average of Multiple Runs per Scenario)
 
 |     | **Bare Metal** | **Nova LXD** | **Nova KVM** |
 |:--- | ---:| ---:| ---:|
-| Spark Anomaly Detection Job | 6.674561404 | 7.358333333 | 13.036842105 |
-| MB Seconds Map | 81793988 | 83552384 | 212194450 |
-| MB Seconds Reduce | 30041510 | 33321600 | 269166958 |
-| CPU time spent | 87041 | 91914 | 93912 |
-| VCore Seconds Map | 72438 | 81594 | 179053 |
-| VCore Seconds Reduce | 27801 | 32541 | 241667 |
+| Spark Anomaly Detection Job (min) | 6.674561404 | 7.358333333 | 13.036842105 |
+| Mem MB x Seconds of Mappers | 81793988 | 83552384 | 212194450 |
+| Mem MB x Seconds of Reducers | 30041510 | 33321600 | 269166958 |
+| CPU time spent (ms) | 87041 | 91914 | 93912 |
+| VCore Seconds x Mappers | 72438 | 81594 | 179053 |
+| VCore Seconds x Reducers | 27801 | 32541 | 241667 |
 
 
 ### Bare Metal Comparison
 |     | **Bare Metal** | **Nova LXD** | **Nova KVM** |
 |:--- | ---:| ---:| ---:|
 | Spark Anomaly Detection Job | 1.0000 | 1.1024 | 1.9532 |
-| MB Seconds Map | 1.0000 | 1.0215 | 2.5943 |
-| MB Seconds Reduce | 1.0000 | 1.1092 | 8.9598 |
+| Mem MB x Seconds of Mappers | 1.0000 | 1.0215 | 2.5943 |
+| Mem MB x Seconds of Reducers | 1.0000 | 1.1092 | 8.9598 |
 | CPU time spent | 1.0000 | 1.0560 | 1.0789 |
-| VCore Seconds Map | 1.0000 | 1.1264 | 2.4718 |
-| VCore Seconds Reduce | 1.0000 | 1.1705 | 8.6928 |
+| VCore Seconds x Mappers | 1.0000 | 1.1264 | 2.4718 |
+| VCore Seconds x Reducers | 1.0000 | 1.1705 | 8.6928 |
 | **AVG** | **1.0000** | **1.0977** | **4.2918** |
 
 

@@ -280,10 +280,10 @@ Freenode IRC channels.
 * [MAAS: Metal as a Service][4]
 * [OpenStack Charm Development Guide][7]
 * [Ubuntu Server][6]
+* [Using Spark for Anomaly (Fraud) Detection by Michael Vogiatzis][15]
 * [Presentation - Slides from ODS Barcelona, October 2016][12]
 * [Presentation - Full Video (openstack.org) from ODS Barcelona, October 2016][13]
 * [Presentation - Full Video (youtube) from ODS Barcelona, October 2016][14]
-
 
 [1]: juju-bundles/spark-hadoop-processing.yaml
 [2]: juju-bundles/openstack-nova-lxd.yaml
@@ -299,3 +299,4 @@ Freenode IRC channels.
 [12]: http://prezi.com/cvhcdlqwnsfn
 [13]: https://www.openstack.org/videos/video/big-data-and-machine-learning-on-openstack-backed-by-nova-lxd
 [14]: https://www.youtube.com/watch?v=I7ETRW14hHs
+[15]: https://micvog.com/2016/05/21/using-spark-for-anomaly-fraud-detection/
